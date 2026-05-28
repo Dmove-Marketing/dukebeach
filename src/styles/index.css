@@ -1838,6 +1838,13 @@ nav.scrolled {
   opacity: 0.7;
 }
 
+/* ─── ALINHAMENTO DE BOTÕES NAS SEÇÕES SPLIT ─── */
+.cerim-btn,
+.festa-btn,
+.btn-whatsapp {
+  align-self: flex-start;
+}
+
 /* ─── TÍTULOS EM MAIÚSCULAS ─── */
 .nav-logo,
 .hero-title,
@@ -1975,15 +1982,35 @@ nav.scrolled {
 
   .hospedagem-header {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
+    text-align: center;
   }
 
   .hospedagem-desc {
     max-width: 100%;
+    text-align: center;
+  }
+
+  /* Centralizar texto das seções em mobile */
+  .sobre-content,
+  .cerim-content,
+  .festa-content,
+  .contato-info {
+    text-align: center;
+  }
+
+  .tagline-phrase {
+    text-align: left;
+  }
+
+  .btn-teal,
+  .btn-outline,
+  .btn-whatsapp {
+    align-self: center !important;
   }
 
   .hospedagem-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr;
   }
 
   .cerimonia {
