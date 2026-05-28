@@ -1,6 +1,9 @@
 export function initForms() {
   const forms = document.querySelectorAll<HTMLFormElement>('form[data-form-id]');
   forms.forEach((form) => {
+    if (form.dataset.initialized) return;
+    form.dataset.initialized = 'true';
+
     let started = false;
     const formId  = form.dataset.formId!;
     const project = form.dataset.project || window.location.hostname;
@@ -53,25 +56,28 @@ export function initForms() {
       if (msgEl) msgEl.style.display = 'none';
 
       const formData = new FormData(form);
-      const data: Record<string, string> = {};
-      formData.forEach((v, k) => { if (k !== 'website') data[k] = v.toString(); });
+      const body: Record<string, string> = {};
+      formData.forEach((v, k) => {
+        if (k === 'website') return;
+        const el = form.querySelector<HTMLElement>(`[name="${CSS.escape(k)}"]`);
+        const label = el?.dataset.label || k;
+        body[label] = v.toString();
+      });
 
-      const trackingRaw = sessionStorage.getItem('dmove_tracking');
-      const tracking    = trackingRaw ? JSON.parse(trackingRaw) : {};
-      const firstVisit  = sessionStorage.getItem('dmove_first_visit') || '';
-
-      const payload = {
-        project,
-        form_id: formId,
-        data,
-        tracking: { ...tracking, first_visit: firstVisit, submitted_at: new Date().toISOString(), page_url: window.location.href },
-      };
+      const now = new Date();
+      body['Data']            = now.toLocaleDateString('pt-BR');
+      body['Horário']         = now.toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit' });
+      body['URL da página']   = window.location.href;
+      body['Agente de usuário'] = navigator.userAgent;
+      body['Desenvolvido por'] = 'Dmove';
+      body['form_id']         = formId;
+      body['form_name']       = form.name || formId;
 
       try {
         const res = await fetch(submitUrl, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(payload),
+          body: JSON.stringify(body),
         });
 
         if (!res.ok) throw new Error('http_' + res.status);
@@ -79,7 +85,7 @@ export function initForms() {
         let json: any = {};
         try { json = await res.json(); } catch {}
 
-        (window as any).dataLayer?.push({ event: 'form_submit', form_id: formId, project, ...data });
+        (window as any).dataLayer?.push({ event: 'form_submit', form_id: formId, project });
 
         const redir = redirectUrl || json.redirect;
         if (redir) {

@@ -155,15 +155,15 @@ const groupCls  = (full?: boolean) => {
               <div class={groupCls(f.full)}>
                 {f.label && <label class={cxLabel} for={f.id ?? f.name}>{f.label}</label>}
                 {f.type === 'select' ? (
-                  <select class={cxSelect} name={f.name} id={f.id ?? f.name} required={f.required}>
+                  <select class={cxSelect} name={f.name} id={f.id ?? f.name} required={f.required} data-label={f.label ?? f.placeholder ?? f.name}>
                     {f.options?.map((opt) => (
                       <option value={opt.value} disabled={opt.disabled} selected={opt.selected}>{opt.label}</option>
                     ))}
                   </select>
                 ) : f.type === 'textarea' ? (
-                  <textarea class={cxArea} name={f.name} id={f.id ?? f.name} rows={f.rows ?? 4} placeholder={f.placeholder} required={f.required}></textarea>
+                  <textarea class={cxArea} name={f.name} id={f.id ?? f.name} rows={f.rows ?? 4} placeholder={f.placeholder} required={f.required} data-label={f.label ?? f.placeholder ?? f.name}></textarea>
                 ) : f.type === 'hidden' ? (
-                  <input type="hidden" name={f.name} id={f.id ?? f.name} value={f.value} />
+                  <input type="hidden" name={f.name} id={f.id ?? f.name} value={f.value} data-label={f.label ?? f.name} />
                 ) : (
                   <input
                     class={cxInput}
@@ -177,6 +177,7 @@ const groupCls  = (full?: boolean) => {
                     min={f.min}
                     max={f.max}
                     readonly={f.readonly}
+                    data-label={f.label ?? f.placeholder ?? f.name}
                   />
                 )}
                 {f.errorText && <span class={cxError} id={f.errorId}>{f.errorText}</span>}
@@ -189,20 +190,20 @@ const groupCls  = (full?: boolean) => {
       const f = fieldOrRow as Field;
 
       if (f.type === 'hidden') {
-        return <input type="hidden" name={f.name} id={f.id ?? f.name} value={f.value} />;
+        return <input type="hidden" name={f.name} id={f.id ?? f.name} value={f.value} data-label={f.label ?? f.name} />;
       }
 
       return (
         <div class={groupCls(f.full)}>
           {f.label && <label class={cxLabel} for={f.id ?? f.name}>{f.label}</label>}
           {f.type === 'select' ? (
-            <select class={cxSelect} name={f.name} id={f.id ?? f.name} required={f.required}>
+            <select class={cxSelect} name={f.name} id={f.id ?? f.name} required={f.required} data-label={f.label ?? f.placeholder ?? f.name}>
               {f.options?.map((opt) => (
                 <option value={opt.value} disabled={opt.disabled} selected={opt.selected}>{opt.label}</option>
               ))}
             </select>
           ) : f.type === 'textarea' ? (
-            <textarea class={cxArea} name={f.name} id={f.id ?? f.name} rows={f.rows ?? 4} placeholder={f.placeholder} required={f.required}></textarea>
+            <textarea class={cxArea} name={f.name} id={f.id ?? f.name} rows={f.rows ?? 4} placeholder={f.placeholder} required={f.required} data-label={f.label ?? f.placeholder ?? f.name}></textarea>
           ) : (
             <input
               class={cxInput}
@@ -216,6 +217,7 @@ const groupCls  = (full?: boolean) => {
               min={f.min}
               max={f.max}
               readonly={f.readonly}
+              data-label={f.label ?? f.placeholder ?? f.name}
             />
           )}
           {f.errorText && <span class={cxError} id={f.errorId}>{f.errorText}</span>}
