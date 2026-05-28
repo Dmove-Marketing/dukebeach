@@ -1,0 +1,567 @@
+---
+// Gerado a partir de: index.html
+import Base from "../layouts/Base.astro";
+import config from "../../config.json";
+import LeadForm from "../components/forms/LeadForm.astro";
+import Img from "../components/ui/Img.astro";
+import Slideshow from "../components/ui/Slideshow.astro";
+import "../styles/index.css";
+---
+
+<Base
+  title="Duke Beach — Destination Wedding · Maresias"
+  description="Hotel boutique cinco estrelas em Maresias, litoral norte de São Paulo. Um fim de semana inteiramente reservado para um único casamento. 31 suítes. 100% privativo."
+  ogImage="/images/og-index.jpg"
+>
+  <link
+    slot="head"
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+  <!-- ─── NAV ─── -->
+  <nav id="navbar">
+    <a href="#" class="nav-logo">Duke Beach</a>
+    <ul class="nav-links">
+      <li><a href="#sobre">O Hotel</a></li>
+      <li><a href="#hospedagem">Hospedagem</a></li>
+      <li><a href="#cerimonia">Cerimônia</a></li>
+      <li><a href="#galeria">Galeria</a></li>
+    </ul>
+    <a href="#contato" class="nav-cta">Agendar visita</a>
+    <button class="nav-hamburger" id="hamburgerBtn" aria-label="Abrir menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- ─── MOBILE MENU ─── -->
+  <div
+    class="mobile-menu"
+    id="mobileMenu"
+    role="dialog"
+    aria-modal="true"
+    aria-label="Menu de navegação"
+  >
+    <a href="#sobre" aria-label="O Hotel">O Hotel</a>
+    <a href="#hospedagem" aria-label="Hospedagem">Hospedagem</a>
+    <a href="#cerimonia" aria-label="Cerimônia">Cerimônia</a>
+    <a href="#galeria" aria-label="Galeria">Galeria</a>
+    <a href="#contato" class="mobile-cta">Agendar visita</a>
+  </div>
+
+  <!-- ─── HERO ─── -->
+  <section class="hero">
+    <div class="hero-bg">
+      <Slideshow
+        priority
+        interval={7}
+        images={[
+          { src: 'HERO/IFlaviniaeeliaswedding0886.jpg',       alt: 'Duke Beach — Destination Wedding em Maresias' },
+          { src: 'HERO/IFlaviniaeeliasensaio0105 (2).jpg',    alt: 'Casal no Duke Beach' },
+          { src: 'HERO/ale e janes WD-216.jpg',               alt: 'Casamento no Duke Beach' },
+          { src: 'HERO/IFlaviniaeeliaswedding0681 (3).jpg',   alt: 'Destination Wedding em Maresias' },
+        ]}
+      />
+    </div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <span class="hero-tag">Maresias · Destination Wedding</span>
+      <h1 class="hero-title">
+        Exclusividade e encanto<br /><em>à beira-mar.</em>
+      </h1>
+      <p class="hero-subtitle">
+        Seu destination wedding em um hotel boutique de luxo em Maresias.
+      </p>
+      <div class="hero-actions">
+        <a href="#hospedagem" class="btn-primary">Quero conhecer</a>
+        <a href="#sobre" class="btn-ghost">Como funciona</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── STATS BAR ─── -->
+  <div class="stats-bar">
+    <div class="stat-item">
+      <span class="stat-num">31</span>
+      <span class="stat-label">suítes para seus convidados</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-num">1</span>
+      <span class="stat-label">casamento por fim de semana</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-num">5 ★</span>
+      <span class="stat-label">hotel boutique de luxo</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-num">100%</span>
+      <span class="stat-label">privativo, só para vocês</span>
+    </div>
+  </div>
+
+  <!-- ─── SOBRE ─── -->
+  <section class="sobre" id="sobre">
+    <div class="sobre-img">
+      <Slideshow
+        images={[
+          { src: 'INFINITY POOL/Duke_Beach_Hotel_Maresias-piscina-4.webp', alt: 'Piscina infinity do Duke Beach com vista para o mar' },
+          { src: 'INFINITY POOL/Duke_Beach_Hotel_Maresias-50-1.webp',      alt: 'Duke Beach Hotel Maresias' },
+          { src: 'INFINITY POOL/IMG_9413.JPG (1).jpeg',                    alt: 'Piscina do Duke Beach Hotel' },
+          { src: 'INFINITY POOL/IMG_9434.JPG (1).jpeg',                    alt: 'Área da piscina do Duke Beach' },
+        ]}
+      />
+    </div>
+    <div class="sobre-content">
+      <span class="section-tag">Sobre o Duke Beach</span>
+      <h2 class="section-title">
+        O oceano sempre esteve lá. Agora ele acompanha o seu casamento.
+      </h2>
+      <p class="section-body">
+        Para entender o Duke Beach, você precisa desconstruir o conceito
+        tradicional de destination wedding.<br /><br />Em uma das costas mais
+        preservadas do litoral norte de São Paulo, no coração de Maresias, nasce
+        o Duke. Um hotel 5 estrelas que, por um fim de semana, para inteiramente
+        para um único casamento.<br /><br />Aqui, o evento e a hospedagem não
+        coexistem. Eles se tornam a mesma memória.
+      </p>
+      <blockquote class="tagline-phrase">
+        "O fim de semana inteiro é de vocês."
+      </blockquote>
+    </div>
+  </section>
+
+  <!-- ─── HOSPEDAGEM ─── -->
+  <section class="hospedagem" id="hospedagem">
+    <div class="hospedagem-header">
+      <div>
+        <span class="section-tag">Hospedagem</span>
+        <h2 class="section-title">Todos os seus convidados, no mesmo lugar.</h2>
+      </div>
+      <p class="hospedagem-desc">
+        Um hotel reservado inteiramente para os dias da celebração.
+      </p>
+    </div>
+    <div class="hospedagem-grid">
+      <!-- Suítes -->
+      <div class="hosp-card">
+        <div class="hosp-bg">
+          <Slideshow
+            images={[
+              { src: 'SUÍTES/IMG_9514.JPG (1).jpeg', alt: 'Suíte do Duke Beach Hotel' },
+              { src: 'SUÍTES/IMG_9460.JPG (1).jpeg', alt: 'Suíte do Duke Beach Hotel' },
+            ]}
+          />
+        </div>
+        <div class="hosp-info">
+          <span class="hosp-name">Trinta e uma suítes.</span>
+          <span class="hosp-cap">Hospedagem completa</span>
+        </div>
+        <div class="hosp-glass">
+          <span class="hosp-glass-name">Suítes</span>
+          <p class="hosp-glass-text">
+            Para que cada um durma ouvindo as ondas e acorde sem pressa de ir
+            embora.
+          </p>
+          <a href="#contato" class="hosp-glass-btn">Ver galeria</a>
+        </div>
+      </div>
+
+      <!-- Infinity Pool -->
+      <div class="hosp-card">
+        <div class="hosp-bg">
+          <Slideshow
+            images={[
+              { src: 'INFINITY POOL/Duke_Beach_Hotel_Maresias-50-1.webp',      alt: 'Infinity Pool com vista para o Atlântico' },
+              { src: 'INFINITY POOL/Duke_Beach_Hotel_Maresias-piscina-4.webp', alt: 'Piscina do Duke Beach' },
+              { src: 'INFINITY POOL/IMG_9413.JPG (1).jpeg',                    alt: 'Piscina do Duke Beach Hotel' },
+              { src: 'INFINITY POOL/IMG_9434.JPG (1).jpeg',                    alt: 'Área da piscina do Duke Beach' },
+            ]}
+          />
+        </div>
+        <div class="hosp-info">
+          <span class="hosp-name">Infinity Pool</span>
+          <span class="hosp-cap">Vista para o Atlântico</span>
+        </div>
+        <div class="hosp-glass">
+          <span class="hosp-glass-name">Infinity Pool</span>
+          <p class="hosp-glass-text">
+            Borda infinita com vista para o Atlântico. Espaço de convivência
+            central ao longo de todos os dias.
+          </p>
+          <a href="#contato" class="hosp-glass-btn">Ver galeria</a>
+        </div>
+      </div>
+
+      <!-- SPA -->
+      <div class="hosp-card">
+        <div class="hosp-bg">
+          <Slideshow
+            images={[
+              { src: 'SPA/Cópia de DSC02972.jpg',        alt: 'SPA do Duke Beach Hotel' },
+              { src: 'SPA/Cópia de Duke-140.jpg',         alt: 'SPA do Duke Beach Hotel' },
+              { src: 'SPA/SALA-DE-MASSAGEM.jpg.webp',     alt: 'Sala de massagem do Duke Beach' },
+            ]}
+          />
+        </div>
+        <div class="hosp-info">
+          <span class="hosp-name">SPA</span>
+          <span class="hosp-cap">Para todos os hóspedes</span>
+        </div>
+        <div class="hosp-glass">
+          <span class="hosp-glass-name">SPA</span>
+          <p class="hosp-glass-text">
+            Disponível para todos os hóspedes. Da preparação da noiva ao
+            relaxamento pós-cerimônia, sem pressa e sem fila.
+          </p>
+          <a href="#contato" class="hosp-glass-btn">Ver galeria</a>
+        </div>
+      </div>
+
+      <!-- Lago Aquecido -->
+      <div class="hosp-card">
+        <div class="hosp-bg">
+          <Slideshow
+            images={[
+              { src: 'LAGO AQUECIDO/Copia-de-Copia-de-Duke-004.webp',                    alt: 'Lago aquecido do Duke Beach' },
+              { src: 'LAGO AQUECIDO/2025-10-21.webp',                                    alt: 'Lago aquecido do Duke Beach Hotel' },
+              { src: 'LAGO AQUECIDO/WhatsApp Image 2026-05-15 at 17.22.46 (3).jpeg',     alt: 'Lago aquecido Duke Beach' },
+              { src: 'LAGO AQUECIDO/WhatsApp Image 2026-05-15 at 17.22.46 (2) (1).jpeg', alt: 'Lago aquecido Duke Beach' },
+            ]}
+          />
+        </div>
+        <div class="hosp-info">
+          <span class="hosp-name">Lago Aquecido</span>
+          <span class="hosp-cap">Espaço contemplativo</span>
+        </div>
+        <div class="hosp-glass">
+          <span class="hosp-glass-name">Lago Aquecido</span>
+          <p class="hosp-glass-text">
+            Ambiente contemplativo e privativo. Um espaço para os momentos entre
+            as comemorações, onde o ritmo desacelera.
+          </p>
+          <a href="#contato" class="hosp-glass-btn">Ver galeria</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── CERIMÔNIA ─── -->
+  <section class="cerimonia" id="cerimonia">
+    <div class="cerim-content">
+      <span class="section-tag">Cerimônia</span>
+      <h2 class="section-title">O mar como<br /><em>testemunha.</em></h2>
+      <p class="section-body">
+        O momento do "sim" acontece diante de uma vista que poucos espaços no
+        litoral paulista conseguem oferecer. Aqui, a paisagem não é cenário: ela
+        participa da experiência.
+      </p>
+      <a href="#contato" class="btn-teal" style="align-self: flex-start;"
+        >Ver o espaço</a
+      >
+    </div>
+    <div class="cerim-img">
+      <Slideshow
+        images={[
+          { src: 'CERIMÔNIA/IFlaviniaeeliaswedding0685.jpg',       alt: 'Cerimônia de casamento no Duke Beach' },
+          { src: 'CERIMÔNIA/IFlaviniaeeliaswedding0176.jpg',       alt: 'Cerimônia à beira-mar no Duke Beach' },
+          { src: 'CERIMÔNIA/Cópia de ale e janes WD-103.jpg',      alt: 'Casamento no Duke Beach Maresias' },
+          { src: 'CERIMÔNIA/IFlaviniaeeliaswedding0625.jpg',       alt: 'Cerimônia no Duke Beach' },
+          { src: 'CERIMÔNIA/IFlaviniaeeliaswedding0180 (2).jpg',   alt: 'Momento da cerimônia no Duke Beach' },
+        ]}
+      />
+    </div>
+  </section>
+
+  <!-- ─── FESTA ─── -->
+  <section class="festa">
+    <div class="festa-img">
+      <Slideshow
+        images={[
+          { src: 'FESTA/IFlaviniaeeliaswedding0234.jpg',       alt: 'Festa de casamento no Duke Beach' },
+          { src: 'FESTA/Cópia de BARBARA E PEDRO-15.jpg',      alt: 'Recepção no Duke Beach' },
+          { src: 'FESTA/Cópia de ale e janes WD-67.jpg',       alt: 'Festa no Duke Beach Maresias' },
+          { src: 'FESTA/IFlaviniaeeliaswedding0196.jpg',       alt: 'Celebração no Duke Beach' },
+        ]}
+      />
+    </div>
+    <div class="festa-content">
+      <span class="section-tag">Festa</span>
+      <h2 class="section-title">Estrutura de<br /><em>alto padrão.</em></h2>
+      <p class="section-body">
+        Um salão criado para celebrações de alto padrão, onde estrutura e
+        atmosfera acompanham o ritmo da noite.
+      </p>
+      <ul class="festa-list">
+        <li class="festa-item">
+          <div class="festa-dot"></div>
+          <div class="festa-text">
+            <strong>Só de vocês</strong>
+            O salão, o jardim, a piscina. Não tem outro casamento do lado, não tem
+            convidados de outra festa cruzando o caminho.
+          </div>
+        </li>
+        <li class="festa-item">
+          <div class="festa-dot"></div>
+          <div class="festa-text">
+            <strong>Equipe dedicada</strong>
+            Som, iluminação e pista montados para a festa de vocês. A equipe não está
+            dividida com mais ninguém aquela noite.
+          </div>
+        </li>
+        <li class="festa-item">
+          <div class="festa-dot"></div>
+          <div class="festa-text">
+            <strong>Sem hora de acabar</strong>
+            O quarto fica ao lado da festa. Quando a noite cansa, é só subir — quem
+            quiser, continua.
+          </div>
+        </li>
+      </ul>
+      <a href="#contato" class="btn-outline" style="align-self: flex-start;"
+        >Falar com a equipe</a
+      >
+    </div>
+  </section>
+
+  <!-- ─── GALERIA HEADER ─── -->
+  <div
+    style="background: var(--white); padding: 80px 60px 0; text-align: center;"
+  >
+    <span class="section-tag" style="display:block; text-align:center;"
+      >Galeria</span
+    >
+    <h2 class="section-title" style="margin-bottom: 12px;">
+      Momentos que foram registrados no Duke.
+    </h2>
+    <p class="section-body" style="max-width: 480px; margin: 0 auto 48px;">
+      Veja fotos de casamentos reais que aconteceram aqui.
+    </p>
+  </div>
+
+  <!-- ─── GALERIA ─── -->
+  <section class="galeria" id="galeria">
+    <div class="galeria-item tall">
+      <div class="galeria-bg">
+        <Slideshow
+          interval={8}
+          images={[
+            { src: 'GALERIA/IFlaviniaeeliaswedding0903.jpg',     alt: 'Casamento no Duke Beach' },
+            { src: 'GALERIA/IFlaviniaeeliaswedding1030.jpg',     alt: 'Casamento no Duke Beach' },
+            { src: 'GALERIA/IFlaviniaeeliaswedding0231.jpg',     alt: 'Casamento no Duke Beach' },
+          ]}
+        />
+      </div>
+    </div>
+    <div class="galeria-item">
+      <div class="galeria-bg">
+        <Slideshow
+          interval={8}
+          images={[
+            { src: 'GALERIA/IFlaviniaeeliaswedding0782.jpg',     alt: 'Casamento no Duke Beach' },
+            { src: 'GALERIA/ale e janes WD-71.jpg',              alt: 'Casamento no Duke Beach' },
+          ]}
+        />
+      </div>
+    </div>
+    <div class="galeria-item">
+      <div class="galeria-bg">
+        <Slideshow
+          interval={8}
+          images={[
+            { src: 'GALERIA/IFlaviniaeeliaswedding0802.jpg',     alt: 'Casamento no Duke Beach' },
+            { src: 'GALERIA/Cópia de ale e janes WD-76.jpg',     alt: 'Casamento no Duke Beach' },
+          ]}
+        />
+      </div>
+    </div>
+    <div class="galeria-item">
+      <div class="galeria-bg">
+        <Slideshow
+          interval={8}
+          images={[
+            { src: 'GALERIA/IFlaviniaeeliaswedding1202.jpg',     alt: 'Casamento no Duke Beach' },
+            { src: 'GALERIA/Cópia de ale e janes WD-227.jpg',    alt: 'Casamento no Duke Beach' },
+          ]}
+        />
+      </div>
+    </div>
+    <div class="galeria-item">
+      <div class="galeria-bg">
+        <Slideshow
+          interval={8}
+          images={[
+            { src: 'GALERIA/IFlaviniaeeliaswedding1130.jpg',     alt: 'Casamento no Duke Beach' },
+            { src: 'GALERIA/Cópia de ale e janes WD-31.jpg',     alt: 'Casamento no Duke Beach' },
+          ]}
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── DEPOIMENTO ─── -->
+  <section class="depoimento">
+    <span class="dep-icon" aria-hidden="true">"</span>
+    <blockquote class="dep-quote">
+      Acordamos no dia seguinte e ninguém queria ir embora. Ainda tinha gente na
+      piscina às dez da manhã, o café estava no jardim e o mar continuava lá.
+      Não lembro de um casamento que tivesse um dia depois assim.
+    </blockquote>
+    <p class="dep-author">— Camila &amp; Rodrigo · Casamento em Março 2026</p>
+  </section>
+
+  <!-- ─── CONTATO ─── -->
+  <section class="contato-section" id="contato">
+    <div class="contato-info">
+      <span class="section-tag">Visita presencial</span>
+      <h2 class="section-title">Venha sonhar<br />com a gente.</h2>
+      <p class="section-body">
+        Preencha o formulário para receber nosso contato.
+      </p>
+
+      <button
+        type="button"
+        class="btn-whatsapp"
+        id="openWaModal"
+        aria-label="Falar pelo WhatsApp"
+      >
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path
+            d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"
+          ></path>
+        </svg>
+        Falar pelo WhatsApp
+      </button>
+
+      <div class="visita-box">
+        <div class="visita-box-icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+            <circle cx="12" cy="10" r="3"></circle>
+          </svg>
+        </div>
+        <div class="visita-box-text">
+          <strong>Visita presencial</strong>
+          <p>
+            O hotel recebe visitas de terça a sábado, das 9h às 18h. Vale muito
+            mais do que qualquer foto.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="contato-form-wrap">
+      <LeadForm
+        formId="lead-form"
+        project={config.project_slug}
+        submitUrl={config.forms["lead-form"].webhooks[0]}
+        redirectUrl={config.forms["lead-form"].redirect_on_success}
+        submitText="Enviar solicitação"
+        prefix="duke"
+        honeypot
+        fields={[
+          { name: "nome",      type: "text",     label: "Nome",               placeholder: "Seu nome",            required: true  },
+          { name: "telefone",  type: "tel",       label: "WhatsApp",           placeholder: "(11) 9 0000-0000",    required: true  },
+          { name: "email",     type: "email",     label: "E-mail",             placeholder: "seu@email.com.br",    required: true  },
+          {
+            name: "tipo_evento", type: "select", label: "Tipo de evento", placeholder: "", required: true,
+            options: [
+              { value: "",            label: "Selecione",          disabled: true, selected: true },
+              { value: "casamento",   label: "Casamento" },
+              { value: "destination", label: "Destination Wedding" },
+              { value: "noivado",     label: "Noivado" },
+              { value: "outro",       label: "Outro" },
+            ],
+          },
+          { name: "data",       type: "text",   label: "Data do evento",    placeholder: "Selecione a data",   required: false },
+          { name: "convidados", type: "number", label: "Número de pessoas", placeholder: "Ex: 80",             required: false },
+          { name: "detalhes",   type: "textarea", label: "Detalhes adicionais", placeholder: "Conte um pouco sobre o casamento que vocês imaginam.", required: false, full: true },
+        ]}
+      />
+    </div>
+  </section>
+
+  <!-- ─── POPUP PRÉ-WHATSAPP ─── -->
+  <div class="wa-backdrop" id="waModalOverlay" aria-hidden="true"></div>
+  <div class="wa-popup" id="waPopup" role="dialog" aria-modal="true" aria-labelledby="waPopupTitle">
+
+    <!-- Cabeçalho estilo WhatsApp -->
+    <div class="wa-popup__head">
+      <div class="wa-popup__avatar">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+        </svg>
+      </div>
+      <div class="wa-popup__info">
+        <strong id="waPopupTitle">Duke Beach</strong>
+        <span class="wa-popup__status">
+          <span class="wa-popup__dot"></span>Online agora
+        </span>
+      </div>
+      <button class="wa-popup__close" id="closeWaModal" aria-label="Fechar">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+          <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Corpo estilo chat -->
+    <div class="wa-popup__body">
+      <div class="wa-bubble">
+        <p>Olá! Preencha os dados abaixo e nossa equipe entra em contato pelo WhatsApp em até 2 horas. 🌊</p>
+      </div>
+
+      <LeadForm
+        formId="wa-form"
+        project={config.project_slug}
+        submitUrl={config.forms["lead-form"].webhooks[0]}
+        redirectUrl="https://wa.me/5512900000000?text=Olá!%20Acabei%20de%20preencher%20o%20formulário%20no%20site%20do%20Duke%20Beach%20e%20gostaria%20de%20saber%20mais%20sobre%20o%20destination%20wedding."
+        submitText="Enviar e continuar no WhatsApp"
+        prefix="wa"
+        honeypot
+        successTitle="Enviado!"
+        successText="Em instantes entraremos em contato pelo WhatsApp."
+        fields={[
+          { name: "nome",       type: "text",   id: "wa-nome",       placeholder: "Nome completo",        required: true  },
+          { name: "telefone",   type: "tel",    id: "wa-telefone",   placeholder: "(00) 00000-0000",      required: true  },
+          { name: "email",      type: "email",  id: "wa-email",      placeholder: "E-mail",               required: true  },
+          { name: "data",       type: "text",   id: "wa-data",       placeholder: "Data do evento",       required: false },
+          { name: "convidados", type: "number", id: "wa-convidados", placeholder: "Número de convidados", required: false },
+        ]}
+      />
+    </div>
+  </div>
+
+  <!-- ─── FOOTER ─── -->
+  <footer class="footer">
+    <div class="footer__inner">
+      <a href="#" class="footer__logo-text">Duke Beach</a>
+      <p class="footer__location">Maresias &nbsp;·&nbsp; Litoral Norte Paulista</p>
+      <a href="#contato" class="footer__cta">Agendar visita</a>
+    </div>
+    <div class="footer__bottom">
+      <p class="footer__copy">&copy; 2026 Duke Beach. Todos os direitos reservados.</p>
+      <a
+        href="https://dmove.com.br/"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="footer__dmove"
+      >
+        Desenvolvido por
+        <img
+          src="/images/logo.dmove.avif"
+          alt="Dmove"
+          class="footer__dmove-logo"
+          width="60"
+          height="14"
+        />
+      </a>
+    </div>
+  </footer>
+
+  <!-- ─── MOBILE STICKY CTA ─── -->
+  <div class="mobile-sticky-cta" aria-hidden="true">
+    <a href="#contato">Agendar visita</a>
+  </div>
+</Base>
+<script>
+  import "../scripts/index.js";
+</script>
