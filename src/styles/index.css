@@ -2039,12 +2039,17 @@ nav.scrolled {
   }
 
   .galeria {
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto;
+    grid-template-columns: 1fr;
+    grid-template-rows: none;
+  }
+
+  .galeria-item {
+    height: 280px;
   }
 
   .galeria-item.tall {
     grid-row: span 1;
+    height: 280px;
   }
 
   .depoimento {
