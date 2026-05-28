@@ -4,6 +4,7 @@ import Img from './Img.astro';
 interface SlideImage {
   src: string;
   alt: string;
+  objectPosition?: string;
 }
 
 interface Props {
@@ -14,6 +15,8 @@ interface Props {
   transition?: number;
   class?: string;
   priority?: boolean;
+  /** object-position padrão para todas as imagens (ex: "top", "center 20%") */
+  objectPosition?: string;
 }
 
 const {
@@ -22,6 +25,7 @@ const {
   transition = 1.5,
   class: className,
   priority = false,
+  objectPosition = 'center',
 } = Astro.props;
 
 const n = images.length;
@@ -56,7 +60,7 @@ const css = `
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center;
+  object-position: ${objectPosition};
 }`;
 ---
 
@@ -67,7 +71,12 @@ const css = `
     <Fragment set:html={`<style>${css}</style>`} />
     {images.map((img, i) => (
       <div class={`${uid}-slide`} style={`animation-delay:${i * interval}s`}>
-        <Img src={img.src} alt={img.alt} priority={i === 0 && priority} />
+        <Img
+          src={img.src}
+          alt={img.alt}
+          priority={i === 0 && priority}
+          style={img.objectPosition ? `object-position:${img.objectPosition}` : undefined}
+        />
       </div>
     ))}
   </>
