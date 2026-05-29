@@ -2,10 +2,10 @@
   "project_name": "duke-beach",
   "project_slug": "duke-beach",
   "client": "Duke Beach",
-  "environment": "development",
+  "environment": "production",
   "tracking": {
-    "gtm_id": "",
-    "enabled": false
+    "gtm_id": "GTM-5W484ZJQ",
+    "enabled": true
   },
   "forms": {
     "lead-form": {
