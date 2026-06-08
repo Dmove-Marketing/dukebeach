@@ -18,16 +18,15 @@ import '../styles/bio.css';
   ogImage="/images/og-index.jpg"
 >
 
-<!-- HERO IMAGE -->
+<!-- HERO IMAGE + TÍTULO -->
   <section class="bio-hero">
     <img src={heroImage.src} alt="Altar decorado com flores brancas e vista para o mar em Maresias" class="bio-hero-img" />
-  </section>
-
-<!-- BRAND + HEADLINE -->
-  <section class="bio-intro">
-    <span class="bio-brand-sub">Duke Beach Eventos · Maresias</span>
-    <h1 class="bio-headline-pt">Viva um casamento inesquecível em Maresias, no Duke Beach Eventos.</h1>
-    <p class="bio-headline-en">Live an unforgettable wedding in Maresias, at Duke Beach Eventos.</p>
+    <div class="bio-hero-overlay"></div>
+    <div class="bio-hero-content">
+      <span class="bio-brand-sub">Duke Beach Eventos · Maresias</span>
+      <h1 class="bio-headline-pt">Viva um casamento inesquecível<br>em Maresias, no Duke Beach Eventos.</h1>
+      <p class="bio-headline-en">Live an unforgettable wedding in Maresias, at Duke Beach Eventos.</p>
+    </div>
   </section>
 
 <!-- SOBRE NÓS -->
@@ -41,7 +40,6 @@ import '../styles/bio.css';
 <!-- FORM -->
   <section class="form-section" id="solicitar">
     <p class="section-label">Fale conosco</p>
-    <h2 class="section-title">Vamos transformar o seu casamento <br><em>em uma experiência inesquecível?</em></h2>
 
     <LeadForm
       formId="lead-form"

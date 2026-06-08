@@ -7,28 +7,44 @@
   min-height: 340px;
   max-height: 600px;
   overflow: hidden;
-  display: block;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
 }
 
 .bio-hero-img {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: center 65%;
-  display: block;
 }
 
-/* ─── BRAND + HEADLINE ─── */
-.bio-intro {
-  background: #2A5060;
-  padding: 48px 24px 40px;
+.bio-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top,
+    rgba(26, 48, 64, 0.97) 0%,
+    rgba(26, 48, 64, 0.55) 45%,
+    rgba(26, 48, 64, 0.20) 100%);
+}
+
+.bio-hero-content {
+  position: relative;
+  z-index: 2;
+  padding: 0 24px 48px;
+  max-width: 600px;
+  width: 100%;
+  text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
-  text-align: center;
-  gap: 20px;
+  gap: 16px;
 }
 
+/* ─── BRAND + HEADLINE ─── */
 .bio-brand-sub {
   font-size: 9px;
   letter-spacing: 4px;
@@ -39,12 +55,12 @@
 
 .bio-headline-pt {
   font-family: 'Sorts Mill Goudy', serif;
-  font-size: clamp(22px, 4.5vw, 36px);
+  font-size: clamp(17px, 4.2vw, 32px);
   font-weight: 400;
   color: var(--sand);
   line-height: 1.3;
   letter-spacing: -0.01em;
-  max-width: 480px;
+  white-space: nowrap;
   margin: 0;
 }
 
@@ -55,7 +71,7 @@
   color: #F5F0E8;
   letter-spacing: 0.05em;
   line-height: 1.7;
-  max-width: 400px;
+  white-space: nowrap;
   margin: 0;
 }
 
@@ -63,7 +79,7 @@
 .bio-about {
   background: #2A5060;
   border-top: 1px solid rgba(213, 204, 188, 0.1);
-  padding: 32px 24px;
+  padding: 32px 24px 16px;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -131,7 +147,7 @@
 /* ─── FORM SECTION ─── */
 .form-section {
   background: #2A5060;
-  padding: 72px 24px 88px;
+  padding: 32px 24px 88px;
   display: flex;
   flex-direction: column;
   align-items: center;
