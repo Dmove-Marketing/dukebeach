@@ -9,7 +9,7 @@
   overflow: hidden;
   position: relative;
   display: flex;
-  align-items: flex-end;
+  align-items: center;
   justify-content: center;
 }
 
@@ -34,7 +34,7 @@
 .bio-hero-content {
   position: relative;
   z-index: 2;
-  padding: 0 24px 48px;
+  padding: 0 24px;
   max-width: 600px;
   width: 100%;
   text-align: center;
@@ -423,6 +423,16 @@
 }
 
 /* ─── RESPONSIVE ─── */
+@media (min-width: 768px) {
+  .bio-hero {
+    align-items: center;
+  }
+
+  .bio-hero-content {
+    padding: 0 40px;
+  }
+}
+
 @media (max-width: 480px) {
   .form-card {
     padding: 36px 24px;
