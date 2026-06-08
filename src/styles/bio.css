@@ -1,0 +1,418 @@
+/* ─── BIO PAGE ─── */
+
+/* ─── HERO IMAGE ─── */
+.bio-hero {
+  width: 100%;
+  height: 60vh;
+  min-height: 340px;
+  max-height: 600px;
+  overflow: hidden;
+  display: block;
+}
+
+.bio-hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 65%;
+  display: block;
+}
+
+/* ─── BRAND + HEADLINE ─── */
+.bio-intro {
+  background: #2A5060;
+  padding: 48px 24px 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 20px;
+}
+
+.bio-brand-sub {
+  font-size: 9px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--teal);
+  font-weight: 400;
+}
+
+.bio-headline-pt {
+  font-family: 'Sorts Mill Goudy', serif;
+  font-size: clamp(22px, 4.5vw, 36px);
+  font-weight: 400;
+  color: var(--sand);
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+  max-width: 480px;
+  margin: 0;
+}
+
+.bio-headline-en {
+  font-family: 'SK Modernist', sans-serif;
+  font-size: clamp(10px, 1.8vw, 13px);
+  font-weight: 300;
+  color: #F5F0E8;
+  letter-spacing: 0.05em;
+  line-height: 1.7;
+  max-width: 400px;
+  margin: 0;
+}
+
+/* ─── SOBRE NÓS ─── */
+.bio-about {
+  background: #2A5060;
+  border-top: 1px solid rgba(213, 204, 188, 0.1);
+  padding: 32px 24px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.bio-about-label {
+  font-size: 9px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--teal);
+  font-weight: 400;
+  margin: 0;
+}
+
+/* ─── REDES SOCIAIS (no footer) ─── */
+.bio-footer__social {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 16px;
+}
+
+.bio-social-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: transparent;
+  border: 1px solid rgba(213, 204, 188, 0.22);
+  color: var(--sand);
+  text-decoration: none;
+  transition: background 0.25s, border-color 0.25s;
+  flex-shrink: 0;
+}
+
+.bio-social-btn:hover:not(.bio-social-btn--disabled) {
+  background: rgba(213, 204, 188, 0.12);
+  border-color: rgba(213, 204, 188, 0.55);
+}
+
+.bio-social-btn--disabled {
+  opacity: 0.3;
+  cursor: default;
+  pointer-events: none;
+}
+
+.bio-about-btn {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  border-radius: 0;
+  padding: 15px 22px;
+  justify-content: center;
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-family: 'SK Modernist', sans-serif;
+  font-weight: 400;
+}
+
+/* ─── FORM SECTION ─── */
+.form-section {
+  background: #2A5060;
+  padding: 72px 24px 88px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.section-label {
+  font-size: 9px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--teal);
+  font-weight: 400;
+  margin-bottom: 16px;
+}
+
+.section-title {
+  font-family: 'Sorts Mill Goudy', serif;
+  font-size: clamp(22px, 3vw, 32px);
+  font-weight: 400;
+  color: var(--sand);
+  line-height: 1.25;
+  max-width: 520px;
+  margin: 0 auto 48px;
+  letter-spacing: -0.01em;
+}
+
+.section-title em {
+  font-style: italic;
+  color: var(--ocean-light, #F5F0E8);
+}
+
+/* ─── FORM CARD (bio prefix) ─── */
+.form-card {
+  width: 100%;
+  max-width: 560px;
+  background: #F5F0E8;
+  border: 1px solid #F5F0E8;
+  border-radius: 12px;
+  padding: 48px 40px;
+  box-shadow: 0 4px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* ─── FORM GRID ─── */
+.bio-form-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.bio-form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+.bio-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.bio-form-group.full {
+  grid-column: 1 / -1;
+}
+
+/* ─── LABELS ─── */
+.bio-label {
+  font-size: 9px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--ocean-light, #3A6878);
+  font-weight: 500;
+}
+
+/* ─── INPUTS ─── */
+.bio-input,
+.bio-select,
+.bio-textarea {
+  padding: 14px 16px;
+  background: transparent;
+  border: 1px solid rgba(26, 48, 64, 0.18);
+  color: #1A3040;
+  font-size: 14px;
+  font-family: 'SK Modernist', sans-serif;
+  font-weight: 300;
+  outline: none;
+  transition: border-color 0.3s;
+  border-radius: 0;
+  width: 100%;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+.bio-input::placeholder,
+.bio-textarea::placeholder {
+  color: rgba(26, 48, 64, 0.3);
+}
+
+.bio-select:has(option[value=""]:checked) {
+  color: rgba(26, 48, 64, 0.3);
+}
+
+.bio-input:focus,
+.bio-select:focus,
+.bio-textarea:focus {
+  border-color: #1A3040;
+}
+
+.bio-textarea {
+  min-height: 96px;
+  resize: vertical;
+}
+
+.bio-select {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%231A3040' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 16px center;
+  background-color: #F5F0E8;
+  cursor: pointer;
+}
+
+.bio-select option {
+  background-color: #F5F0E8;
+  color: #1A3040;
+}
+
+/* ─── SUBMIT ─── */
+.bio-submit {
+  width: 100%;
+  background: #1B3140;
+  color: var(--sand);
+  padding: 18px 32px;
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 0;
+  cursor: pointer;
+  font-family: 'SK Modernist', sans-serif;
+  font-weight: 500;
+  transition: background 0.3s;
+  margin-top: 4px;
+}
+
+.bio-submit:hover {
+  background: var(--ocean-mid, #2A5060);
+}
+
+.bio-submit:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* ─── FOOTER & ERROR ─── */
+.bio-form-footer {
+  font-size: 10px;
+  color: rgba(26, 48, 64, 0.3);
+  letter-spacing: 0.3px;
+  text-align: center;
+  line-height: 1.6;
+}
+
+.bio-form-msg {
+  font-size: 13px;
+  color: #c0392b;
+  text-align: center;
+  display: none;
+}
+
+/* ─── SUCCESS STATE ─── */
+.bio-success-state {
+  display: none;
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.bio-success-state.active {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.bio-success-icon {
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--teal);
+  border-radius: 50%;
+}
+
+.bio-success-icon svg {
+  width: 24px;
+  height: 24px;
+  stroke: var(--white);
+  fill: none;
+  stroke-width: 2;
+  stroke-linecap: round;
+}
+
+.bio-success-title {
+  font-family: 'Sorts Mill Goudy', serif;
+  font-size: 24px;
+  font-weight: 400;
+  color: var(--ocean-deep);
+}
+
+.bio-success-text {
+  font-size: 14px;
+  color: var(--ocean-light, #3A6878);
+  line-height: 1.7;
+}
+
+/* ─── FOOTER ─── */
+.bio-footer {
+  background: #1B3140;
+}
+
+.bio-footer__top {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  padding: 48px 24px 32px;
+  border-bottom: 1px solid rgba(245, 240, 232, 0.08);
+}
+
+.bio-footer__client-logo {
+  height: 60px;
+  width: auto;
+  opacity: 0.85;
+}
+
+.footer__bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 22px 40px;
+}
+
+.footer__copy {
+  font-size: 10px;
+  color: rgba(245, 240, 232, 0.18);
+  letter-spacing: 0.5px;
+}
+
+.footer__dmove {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 10px;
+  color: rgba(245, 240, 232, 0.25);
+  text-decoration: none;
+  letter-spacing: 0.5px;
+  transition: color 0.3s;
+}
+
+.footer__dmove:hover {
+  color: rgba(245, 240, 232, 0.5);
+}
+
+.footer__dmove-logo {
+  height: 14px;
+  width: auto;
+  opacity: 0.45;
+  transition: opacity 0.3s;
+}
+
+.footer__dmove:hover .footer__dmove-logo {
+  opacity: 0.7;
+}
+
+/* ─── RESPONSIVE ─── */
+@media (max-width: 480px) {
+  .form-card {
+    padding: 36px 24px;
+  }
+
+  .bio-form-row {
+    grid-template-columns: 1fr;
+  }
+}
