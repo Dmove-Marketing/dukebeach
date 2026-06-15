@@ -52,19 +52,11 @@ import "../styles/index.css";
   <!-- ─── HERO ─── -->
   <section class="hero">
     <div class="hero-bg">
-      <Slideshow
+      <Img
+        src="hero-main.png"
+        alt="Duke Beach — Destination Wedding em Maresias"
         priority
-        interval={7}
-        objectPosition="center 20%"
-        images={[
-          { src: 'HERO/IFlaviniaeeliaswedding0676.jpg',       alt: 'Duke Beach — Destination Wedding em Maresias' },
-          { src: 'HERO/IFlaviniaeeliaswedding0695.jpg',       alt: 'Casal no Duke Beach' },
-          { src: 'HERO/IFlaviniaeeliaswedding0914.jpg',       alt: 'Casamento no Duke Beach' },
-          { src: 'HERO/IFlaviniaeeliaswedding0886.jpg',       alt: 'Duke Beach — Destination Wedding em Maresias' },
-          { src: 'HERO/IFlaviniaeeliasensaio0105 (2).jpg',    alt: 'Casal no Duke Beach' },
-          { src: 'HERO/ale e janes WD-216.jpg',               alt: 'Casamento no Duke Beach' },
-          { src: 'HERO/IFlaviniaeeliaswedding0681 (3).jpg',   alt: 'Destination Wedding em Maresias' },
-        ]}
+        style="width:100%;height:100%;object-fit:cover;object-position:center 20%;"
       />
     </div>
     <div class="hero-overlay"></div>
@@ -105,13 +97,10 @@ import "../styles/index.css";
   <!-- ─── SOBRE ─── -->
   <section class="sobre" id="sobre">
     <div class="sobre-img">
-      <Slideshow
-        images={[
-          { src: 'INFINITY POOL/Duke_Beach_Hotel_Maresias-piscina-4.webp', alt: 'Piscina infinity do Duke Beach com vista para o mar' },
-          { src: 'INFINITY POOL/Duke_Beach_Hotel_Maresias-50-1.webp',      alt: 'Duke Beach Hotel Maresias' },
-          { src: 'INFINITY POOL/IMG_9413.JPG (1).jpeg',                    alt: 'Piscina do Duke Beach Hotel' },
-          { src: 'INFINITY POOL/IMG_9434.JPG (1).jpeg',                    alt: 'Área da piscina do Duke Beach' },
-        ]}
+      <Img
+        src="sobre-main.jpg"
+        alt="Duke Beach — Destination Wedding em Maresias"
+        style="width:100%;height:100%;object-fit:cover;object-position:center;"
       />
     </div>
     <div class="sobre-content">
@@ -127,6 +116,79 @@ import "../styles/index.css";
       <blockquote class="tagline-phrase">
         "O fim de semana inteiro é de vocês."
       </blockquote>
+    </div>
+  </section>
+
+  <!-- ─── CERIMÔNIA ─── -->
+  <section class="cerimonia" id="cerimonia">
+    <div class="cerim-content">
+      <span class="section-tag">Cerimônia</span>
+      <h2 class="section-title">O mar como<br /><em>testemunha.</em></h2>
+      <p class="section-body">
+        O momento do "sim" acontece diante de uma vista que poucos espaços no
+        litoral paulista conseguem oferecer. Aqui, a paisagem não é cenário: ela
+        participa da experiência.
+      </p>
+      <a href="#contato" class="btn-teal cerim-btn">Ver o espaço</a>
+    </div>
+    <div class="cerim-img">
+      <Slideshow
+        images={[
+          { src: 'cerimonia-1.png', alt: 'Cerimônia de casamento no Duke Beach' },
+          { src: 'cerimonia-2.jpg', alt: 'Momento da cerimônia no Duke Beach' },
+          { src: 'cerimonia-3.jpg', alt: 'Cerimônia à beira-mar no Duke Beach' },
+        ]}
+      />
+    </div>
+  </section>
+
+  <!-- ─── FESTA ─── -->
+  <section class="festa">
+    <div class="festa-img">
+      <Slideshow
+        images={[
+          { src: 'festa-1.jpg', alt: 'Festa de casamento no Duke Beach' },
+          { src: 'festa-2.jpg', alt: 'Recepção no Duke Beach' },
+          { src: 'festa-3.jpg', alt: 'Celebração no Duke Beach' },
+          { src: 'festa-4.jpg', alt: 'Festa no Duke Beach Maresias' },
+          { src: 'festa-5.jpg', alt: 'Festa no Duke Beach Maresias' },
+        ]}
+      />
+    </div>
+    <div class="festa-content">
+      <span class="section-tag">Festa</span>
+      <h2 class="section-title">Estrutura de<br /><em>alto padrão.</em></h2>
+      <p class="section-body">
+        Um salão criado para celebrações de alto padrão, onde estrutura e
+        atmosfera acompanham o ritmo da noite.
+      </p>
+      <ul class="festa-list">
+        <li class="festa-item">
+          <div class="festa-dot"></div>
+          <div class="festa-text">
+            <strong>Só de vocês</strong>
+            O salão, o jardim, a piscina. Não tem outro casamento do lado, não tem
+            convidados de outra festa cruzando o caminho.
+          </div>
+        </li>
+        <li class="festa-item">
+          <div class="festa-dot"></div>
+          <div class="festa-text">
+            <strong>Equipe dedicada</strong>
+            Som, iluminação e pista montados para a festa de vocês. A equipe não está
+            dividida com mais ninguém aquela noite.
+          </div>
+        </li>
+        <li class="festa-item">
+          <div class="festa-dot"></div>
+          <div class="festa-text">
+            <strong>Sem hora de acabar</strong>
+            O quarto fica ao lado da festa. Quando a noite cansa, é só subir — quem
+            quiser, continua.
+          </div>
+        </li>
+      </ul>
+      <a href="#contato" class="btn-outline festa-btn">Falar com a equipe</a>
     </div>
   </section>
 
@@ -147,8 +209,9 @@ import "../styles/index.css";
         <div class="hosp-bg">
           <Slideshow
             images={[
-              { src: 'SUÍTES/IMG_9514.JPG (1).jpeg', alt: 'Suíte do Duke Beach Hotel' },
-              { src: 'SUÍTES/IMG_9460.JPG (1).jpeg', alt: 'Suíte do Duke Beach Hotel' },
+              { src: 'hosp-suite-1.jpg', alt: 'Suíte do Duke Beach Hotel' },
+              { src: 'hosp-suite-2.jpg', alt: 'Suíte do Duke Beach Hotel' },
+              { src: 'hosp-suite-3.jpg', alt: 'Suíte do Duke Beach Hotel' },
             ]}
           />
         </div>
@@ -171,10 +234,11 @@ import "../styles/index.css";
         <div class="hosp-bg">
           <Slideshow
             images={[
-              { src: 'INFINITY POOL/Duke_Beach_Hotel_Maresias-50-1.webp',      alt: 'Infinity Pool com vista para o Atlântico' },
-              { src: 'INFINITY POOL/Duke_Beach_Hotel_Maresias-piscina-4.webp', alt: 'Piscina do Duke Beach' },
-              { src: 'INFINITY POOL/IMG_9413.JPG (1).jpeg',                    alt: 'Piscina do Duke Beach Hotel' },
-              { src: 'INFINITY POOL/IMG_9434.JPG (1).jpeg',                    alt: 'Área da piscina do Duke Beach' },
+              { src: 'hosp-pool-1.webp', alt: 'Infinity Pool com vista para o Atlântico' },
+              { src: 'hosp-pool-2.webp', alt: 'Piscina do Duke Beach' },
+              { src: 'hosp-pool-3.jpg',  alt: 'Piscina do Duke Beach Hotel' },
+              { src: 'hosp-pool-4.jpg',  alt: 'Área da piscina do Duke Beach' },
+              { src: 'hosp-pool-5.jpg',  alt: 'Infinity Pool Duke Beach' },
             ]}
           />
         </div>
@@ -222,10 +286,10 @@ import "../styles/index.css";
         <div class="hosp-bg">
           <Slideshow
             images={[
-              { src: 'LAGO AQUECIDO/Copia-de-Copia-de-Duke-004.webp',                    alt: 'Lago aquecido do Duke Beach' },
-              { src: 'LAGO AQUECIDO/2025-10-21.webp',                                    alt: 'Lago aquecido do Duke Beach Hotel' },
-              { src: 'LAGO AQUECIDO/WhatsApp Image 2026-05-15 at 17.22.46 (3).jpeg',     alt: 'Lago aquecido Duke Beach' },
-              { src: 'LAGO AQUECIDO/WhatsApp Image 2026-05-15 at 17.22.46 (2) (1).jpeg', alt: 'Lago aquecido Duke Beach' },
+              { src: 'hosp-lago-1.webp', alt: 'Lago aquecido do Duke Beach Hotel' },
+              { src: 'hosp-lago-2.webp', alt: 'Lago aquecido do Duke Beach' },
+              { src: 'hosp-lago-3.jpg',  alt: 'Lago aquecido Duke Beach' },
+              { src: 'hosp-lago-4.jpg',  alt: 'Lago aquecido Duke Beach' },
             ]}
           />
         </div>
@@ -242,80 +306,6 @@ import "../styles/index.css";
           <a href="#contato" class="hosp-glass-btn">Ver galeria</a>
         </div>
       </div>
-    </div>
-  </section>
-
-  <!-- ─── CERIMÔNIA ─── -->
-  <section class="cerimonia" id="cerimonia">
-    <div class="cerim-content">
-      <span class="section-tag">Cerimônia</span>
-      <h2 class="section-title">O mar como<br /><em>testemunha.</em></h2>
-      <p class="section-body">
-        O momento do "sim" acontece diante de uma vista que poucos espaços no
-        litoral paulista conseguem oferecer. Aqui, a paisagem não é cenário: ela
-        participa da experiência.
-      </p>
-      <a href="#contato" class="btn-teal cerim-btn">Ver o espaço</a>
-    </div>
-    <div class="cerim-img">
-      <Slideshow
-        images={[
-          { src: 'CERIMÔNIA/IFlaviniaeeliaswedding0685.jpg',       alt: 'Cerimônia de casamento no Duke Beach' },
-          { src: 'CERIMÔNIA/IFlaviniaeeliaswedding0176.jpg',       alt: 'Cerimônia à beira-mar no Duke Beach' },
-          { src: 'CERIMÔNIA/Cópia de ale e janes WD-103.jpg',      alt: 'Casamento no Duke Beach Maresias' },
-          { src: 'CERIMÔNIA/IFlaviniaeeliaswedding0625.jpg',       alt: 'Cerimônia no Duke Beach' },
-          { src: 'CERIMÔNIA/IFlaviniaeeliaswedding0180 (2).jpg',   alt: 'Momento da cerimônia no Duke Beach' },
-        ]}
-      />
-    </div>
-  </section>
-
-  <!-- ─── FESTA ─── -->
-  <section class="festa">
-    <div class="festa-img">
-      <Slideshow
-        images={[
-          { src: 'FESTA/IFlaviniaeeliaswedding0234.jpg',       alt: 'Festa de casamento no Duke Beach' },
-          { src: 'FESTA/Cópia de BARBARA E PEDRO-15.jpg',      alt: 'Recepção no Duke Beach' },
-          { src: 'FESTA/Cópia de ale e janes WD-67.jpg',       alt: 'Festa no Duke Beach Maresias' },
-          { src: 'FESTA/IFlaviniaeeliaswedding0196.jpg',       alt: 'Celebração no Duke Beach' },
-        ]}
-      />
-    </div>
-    <div class="festa-content">
-      <span class="section-tag">Festa</span>
-      <h2 class="section-title">Estrutura de<br /><em>alto padrão.</em></h2>
-      <p class="section-body">
-        Um salão criado para celebrações de alto padrão, onde estrutura e
-        atmosfera acompanham o ritmo da noite.
-      </p>
-      <ul class="festa-list">
-        <li class="festa-item">
-          <div class="festa-dot"></div>
-          <div class="festa-text">
-            <strong>Só de vocês</strong>
-            O salão, o jardim, a piscina. Não tem outro casamento do lado, não tem
-            convidados de outra festa cruzando o caminho.
-          </div>
-        </li>
-        <li class="festa-item">
-          <div class="festa-dot"></div>
-          <div class="festa-text">
-            <strong>Equipe dedicada</strong>
-            Som, iluminação e pista montados para a festa de vocês. A equipe não está
-            dividida com mais ninguém aquela noite.
-          </div>
-        </li>
-        <li class="festa-item">
-          <div class="festa-dot"></div>
-          <div class="festa-text">
-            <strong>Sem hora de acabar</strong>
-            O quarto fica ao lado da festa. Quando a noite cansa, é só subir — quem
-            quiser, continua.
-          </div>
-        </li>
-      </ul>
-      <a href="#contato" class="btn-outline festa-btn">Falar com a equipe</a>
     </div>
   </section>
 
@@ -341,9 +331,9 @@ import "../styles/index.css";
         <Slideshow
           interval={8}
           images={[
-            { src: 'GALERIA/IFlaviniaeeliaswedding0903.jpg',     alt: 'Casamento no Duke Beach' },
-            { src: 'GALERIA/IFlaviniaeeliaswedding1030.jpg',     alt: 'Casamento no Duke Beach' },
-            { src: 'GALERIA/IFlaviniaeeliaswedding0231.jpg',     alt: 'Casamento no Duke Beach' },
+            { src: 'galeria-1.jpg',  alt: 'Casamento no Duke Beach' },
+            { src: 'galeria-2.jpg',  alt: 'Casamento no Duke Beach' },
+            { src: 'galeria-3.jpg',  alt: 'Casamento no Duke Beach' },
           ]}
         />
       </div>
@@ -353,8 +343,9 @@ import "../styles/index.css";
         <Slideshow
           interval={8}
           images={[
-            { src: 'GALERIA/IFlaviniaeeliaswedding0782.jpg',     alt: 'Casamento no Duke Beach' },
-            { src: 'GALERIA/ale e janes WD-71.jpg',              alt: 'Casamento no Duke Beach' },
+            { src: 'galeria-4.jpg',  alt: 'Casamento no Duke Beach' },
+            { src: 'galeria-5.jpg',  alt: 'Casamento no Duke Beach' },
+            { src: 'galeria-6.jpg',  alt: 'Casamento no Duke Beach' },
           ]}
         />
       </div>
@@ -364,8 +355,8 @@ import "../styles/index.css";
         <Slideshow
           interval={8}
           images={[
-            { src: 'GALERIA/IFlaviniaeeliaswedding0802.jpg',     alt: 'Casamento no Duke Beach' },
-            { src: 'GALERIA/Cópia de ale e janes WD-76.jpg',     alt: 'Casamento no Duke Beach' },
+            { src: 'galeria-7.jpg',  alt: 'Casamento no Duke Beach' },
+            { src: 'galeria-8.jpg',  alt: 'Casamento no Duke Beach' },
           ]}
         />
       </div>
@@ -375,8 +366,8 @@ import "../styles/index.css";
         <Slideshow
           interval={8}
           images={[
-            { src: 'GALERIA/IFlaviniaeeliaswedding1202.jpg',     alt: 'Casamento no Duke Beach' },
-            { src: 'GALERIA/Cópia de ale e janes WD-227.jpg',    alt: 'Casamento no Duke Beach' },
+            { src: 'galeria-9.jpg',  alt: 'Casamento no Duke Beach' },
+            { src: 'galeria-10.jpg', alt: 'Casamento no Duke Beach' },
           ]}
         />
       </div>
@@ -386,12 +377,25 @@ import "../styles/index.css";
         <Slideshow
           interval={8}
           images={[
-            { src: 'GALERIA/IFlaviniaeeliaswedding1130.jpg',     alt: 'Casamento no Duke Beach' },
-            { src: 'GALERIA/Cópia de ale e janes WD-31.jpg',     alt: 'Casamento no Duke Beach' },
+            { src: 'galeria-11.jpg', alt: 'Casamento no Duke Beach' },
+            { src: 'galeria-12.jpg', alt: 'Casamento no Duke Beach' },
           ]}
         />
       </div>
     </div>
+  </section>
+
+  <!-- ─── RECONHECIMENTO ─── -->
+  <section class="reconhecimento">
+    <span class="section-tag reconhec-tag">Reconhecimento</span>
+    <div class="reconhec-badge">
+      <span class="reconhec-badge-title">PREFERRED</span>
+      <span class="reconhec-badge-sub">SELO OFICIAL</span>
+    </div>
+    <h2 class="reconhec-title">
+      Um endereço entre os hotéis mais<br />reconhecidos do país.
+    </h2>
+    <p class="reconhec-caption">SELO OFICIAL A SER INSERIDO</p>
   </section>
 
   <!-- ─── DEPOIMENTO ─── -->
