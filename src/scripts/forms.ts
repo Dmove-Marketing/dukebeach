@@ -33,6 +33,22 @@ export function initForms() {
       const hp = form.querySelector<HTMLInputElement>('[name="website"]');
       if (hp && hp.value) return;
 
+      // Required field validation
+      const requiredFields = form.querySelectorAll<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>('[required]');
+      let isValid = true;
+      form.querySelectorAll('.field-invalid').forEach(el => el.classList.remove('field-invalid'));
+      requiredFields.forEach((field) => {
+        if (!field.value.trim()) {
+          isValid = false;
+          field.classList.add('field-invalid');
+        }
+      });
+      if (!isValid) {
+        const first = form.querySelector<HTMLElement>('.field-invalid');
+        first?.focus();
+        return;
+      }
+
       const submitBtn  = form.querySelector<HTMLButtonElement>('.form-submit, [type="submit"]');
       const btnText    = submitBtn?.querySelector<HTMLElement>('.btn-text');
       const btnLoading = submitBtn?.querySelector<HTMLElement>('.btn-loading');

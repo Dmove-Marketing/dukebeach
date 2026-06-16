@@ -1393,6 +1393,12 @@ nav.scrolled {
   border-color: var(--teal);
 }
 
+.duke-input.field-invalid,
+.duke-select.field-invalid,
+.duke-textarea.field-invalid {
+  border-color: #ef4444;
+}
+
 .duke-textarea {
   min-height: 100px;
   resize: vertical;
@@ -1666,6 +1672,13 @@ nav.scrolled {
 .wa-textarea:focus {
   border-color: #25D366;
   box-shadow: 0 0 0 2px rgba(37, 211, 102, 0.15);
+}
+
+.wa-input.field-invalid,
+.wa-select.field-invalid,
+.wa-textarea.field-invalid {
+  border-color: #ef4444;
+  box-shadow: 0 0 0 2px rgba(239, 68, 68, 0.12);
 }
 
 .wa-select {
