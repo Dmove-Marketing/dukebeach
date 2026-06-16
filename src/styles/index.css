@@ -340,7 +340,7 @@ nav.scrolled {
 }
 
 .hero-tag {
-  font-size: 10px;
+  font-size: 11px;
   letter-spacing: 4px;
   text-transform: uppercase;
   color: var(--white);
@@ -528,7 +528,7 @@ nav.scrolled {
 
 /* ─── SECTION GLOBALS ─── */
 .section-tag {
-  font-size: 9px;
+  font-size: 11px;
   letter-spacing: 4px;
   text-transform: uppercase;
   color: var(--teal);
@@ -618,7 +618,7 @@ nav.scrolled {
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-  margin-bottom: 60px;
+  margin-bottom: 40px;
   gap: 40px;
 }
 
@@ -627,11 +627,12 @@ nav.scrolled {
 }
 
 .hospedagem-desc {
-  max-width: 380px;
+  max-width: 560px;
   font-size: 14px;
   line-height: 1.85;
   color: var(--ocean-light);
   font-weight: 300;
+  margin-top: 12px;
 }
 
 .hospedagem-grid {
@@ -866,9 +867,8 @@ nav.scrolled {
 .festa-item {
   display: block;
   padding: 12px 16px;
-  border: 1px solid rgba(26, 48, 64, 0.14);
-  background: rgba(26, 48, 64, 0.025);
   border-left: 3px solid var(--teal);
+  background: #ffffff;
 }
 
 .festa-dot {
