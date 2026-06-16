@@ -474,8 +474,8 @@ import "../styles/index.css";
               { value: "outro",       label: "Outro" },
             ],
           },
-          { name: "data",       type: "text",   label: "Data do evento",    placeholder: "Selecione a data",   required: false },
-          { name: "convidados", type: "number", label: "Número de pessoas", placeholder: "Ex: 80",             required: false },
+          { name: "data",       type: "text",   label: "Data do evento",    placeholder: "Selecione a data",   required: true },
+          { name: "convidados", type: "number", label: "Número de pessoas", placeholder: "Ex: 80",             required: true },
           { name: "detalhes",   type: "textarea", label: "Detalhes adicionais", placeholder: "Conte um pouco sobre o casamento que vocês imaginam.", required: false, full: true },
         ]}
       />
@@ -526,8 +526,8 @@ import "../styles/index.css";
           { name: "nome",       type: "text",   id: "wa-nome",       placeholder: "Nome completo",        required: true  },
           { name: "telefone",   type: "tel",    id: "wa-telefone",   placeholder: "(00) 00000-0000",      required: true  },
           { name: "email",      type: "email",  id: "wa-email",      placeholder: "E-mail",               required: true  },
-          { name: "data",       type: "text",   id: "wa-data",       placeholder: "Data do evento",       required: false },
-          { name: "convidados", type: "number", id: "wa-convidados", placeholder: "Número de convidados", required: false },
+          { name: "data",       type: "text",   id: "wa-data",       placeholder: "Data do evento",       required: true },
+          { name: "convidados", type: "number", id: "wa-convidados", placeholder: "Número de convidados", required: true },
         ]}
       />
     </div>
