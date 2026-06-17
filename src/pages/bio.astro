@@ -3,7 +3,7 @@ import Base from '../layouts/Base.astro';
 import config from '../../config.json';
 import LeadForm from '../components/forms/LeadForm.astro';
 import { getImage } from 'astro:assets';
-import rawHero from '../assets/images/bio-hero.jpg';
+import rawHero from '../assets/images/bio-hero.png';
 const heroImage = await getImage({ src: rawHero, format: 'webp' });
 import rawDmove from '../assets/images/Versao-Principal-Negativo-scaled-e1750426923582.avif';
 const dmoveLogo = await getImage({ src: rawDmove, format: 'avif' });
@@ -24,8 +24,8 @@ import '../styles/bio.css';
     <div class="bio-hero-overlay"></div>
     <div class="bio-hero-content">
       <span class="bio-brand-sub">Duke Beach Hotel & SPA · Maresias</span>
-      <h1 class="bio-headline-pt">Viva um casamento inesquecível<br>em Maresias, no Duke Beach Hotel & SPA.</h1>
-      <p class="bio-headline-en">Live an unforgettable wedding in Maresias, at Duke Beach Hotel & SPA.</p>
+      <h1 class="bio-headline-pt">Viva um casamento inesquecível à beira mar</h1>
+      <p class="bio-headline-en">Live an unforgettable wedding by the sea.</p>
     </div>
   </section>
 
