@@ -6,6 +6,7 @@ import LeadForm from "../components/forms/LeadForm.astro";
 import Img from "../components/ui/Img.astro";
 import Slideshow from "../components/ui/Slideshow.astro";
 import "../styles/index.css";
+import videoUrl from "../assets/video/sobre-dukebeach.mp4";
 ---
 
 <Base
@@ -28,7 +29,7 @@ import "../styles/index.css";
       <li><a href="#cerimonia">Cerimônia</a></li>
       <li><a href="#galeria">Galeria</a></li>
     </ul>
-    <a href="#contato" class="nav-cta">Agendar visita</a>
+    <a href="#contato" class="nav-cta">Solicitar orçamento</a>
     <button class="nav-hamburger" id="hamburgerBtn" aria-label="Abrir menu">
       <span></span><span></span><span></span>
     </button>
@@ -46,7 +47,7 @@ import "../styles/index.css";
     <a href="#hospedagem" aria-label="Hospedagem">Hospedagem</a>
     <a href="#cerimonia" aria-label="Cerimônia">Cerimônia</a>
     <a href="#galeria" aria-label="Galeria">Galeria</a>
-    <a href="#contato" class="mobile-cta">Agendar visita</a>
+    <a href="#contato" class="mobile-cta">Solicitar orçamento</a>
   </div>
 
   <!-- ─── HERO ─── -->
@@ -69,7 +70,7 @@ import "../styles/index.css";
         Seu destination wedding em um hotel boutique de luxo em Maresias.
       </p>
       <div class="hero-actions">
-        <a href="#sobre" class="btn-primary">Quero conhecer</a>
+        <a href="#contato" class="btn-primary">Solicitar orçamento</a>
       </div>
     </div>
   </section>
@@ -97,11 +98,16 @@ import "../styles/index.css";
   <!-- ─── SOBRE ─── -->
   <section class="sobre" id="sobre">
     <div class="sobre-img">
-      <Img
-        src="sobre-main.jpg"
-        alt="Duke Beach — Destination Wedding em Maresias"
-        style="width:100%;height:100%;object-fit:cover;object-position:center;"
-      />
+      <video
+        autoplay
+        muted
+        loop
+        playsinline
+        style="width:100%;height:100%;object-fit:cover;object-position:center;z-index: 1;position: relative;"
+      >
+        <source src={videoUrl} type="video/mp4" />
+        Seu navegador não suporta a reprodução de vídeo.
+      </video>
     </div>
     <div class="sobre-content">
       <span class="section-tag">Sobre o Duke Beach</span>
@@ -109,13 +115,11 @@ import "../styles/index.css";
         O oceano sempre esteve lá. Agora ele acompanha o seu casamento.
       </h2>
       <div class="section-body">
-        <p>Para entender o Duke Beach, você precisa desconstruir o conceito tradicional de destination wedding.</p>
-        <p>Em uma das costas mais preservadas do litoral norte de São Paulo, no coração de Maresias, nasce o Duke. Um hotel 5 estrelas que, por um fim de semana, para inteiramente para um único casamento.</p>
+        <p>Para entender o Duke Beach, você precisa desconstruir o conceito tradicional de casamento.</p>
+        <p>Em uma das costas mais preservadas do litoral norte de São Paulo, nasce um destination wedding onde a experiência vai muito além da cerimônia.</p>
+        <p>O Duke é um hotel 5 estrelas que, por um fim de semana, para inteiramente para um único casamento.</p>
         <p>Aqui, o evento e a hospedagem não coexistem. Eles se tornam a mesma memória.</p>
       </div>
-      <blockquote class="tagline-phrase">
-        "O fim de semana inteiro é de vocês."
-      </blockquote>
     </div>
   </section>
 
@@ -129,7 +133,7 @@ import "../styles/index.css";
         litoral paulista conseguem oferecer. Aqui, a paisagem não é cenário: ela
         participa da experiência.
       </p>
-      <a href="#contato" class="btn-teal cerim-btn">Ver o espaço</a>
+      <a href="#contato" class="btn-teal cerim-btn">Solicitar orçamento</a>
     </div>
     <div class="cerim-img">
       <Slideshow
@@ -137,6 +141,7 @@ import "../styles/index.css";
           { src: 'cerimonia-1.png', alt: 'Cerimônia de casamento no Duke Beach' },
           { src: 'cerimonia-2.jpg', alt: 'Momento da cerimônia no Duke Beach' },
           { src: 'cerimonia-3.jpg', alt: 'Cerimônia à beira-mar no Duke Beach' },
+          { src: 'cerimonia-4.jpg', alt: 'Cerimônia de casamento decorada no Duke Beach' },
         ]}
       />
     </div>
@@ -147,11 +152,11 @@ import "../styles/index.css";
     <div class="festa-img">
       <Slideshow
         images={[
-          { src: 'festa-1.jpg', alt: 'Festa de casamento no Duke Beach' },
-          { src: 'festa-2.jpg', alt: 'Recepção no Duke Beach' },
-          { src: 'festa-3.jpg', alt: 'Celebração no Duke Beach' },
-          { src: 'festa-4.jpg', alt: 'Festa no Duke Beach Maresias' },
-          { src: 'festa-5.jpg', alt: 'Festa no Duke Beach Maresias' },
+          { src: 'festa-1-atualizada.jpg', alt: 'Festa de casamento no Duke Beach' },
+          { src: 'festa-2-atualizada.jpg', alt: 'Recepção no Duke Beach' },
+          { src: 'festa-3-atualizada.jpg', alt: 'Celebração no Duke Beach' },
+          { src: 'festa-4-atualizada.jpg', alt: 'Festa no Duke Beach Maresias', objectPosition: 'top center' },
+          { src: 'festa-5-atualizada.jpg', alt: 'Festa no Duke Beach Maresias' },
         ]}
       />
     </div>
@@ -166,29 +171,26 @@ import "../styles/index.css";
         <li class="festa-item">
           <div class="festa-dot"></div>
           <div class="festa-text">
-            <strong>Só de vocês</strong>
-            O salão, o jardim, a piscina. Não tem outro casamento do lado, não tem
-            convidados de outra festa cruzando o caminho.
+            <strong>EXCLUSIVIDADE ABSOLUTA</strong>
+            Todo o hotel é reservado para um único casamento, sem compartilhamentos, interrupções ou encontros com outros hóspedes.
           </div>
         </li>
         <li class="festa-item">
           <div class="festa-dot"></div>
           <div class="festa-text">
-            <strong>Equipe dedicada</strong>
-            Som, iluminação e pista montados para a festa de vocês. A equipe não está
-            dividida com mais ninguém aquela noite.
+            <strong>OPERAÇÃO INTEIRAMENTE DEDICADA</strong>
+            Toda a estrutura do hotel é direcionada para um único evento. Cada detalhe recebe atenção integral da equipe.
           </div>
         </li>
         <li class="festa-item">
           <div class="festa-dot"></div>
           <div class="festa-text">
-            <strong>Sem hora de acabar</strong>
-            O quarto fica ao lado da festa. Quando a noite cansa, é só subir — quem
-            quiser, continua.
+            <strong>O PRIVILÉGIO DE NÃO OLHAR PARA O RELÓGIO</strong>
+            A celebração acontece onde todos estão hospedados e o tempo deixa de ser uma preocupação. A festa segue naturalmente, no ritmo dos convidados.
           </div>
         </li>
       </ul>
-      <a href="#contato" class="btn-outline festa-btn">Falar com a equipe</a>
+      <a href="#contato" class="btn-outline festa-btn">Solicitar orçamento</a>
     </div>
   </section>
 
@@ -326,78 +328,66 @@ import "../styles/index.css";
 
   <!-- ─── GALERIA ─── -->
   <section class="galeria" id="galeria">
-    <div class="galeria-item tall">
-      <div class="galeria-bg">
-        <Slideshow
-          interval={8}
-          images={[
-            { src: 'galeria-1.jpg',  alt: 'Casamento no Duke Beach' },
-            { src: 'galeria-2.jpg',  alt: 'Casamento no Duke Beach' },
-            { src: 'galeria-3.jpg',  alt: 'Casamento no Duke Beach' },
-          ]}
-        />
-      </div>
+    <div class="galeria-item">
+      <Img src="galeria-atualizada-01.jpg" alt="Galeria Duke Beach" style="width:100%;height:100%;object-fit:cover;object-position:top center;" />
     </div>
     <div class="galeria-item">
-      <div class="galeria-bg">
-        <Slideshow
-          interval={8}
-          images={[
-            { src: 'galeria-4.jpg',  alt: 'Casamento no Duke Beach' },
-            { src: 'galeria-5.jpg',  alt: 'Casamento no Duke Beach' },
-            { src: 'galeria-6.jpg',  alt: 'Casamento no Duke Beach' },
-          ]}
-        />
-      </div>
+      <Img src="galeria-atualizada-02.jpg" alt="Galeria Duke Beach" style="width:100%;height:100%;object-fit:cover;" />
     </div>
     <div class="galeria-item">
-      <div class="galeria-bg">
-        <Slideshow
-          interval={8}
-          images={[
-            { src: 'galeria-7.jpg',  alt: 'Casamento no Duke Beach' },
-            { src: 'galeria-8.jpg',  alt: 'Casamento no Duke Beach' },
-          ]}
-        />
-      </div>
+      <Img src="galeria-atualizada-03.jpg" alt="Galeria Duke Beach" style="width:100%;height:100%;object-fit:cover;" />
     </div>
     <div class="galeria-item">
-      <div class="galeria-bg">
-        <Slideshow
-          interval={8}
-          images={[
-            { src: 'galeria-9.jpg',  alt: 'Casamento no Duke Beach' },
-            { src: 'galeria-10.jpg', alt: 'Casamento no Duke Beach' },
-          ]}
-        />
-      </div>
+      <Img src="galeria-atualizada-04.jpg" alt="Galeria Duke Beach" style="width:100%;height:100%;object-fit:cover;" />
     </div>
     <div class="galeria-item">
-      <div class="galeria-bg">
-        <Slideshow
-          interval={8}
-          images={[
-            { src: 'galeria-11.jpg', alt: 'Casamento no Duke Beach' },
-            { src: 'galeria-12.jpg', alt: 'Casamento no Duke Beach' },
-          ]}
-        />
-      </div>
+      <Img src="galeria-atualizada-05.jpg" alt="Galeria Duke Beach" style="width:100%;height:100%;object-fit:cover;" />
+    </div>
+    <div class="galeria-item">
+      <Img src="galeria-atualizada-06.jpg" alt="Galeria Duke Beach" style="width:100%;height:100%;object-fit:cover;object-position:top center;" />
+    </div>
+    <div class="galeria-item">
+      <Img src="galeria-atualizada-07.jpg" alt="Galeria Duke Beach" style="width:100%;height:100%;object-fit:cover;" />
+    </div>
+    <div class="galeria-item">
+      <Img src="galeria-atualizada-08.jpg" alt="Galeria Duke Beach" style="width:100%;height:100%;object-fit:cover;" />
+    </div>
+    <div class="galeria-item">
+      <Img src="galeria-atualizada-09.jpg" alt="Galeria Duke Beach" style="width:100%;height:100%;object-fit:cover;" />
+    </div>
+    <div class="galeria-item">
+      <Img src="galeria-atualizada-10.jpeg" alt="Galeria Duke Beach" style="width:100%;height:100%;object-fit:cover; object-position:top center;" />
+    </div>
+    <div class="galeria-item">
+      <Img src="galeria-atualizada-11.jpeg" alt="Galeria Duke Beach" style="width:100%;height:100%;object-fit:cover;" />
+    </div>
+    <div class="galeria-item">
+      <Img src="galeria-atualizada-12.jpeg" alt="Galeria Duke Beach" style="width:100%;height:100%;object-fit:cover;" />
     </div>
   </section>
 
   <!-- ─── RECONHECIMENTO ─── -->
   <section class="reconhecimento">
-    <span class="section-tag reconhec-tag">Reconhecimento</span>
-    <div class="reconhec-selo">
+    <div class="reconhec-left">
+      <span class="section-tag reconhec-tag">Reconhecimento</span>
+      <div class="reconhec-selo">
+        <Img
+          src="selo.webp"
+          alt="Selo oficial Duke Beach"
+          style="width:100%;height:100%;object-fit:contain;"
+        />
+      </div>
+      <h2 class="reconhec-title">
+        Um endereço entre os hotéis mais<br />reconhecidos do país.
+      </h2>
+    </div>
+    <div class="reconhec-right">
       <Img
-        src="selo.webp"
-        alt="Selo oficial Duke Beach"
-        style="width:100%;height:100%;object-fit:contain;"
+        src="reconhecimento-duke.jpg"
+        alt="Duke Beach — Reconhecido entre os melhores hotéis do país"
+        style="width:100%;height:100%;object-fit:cover;object-position:center;"
       />
     </div>
-    <h2 class="reconhec-title">
-      Um endereço entre os hotéis mais<br />reconhecidos do país.
-    </h2>
   </section>
 
   <!-- ─── DEPOIMENTO ─── -->
@@ -414,41 +404,11 @@ import "../styles/index.css";
   <!-- ─── CONTATO ─── -->
   <section class="contato-section" id="contato">
     <div class="contato-info">
-      <span class="section-tag">Visita presencial</span>
+      <span class="section-tag">Contato</span>
       <h2 class="section-title">Venha sonhar<br />com a gente.</h2>
       <p class="section-body">
         Preencha o formulário para receber nosso contato.
       </p>
-
-      <button
-        type="button"
-        class="btn-whatsapp"
-        id="openWaModal"
-        aria-label="Falar pelo WhatsApp"
-      >
-        <svg viewBox="0 0 24 24" aria-hidden="true">
-          <path
-            d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"
-          ></path>
-        </svg>
-        Falar pelo WhatsApp
-      </button>
-
-      <div class="visita-box">
-        <div class="visita-box-icon">
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-            <circle cx="12" cy="10" r="3"></circle>
-          </svg>
-        </div>
-        <div class="visita-box-text">
-          <strong>Visita presencial</strong>
-          <p>
-            O hotel recebe visitas de terça a sábado, das 9h às 18h. Vale muito
-            mais do que qualquer foto.
-          </p>
-        </div>
-      </div>
     </div>
 
     <div class="contato-form-wrap">
@@ -538,7 +498,6 @@ import "../styles/index.css";
     <div class="footer__inner">
       <a href="#" class="footer__logo-text">Duke Beach</a>
       <p class="footer__location">Maresias &nbsp;·&nbsp; Litoral Norte Paulista</p>
-      <a href="#contato" class="footer__cta">Agendar visita</a>
     </div>
     <div class="footer__bottom">
       <p class="footer__copy">&copy; 2026 Duke Beach. Todos os direitos reservados.</p>
@@ -560,10 +519,17 @@ import "../styles/index.css";
     </div>
   </footer>
 
-  <!-- ─── MOBILE STICKY CTA ─── -->
-  <div class="mobile-sticky-cta" aria-hidden="true">
-    <a href="#contato">Agendar visita</a>
-  </div>
+  <!-- ─── FLOATING WHATSAPP BUTTON ─── -->
+  <button
+    type="button"
+    class="wa-floating-btn"
+    id="waFloatingBtn"
+    aria-label="Falar pelo WhatsApp"
+  >
+    <svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"></path>
+    </svg>
+  </button>
 </Base>
 <script>
   import "../scripts/index.js";

@@ -78,24 +78,30 @@ import 'flatpickr/dist/flatpickr.min.css';
 
     /* ─── Popup WhatsApp ─── */
     const openWaBtn = document.getElementById('openWaModal');
+    const floatingWaBtn = document.getElementById('waFloatingBtn');
     const waBackdrop = document.getElementById('waModalOverlay');
     const waPopup   = document.getElementById('waPopup');
     const closeWaBtn = document.getElementById('closeWaModal');
+
+    function openWaModal() {
+      waBackdrop.classList.add('is-open');
+      waPopup.classList.add('is-open');
+      document.body.style.overflow = 'hidden';
+      document.body.classList.add('modal-open');
+    }
 
     function closeWaModal() {
       waBackdrop.classList.remove('is-open');
       waPopup.classList.remove('is-open');
       document.body.style.overflow = '';
+      document.body.classList.remove('modal-open');
     }
 
-    if (openWaBtn && waPopup) {
-      openWaBtn.addEventListener('click', () => {
-        waBackdrop.classList.add('is-open');
-        waPopup.classList.add('is-open');
-        document.body.style.overflow = 'hidden';
-      });
+    if (waPopup) {
+      if (openWaBtn) openWaBtn.addEventListener('click', openWaModal);
+      if (floatingWaBtn) floatingWaBtn.addEventListener('click', openWaModal);
       if (closeWaBtn) closeWaBtn.addEventListener('click', closeWaModal);
-      waBackdrop.addEventListener('click', closeWaModal);
+      if (waBackdrop) waBackdrop.addEventListener('click', closeWaModal);
     }
 
     /* ─── IntersectionObserver scroll reveals ─── */

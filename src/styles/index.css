@@ -539,7 +539,7 @@ nav.scrolled {
 
 .section-title {
   font-family: 'Sorts Mill Goudy', serif;
-  font-size: clamp(26px, 3vw, 42px);
+  font-size: clamp(26px, 3vw, 60px);
   font-weight: 400;
   color: var(--ocean-deep);
   line-height: 1.15;
@@ -896,53 +896,29 @@ nav.scrolled {
 /* ─── GALERIA ─── */
 .galeria {
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr;
-  grid-template-rows: 320px 320px;
-  gap: 3px;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(3,400px);
+  gap: 0px;
+  padding: 0 60px 80px;
+  background: var(--white);
 }
 
 .galeria-item {
   overflow: hidden;
   background: var(--ocean-deep);
   position: relative;
+  border-radius: 4px;
 }
 
-.galeria-item.tall {
-  grid-row: span 2;
+.galeria-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.galeria-bg {
-  position: absolute;
-  inset: 0;
-  background-size: cover;
-  background-position: center;
-  transition: transform 0.7s ease, opacity 0.4s;
-  opacity: 0.88;
-}
-
-.galeria-item:hover .galeria-bg {
-  transform: scale(1.04);
-  opacity: 1;
-}
-
-.galeria-item:nth-child(1) .galeria-bg {
-  background: linear-gradient(155deg, #1f3a50 0%, #2a6878 40%, #1f9c8f 80%);
-}
-
-.galeria-item:nth-child(2) .galeria-bg {
-  background: linear-gradient(135deg, #2a1a10 0%, #4a3020 40%, #6a5035 70%, #8a7050 100%);
-}
-
-.galeria-item:nth-child(3) .galeria-bg {
-  background: linear-gradient(145deg, #0a1520 0%, #1a3040 50%, #2a5868 100%);
-}
-
-.galeria-item:nth-child(4) .galeria-bg {
-  background: linear-gradient(155deg, #152535 0%, #1f4858 40%, #2a7888 80%);
-}
-
-.galeria-item:nth-child(5) .galeria-bg {
-  background: linear-gradient(135deg, #1a3040 0%, #254055 40%, #306070 80%);
+.galeria-item:hover img {
+  transform: scale(1.06);
 }
 
 /* ─── GALERIA PLACEHOLDER ─── */
@@ -998,7 +974,7 @@ nav.scrolled {
   color: var(--ocean-deep);
   max-width: 860px;
   margin: 0 auto 36px;
-  line-height: 1.55;
+  line-height: 1.20;
   text-transform: none;
 }
 
@@ -1118,10 +1094,10 @@ nav.scrolled {
 
 .contato-info {
   background: var(--ocean-mid);
-  padding: 80px 64px;
+  padding: 80px 150px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
 }
 
 .contato-info .section-tag {
@@ -1218,11 +1194,12 @@ nav.scrolled {
 }
 
 .contato-form-wrap {
-  background: var(--white);
+  background: #F5F0E8;
   padding: 72px 60px;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  border-top: 3px solid #2A5060;
 }
 
 .form-grid {
@@ -1467,6 +1444,60 @@ nav.scrolled {
   font-size: 14px;
   color: var(--ocean-light);
   line-height: 1.7;
+}
+
+/* ─── BOTÃO FLUTUANTE DO WHATSAPP ─── */
+.wa-floating-btn {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  width: 60px;
+  height: 60px;
+  background-color: #25d366;
+  color: #ffffff;
+  border: none;
+  border-radius: 50%;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+  z-index: 8900;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease, background-color 0.2s ease, opacity 0.3s ease, visibility 0.3s ease;
+  padding: 0;
+}
+
+.wa-floating-btn svg {
+  width: 32px;
+  height: 32px;
+}
+
+.wa-floating-btn:hover {
+  transform: scale(1.1);
+  background-color: #20ba5a;
+}
+
+.wa-floating-btn:active {
+  transform: scale(0.95);
+}
+
+body.modal-open .wa-floating-btn {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+@media (max-width: 768px) {
+  .wa-floating-btn {
+    bottom: 80px; /* Fica acima do CTA fixo do mobile */
+    right: 1rem;
+    width: 50px;
+    height: 50px;
+  }
+  .wa-floating-btn svg {
+    width: 26px;
+    height: 26px;
+  }
 }
 
 /* ─── POPUP PRÉ-WHATSAPP (estilo chat widget) ─── */
@@ -2085,17 +2116,13 @@ nav.scrolled {
   }
 
   .galeria {
-    grid-template-columns: 1fr;
-    grid-template-rows: none;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(6, 200px);
+    padding: 0 24px 60px;
   }
 
   .galeria-item {
-    height: 280px;
-  }
-
-  .galeria-item.tall {
-    grid-row: span 1;
-    height: 280px;
+    height: 100%;
   }
 
   .depoimento {
@@ -2160,12 +2187,25 @@ nav.scrolled {
 /* ─── RECONHECIMENTO ─── */
 .reconhecimento {
   background: var(--ocean-deep);
-  padding: 100px 40px;
-  text-align: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: stretch;
+}
+
+.reconhec-left {
+  padding: 100px 80px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+  text-align: center;
   gap: 32px;
+}
+
+.reconhec-right {
+  position: relative;
+  overflow: hidden;
+  min-height: 480px;
 }
 
 .reconhec-tag {
@@ -2199,5 +2239,25 @@ nav.scrolled {
   letter-spacing: -0.01em;
   max-width: 680px;
   margin: 0;
+}
+
+@media (max-width: 991px) {
+  .reconhecimento {
+    grid-template-columns: 1fr;
+  }
+  .reconhec-left {
+    padding: 80px 32px;
+  }
+  .reconhec-right {
+    min-height: 400px;
+  }
+}
+
+@media (max-width: 480px) {
+  .galeria {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(12, 180px);
+    padding: 0 16px 40px;
+  }
 }
 
