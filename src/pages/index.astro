@@ -22,7 +22,9 @@ import videoUrl from "../assets/video/sobre-dukebeach.mp4";
   />
   <!-- ─── NAV ─── -->
   <nav id="navbar">
-    <a href="#" class="nav-logo">Duke Beach</a>
+    <a href="#" class="nav-logo">
+      <Img src="logo-dekubeach-01.png" alt="Duke Beach" class="nav-logo-img" />
+    </a>
     <ul class="nav-links">
       <li><a href="#sobre">O Hotel</a></li>
       <li><a href="#hospedagem">Hospedagem</a></li>
@@ -112,7 +114,7 @@ import videoUrl from "../assets/video/sobre-dukebeach.mp4";
     <div class="sobre-content">
       <span class="section-tag">Sobre o Duke Beach</span>
       <h2 class="section-title">
-        O oceano sempre esteve lá. Agora ele acompanha o seu casamento.
+        O oceano sempre esteve lá.<br> Agora ele acompanha o seu casamento.
       </h2>
       <div class="section-body">
         <p>Para entender o Duke Beach, você precisa desconstruir o conceito tradicional de casamento.</p>
@@ -140,7 +142,6 @@ import videoUrl from "../assets/video/sobre-dukebeach.mp4";
         images={[
           { src: 'cerimonia-1.png', alt: 'Cerimônia de casamento no Duke Beach' },
           { src: 'cerimonia-2.jpg', alt: 'Momento da cerimônia no Duke Beach' },
-          { src: 'cerimonia-3.jpg', alt: 'Cerimônia à beira-mar no Duke Beach' },
           { src: 'cerimonia-4.jpg', alt: 'Cerimônia de casamento decorada no Duke Beach' },
         ]}
       />
@@ -153,15 +154,14 @@ import videoUrl from "../assets/video/sobre-dukebeach.mp4";
       <Slideshow
         images={[
           { src: 'festa-1-atualizada.jpg', alt: 'Festa de casamento no Duke Beach' },
-          { src: 'festa-2-atualizada.jpg', alt: 'Recepção no Duke Beach' },
-          { src: 'festa-3-atualizada.jpg', alt: 'Celebração no Duke Beach' },
-          { src: 'festa-4-atualizada.jpg', alt: 'Festa no Duke Beach Maresias', objectPosition: 'top center' },
+          { src: 'festa-2-atualizada.png', alt: 'Recepção no Duke Beach' },
+          { src: 'festa-3-atualizada.png', alt: 'Celebração no Duke Beach' },
           { src: 'festa-5-atualizada.jpg', alt: 'Festa no Duke Beach Maresias' },
         ]}
       />
     </div>
     <div class="festa-content">
-      <span class="section-tag">Festa</span>
+      <span class="section-tag">Recepção</span>
       <h2 class="section-title">Estrutura de<br /><em>alto padrão.</em></h2>
       <p class="section-body">
         Um salão criado para celebrações de alto padrão, onde estrutura e
@@ -227,7 +227,7 @@ import videoUrl from "../assets/video/sobre-dukebeach.mp4";
             Para que cada um durma ouvindo as ondas e acorde sem pressa de ir
             embora.
           </p>
-          <a href="#contato" class="hosp-glass-btn">Ver galeria</a>
+          <a href="#contato" class="hosp-glass-btn">Solicitar orçamento</a>
         </div>
       </div>
 
@@ -254,7 +254,7 @@ import videoUrl from "../assets/video/sobre-dukebeach.mp4";
             Borda infinita com vista para o Atlântico. Espaço de convivência
             central ao longo de todos os dias.
           </p>
-          <a href="#contato" class="hosp-glass-btn">Ver galeria</a>
+          <a href="#contato" class="hosp-glass-btn">Solicitar orçamento</a>
         </div>
       </div>
 
@@ -279,7 +279,7 @@ import videoUrl from "../assets/video/sobre-dukebeach.mp4";
             Disponível para todos os hóspedes. Da preparação da noiva ao
             relaxamento pós-cerimônia, sem pressa e sem fila.
           </p>
-          <a href="#contato" class="hosp-glass-btn">Ver galeria</a>
+          <a href="#contato" class="hosp-glass-btn">Solicitar orçamento</a>
         </div>
       </div>
 
@@ -305,29 +305,25 @@ import videoUrl from "../assets/video/sobre-dukebeach.mp4";
             Ambiente contemplativo e privativo. Um espaço para os momentos entre
             as comemorações, onde o ritmo desacelera.
           </p>
-          <a href="#contato" class="hosp-glass-btn">Ver galeria</a>
+          <a href="#contato" class="hosp-glass-btn">Solicitar orçamento</a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ─── GALERIA HEADER ─── -->
-  <div
-    style="background: var(--white); padding: 80px 60px 0; text-align: center;"
-  >
-    <span class="section-tag" style="display:block; text-align:center;"
-      >Galeria</span
-    >
-    <h2 class="section-title" style="margin-bottom: 12px;">
-      Momentos que foram registrados no Duke.
-    </h2>
-    <p class="section-body" style="max-width: 480px; margin: 0 auto 48px;">
-      Veja fotos de casamentos reais que aconteceram aqui.
-    </p>
-  </div>
-
   <!-- ─── GALERIA ─── -->
   <section class="galeria" id="galeria">
+    <div class="galeria-header">
+      <span class="section-tag" style="display:block; text-align:center; color: var(--teal);"
+        >Galeria</span
+      >
+      <h2 class="section-title" style="margin-bottom: 12px; color: var(--sand);">
+        Momentos que foram registrados no Duke.
+      </h2>
+      <p class="section-body" style="max-width: 480px; margin: 0 auto 0; color: rgba(245,240,232,0.7);">
+        Veja fotos de casamentos reais que aconteceram aqui.
+      </p>
+    </div>
     <div class="galeria-item">
       <Img src="galeria-atualizada-01.jpg" alt="Galeria Duke Beach" style="width:100%;height:100%;object-fit:cover;object-position:top center;" />
     </div>
@@ -496,7 +492,9 @@ import videoUrl from "../assets/video/sobre-dukebeach.mp4";
   <!-- ─── FOOTER ─── -->
   <footer class="footer">
     <div class="footer__inner">
-      <a href="#" class="footer__logo-text">Duke Beach</a>
+      <a href="#" class="footer__logo-text">
+        <Img src="logo-dekubeach-01.png" alt="Duke Beach" class="footer-logo-img" />
+      </a>
       <p class="footer__location">Maresias &nbsp;·&nbsp; Litoral Norte Paulista</p>
     </div>
     <div class="footer__bottom">
