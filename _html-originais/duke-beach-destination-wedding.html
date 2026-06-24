@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Duke Beach — Destination Wedding · Maresias</title>
+<meta name="description" content="Seu destination wedding em um hotel boutique de luxo em Maresias. Um casamento por fim de semana, 31 suítes para seus convidados e o hotel 100% privativo, só para vocês.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#F4EDE2;
+    --cream-2:#EFE6D7;
+    --sand:#E5D9C4;
+    --bronze:#B0936A;
+    --ink:#211C15;
+    --ink-soft:#5A5142;
+    --paper:#EDE6D9;
+    --ocean:#1a3040;
+    --ocean-deep:#123B3E;
+
+    --maxw:1320px;
+    --ease:cubic-bezier(.16,1,.3,1);
+    --r:18px;
+  }
+
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+  body{
+    font-family:'Outfit',system-ui,sans-serif;
+    background:var(--cream);
+    color:var(--ink);
+    line-height:1.6;
+    font-size:17px;
+    overflow-x:hidden;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,.serif{font-family:'Fraunces',Georgia,serif;font-weight:380;letter-spacing:-.01em}
+  img{max-width:100%;display:block}
+  a{color:inherit;text-decoration:none}
+
+  .grain{position:fixed;inset:0;z-index:90;pointer-events:none;opacity:.04;mix-blend-mode:multiply;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");}
+
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px}
+  .kicker{font-size:.72rem;letter-spacing:.28em;text-transform:uppercase;font-weight:500;color:var(--ocean)}
+  .kicker.on-dark{color:var(--bronze)}
+
+  /* ---------- Buttons ---------- */
+  .btn{display:inline-flex;align-items:center;gap:.6em;font-family:'Outfit';font-size:.95rem;font-weight:500;
+    padding:15px 30px;border-radius:100px;cursor:pointer;border:1px solid transparent;
+    transition:transform .25s var(--ease),background .3s var(--ease),color .3s var(--ease),border-color .3s var(--ease);}
+  .btn:active{transform:translateY(1px) scale(.99)}
+  .btn-primary{background:var(--ocean);color:var(--cream)}
+  .btn-primary:hover{background:var(--ocean-deep);transform:translateY(-2px)}
+  .btn-ghost{background:transparent;border-color:rgba(33,28,21,.28);color:var(--ink)}
+  .btn-ghost:hover{border-color:var(--ink);transform:translateY(-2px)}
+  .btn-ghost.on-dark{border-color:rgba(237,230,217,.32);color:var(--paper)}
+  .btn-ghost.on-dark:hover{border-color:var(--paper)}
+  .btn .arr{transition:transform .3s var(--ease)}
+  .btn:hover .arr{transform:translateX(4px)}
+
+  /* ---------- Media duotone ---------- */
+  .media{position:relative;overflow:hidden;background:var(--ocean-deep)}
+  .media img{width:100%;height:100%;object-fit:cover;mix-blend-mode:luminosity;opacity:.92;transition:transform 1.1s var(--ease)}
+  .media::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(18,59,62,.12),rgba(33,28,21,.28))}
+  .zoomable:hover img{transform:scale(1.05)}
+
+  /* ---------- Hero ---------- */
+  header.hero{position:relative;min-height:100dvh;display:flex;align-items:flex-end;isolation:isolate}
+  .hero-bg{position:absolute;inset:0;z-index:-2;background:#a17d55}
+  .hero-bg img,.hero-bg video{width:100%;height:100%;object-fit:cover;opacity:.75;mix-blend-mode:multiply}
+  .hero-logo{position:absolute;top:clamp(26px,4vw,44px);left:50%;transform:translateX(-50%);z-index:3;display:block}
+  .hero-logo img{height:clamp(54px,7vw,88px);width:auto;opacity:.95}
+  .hero-grad{position:absolute;left:0;right:0;bottom:0;z-index:-1;pointer-events:none;
+    height:clamp(220px,34vh,340px);mix-blend-mode:multiply;
+    background:linear-gradient(to top,rgba(0,0,0,.8),rgba(0,0,0,0))}
+  .hero-inner{padding:140px 0 64px;width:100%}
+  .hero-tag{display:inline-flex;align-items:center;gap:12px;margin-bottom:26px}
+  .hero-tag .line{width:46px;height:1px;background:var(--bronze)}
+  .hero h1{color:var(--paper);font-size:clamp(2.16rem,5.6vw,4.48rem);line-height:1.02;font-weight:340;max-width:15ch}
+  .hero h1 em{font-style:normal;font-weight:300;color:#E9D9BE}
+  .hero p.lead{color:rgba(237,230,217,.9);font-size:clamp(calc(1.05rem + 3px),1.6vw,calc(1.22rem + 3px));max-width:48ch;margin:28px 0 38px;font-weight:300}
+  .hero-actions{display:flex;gap:14px;flex-wrap:wrap}
+
+  /* hero stats */
+  .hero-stats{margin-top:48px;display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1px solid rgba(237,230,217,.22)}
+  .hero-stat{padding:37px 15px 4px 0;border-right:1px solid rgba(237,230,217,.16)}
+  .hero-stat:not(:first-child){padding-left:15px}
+  .hero-stat:last-child{border-right:0}
+  .hero-stat .n{font-family:'Fraunces';font-size:clamp(1.7rem,3vw,2.3rem);font-weight:340;color:#E9D9BE;line-height:1}
+  .hero-stat .l{display:block;margin-top:8px;font-size:calc(.82rem + 3px);color:rgba(237,230,217,.78);font-weight:300;max-width:18ch}
+
+  .scroll-cue{position:absolute;right:28px;bottom:42px;writing-mode:vertical-rl;font-size:.7rem;letter-spacing:.25em;text-transform:uppercase;color:#fff;display:flex;align-items:center;gap:14px}
+  .scroll-cue .bar{width:1px;height:54px;background:linear-gradient(#fff,transparent);animation:slide 2.2s var(--ease) infinite}
+
+  /* hero — todos os textos e gráficos em branco (exceto botões) */
+  .hero .kicker.on-dark{color:#fff;font-size:calc(.72rem + 3px)}
+  .hero .hero-tag .line{background:#fff}
+  .hero h1,.hero h1 em{color:#fff}
+  .hero p.lead{color:#fff}
+  .hero-stats{border-top-color:rgba(255,255,255,.3)}
+  .hero-stat{border-right-color:rgba(255,255,255,.22)}
+  .hero-stat .n{color:#fff}
+  .hero-stat .l{color:#fff}
+  @keyframes slide{0%{transform:scaleY(0);transform-origin:top}45%{transform:scaleY(1);transform-origin:top}55%{transform:scaleY(1);transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+
+  /* ---------- Section scaffolding ---------- */
+  section{position:relative}
+  .pad{padding:75px 0}
+  .eyebrow-row{display:flex;align-items:center;gap:14px;margin-bottom:30px}
+  .eyebrow-row .line{width:46px;height:1px;background:var(--bronze)}
+  .h-sec{font-size:clamp(2rem,4.4vw,3.5rem);line-height:1.06;font-weight:360;max-width:18ch}
+  .h-sec em{font-style:normal;color:inherit}
+  .h-sec.on-dark em{color:inherit}
+
+  /* ---------- About / manifesto ---------- */
+  .about-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(40px,6vw,90px);align-items:center}
+  .about-copy p{color:var(--ink-soft);margin-top:22px;max-width:54ch;font-size:calc(1em + 5px)}
+  .about-copy strong{color:var(--ink);font-weight:500}
+  .about-media{position:relative}
+  .about-media .media{aspect-ratio:4/5;border-radius:var(--r)}
+  .about-media .media img{mix-blend-mode:normal;opacity:1}
+  .about-media .media::after{display:none}
+  .quote-float{position:absolute;left:-34px;bottom:34px;max-width:300px;background:var(--ink);color:var(--paper);
+    padding:26px 28px;border-radius:14px;font-family:'Fraunces';font-style:normal;font-size:1.05rem;line-height:1.4;
+    box-shadow:0 30px 60px -28px rgba(18,30,30,.55)}
+  .quote-float .q{display:block;font-style:normal;font-family:'Fraunces';font-size:2.4rem;line-height:0;color:var(--bronze);height:0;margin-top:.5em}
+
+  /* ---------- Cerimônia (full-bleed feature) ---------- */
+  .feature{position:relative;min-height:78vh;display:flex;align-items:center;isolation:isolate;color:var(--paper)}
+  .feature .feature-bg{position:absolute;inset:0;z-index:-2;background:#000}
+  .feature .feature-bg img{width:100%;height:100%;object-fit:cover;opacity:.5}
+  .feature .feature-fade{position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(18,30,30,.25),rgba(18,30,30,.72))}
+  .feature-inner{padding:clamp(56px,8vw,100px) 0}
+  .feature .h-sec{color:var(--paper);max-width:14ch}
+  .feature .h-sec em{color:inherit}
+  .feature p{color:rgba(237,230,217,.86);max-width:48ch;margin:22px 0 30px;font-weight:300;font-size:calc(1em + 5px)}
+
+  /* ---------- Recepção (dark feature) ---------- */
+  .excl{background:#1a3040;color:var(--paper);overflow:hidden;position:relative}
+  .excl::before{content:"";position:absolute;width:520px;height:520px;border-radius:50%;background:radial-gradient(circle,rgba(176,147,106,.18),transparent 70%);top:-180px;right:-120px}
+  .excl-head{max-width:60ch}
+  .excl-head .h-sec{color:var(--paper)}
+  .excl-head .lead{color:rgba(237,230,217,.74);margin-top:20px;max-width:50ch;font-weight:300;font-size:calc(1em + 5px)}
+  .excl-grid{margin-top:clamp(48px,7vw,80px);display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid rgba(237,230,217,.18)}
+  .excl-col{padding:55px 30px 8px 0;border-right:1px solid rgba(237,230,217,.14)}
+  .excl-col:not(:first-child){padding-left:15px}
+  .excl-col:last-child{border-right:0}
+  .excl-col .step{font-family:'Fraunces';font-style:normal;color:var(--bronze);font-size:1rem;margin-bottom:16px}
+  .excl-col h3{font-size:1.3rem;color:var(--paper);margin-bottom:12px}
+  .excl-col p{color:rgba(237,230,217,.74);font-size:calc(.95rem + 5px);max-width:36ch}
+  .excl .btn{margin-top:clamp(40px,6vw,60px)}
+
+  /* ---------- Hospedagem (zigzag editorial) ---------- */
+  .space-row{display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,5vw,76px);align-items:center;padding:clamp(46px,6vw,76px) 0}
+  .space-row+.space-row{border-top:1px solid rgba(33,28,21,.1)}
+  .space-row:nth-child(even) .space-media{order:2}
+  .space-media .media{aspect-ratio:5/4;border-radius:var(--r)}
+  .space-num{font-family:'Fraunces';font-style:normal;color:var(--bronze);font-size:1rem;margin-bottom:14px}
+  .space-text h3{font-size:clamp(1.6rem,2.8vw,2.4rem);margin-bottom:14px}
+  .space-text>p{color:var(--ink-soft);max-width:50ch;font-size:calc(1em + 5px)}
+  .space-text .btn{margin-top:26px}
+
+  /* ---------- Hospedagem (4 colunas estilo modelo) ---------- */
+  .hosp-cols{margin-top:clamp(40px,6vw,64px);display:grid;grid-template-columns:repeat(4,1fr);gap:0}
+  .hosp-col{position:relative;display:block;min-height:clamp(440px,72vh,700px);overflow:hidden;isolation:isolate}
+  .hosp-col img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform 1.1s var(--ease)}
+  .hosp-col:hover img{transform:scale(1.06)}
+  .hosp-col::after{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(18,30,30,.22),rgba(18,30,30,.58))}
+  .hosp-col+.hosp-col{box-shadow:-1px 0 0 rgba(237,230,217,.16)}
+  .hosp-ov{position:absolute;inset:0;z-index:2;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:24px;gap:18px}
+  .hosp-ov .hi{color:var(--paper);opacity:.92}
+  .hosp-ov h3{color:#fff;font-family:'Fraunces',Georgia,serif;font-weight:380;font-size:clamp(1.15rem,1.6vw,1.55rem);letter-spacing:.12em;text-transform:uppercase;line-height:1.25;max-width:13ch}
+
+  /* ---------- Galeria (bento) ---------- */
+  .gal{margin-top:clamp(40px,6vw,64px);display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:210px;grid-auto-flow:dense;gap:12px}
+  .gal .media{border-radius:var(--r);height:100%;cursor:zoom-in;background:var(--sand)}
+  /* cores originais — sem duotone */
+  .gal .media img{mix-blend-mode:normal;opacity:1;object-position:top}
+  .gal .media::after{display:none}
+  /* mosaico */
+  .gal .media:nth-child(6n+1){grid-column:span 2;grid-row:span 2}
+  .gal .media:nth-child(6n+4){grid-row:span 2}
+  .gal .media:nth-child(6n+5){grid-column:span 2}
+
+  /* lightbox */
+  .lightbox{position:fixed;inset:0;z-index:200;background:rgba(18,20,18,.92);display:flex;align-items:center;justify-content:center;padding:4vw;
+    opacity:0;visibility:hidden;transition:opacity .3s var(--ease),visibility .3s;cursor:zoom-out}
+  .lightbox.open{opacity:1;visibility:visible}
+  .lightbox img{max-width:92vw;max-height:90vh;border-radius:10px;box-shadow:0 40px 90px -30px rgba(0,0,0,.7)}
+  .lightbox .lb-close{position:absolute;top:22px;right:26px;width:44px;height:44px;border-radius:50%;border:0;cursor:pointer;
+    background:rgba(237,230,217,.14);color:var(--paper);font-size:1.4rem;line-height:1;display:grid;place-items:center}
+  .lightbox .lb-close:hover{background:rgba(237,230,217,.26)}
+
+  /* ---------- Reconhecimento (testimonial) ---------- */
+  .testi{background:var(--ink);color:var(--paper);text-align:center}
+  #depoimento{overflow:hidden}
+  .depo-bg{position:absolute;inset:0;z-index:0}
+  .depo-bg img{width:100%;height:100%;object-fit:cover;opacity:.5}
+  #depoimento .wrap{position:relative;z-index:1}
+  .testi .h-sec{color:var(--paper);margin:0 auto 0;max-width:20ch}
+  .testi .h-sec em{color:inherit}
+  .testi blockquote{font-family:'Fraunces';font-weight:340;font-style:normal;font-size:clamp(1.4rem,2.6vw,2.05rem);
+    line-height:1.4;max-width:24ch;margin:clamp(40px,6vw,64px) auto 0;color:var(--paper)}
+  .testi .qmark{font-family:'Fraunces';font-size:4rem;color:var(--bronze);line-height:0;display:block;height:.5em}
+  .testi cite{display:block;margin-top:32px;font-style:normal;font-size:calc(.92rem + 5px);letter-spacing:.04em;color:rgba(237,230,217,.7);white-space:nowrap}
+
+  /* ---------- Contact ---------- */
+  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,6vw,84px);align-items:start}
+  .contact-left .h-sec{margin-bottom:24px}
+  .contact-left>p{color:var(--ink-soft);max-width:44ch}
+  .info{margin-top:42px;display:flex;flex-direction:column;gap:4px}
+  .info a,.info .row{display:flex;align-items:flex-start;gap:18px;padding:20px 0;border-top:1px solid rgba(33,28,21,.12);transition:padding-left .3s var(--ease)}
+  .info a:hover{padding-left:8px}
+  .info .ico{flex:none;width:42px;height:42px;border-radius:50%;display:grid;place-items:center;background:var(--cream-2);color:var(--ocean)}
+  .info .lbl{font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--bronze)}
+  .info .val{font-size:1.08rem;color:var(--ink);font-weight:500}
+  .info .sub{font-size:.88rem;color:var(--ink-soft)}
+
+  .form-card{background:var(--cream-2);border:1px solid rgba(33,28,21,.08);border-radius:24px;padding:clamp(28px,4vw,40px);
+    box-shadow:0 40px 80px -50px rgba(18,30,30,.4)}
+  .form-card .badge{display:inline-flex;align-items:center;gap:8px;font-size:.78rem;color:var(--ocean);font-weight:500;margin-bottom:14px}
+  .form-card .badge .dot{width:8px;height:8px;border-radius:50%;background:#2F9E6B;box-shadow:0 0 0 3px rgba(47,158,107,.18)}
+  .form-card h3{font-size:1.5rem;margin-bottom:6px}
+  .form-card .fc-sub{font-size:calc(.92rem + 5px);color:var(--ink-soft);margin-bottom:26px}
+  .field{display:flex;flex-direction:column;gap:7px;margin-bottom:18px}
+  .field.two{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .field label{font-size:.78rem;letter-spacing:.04em;font-weight:500;color:var(--ink)}
+  .field input,.field textarea{font-family:'Outfit';font-size:1rem;color:var(--ink);background:var(--cream);
+    border:0;border-radius:12px;padding:14px 16px;min-height:50px;transition:box-shadow .25s var(--ease)}
+  .field input:focus,.field textarea:focus{outline:none;box-shadow:none}
+  .field textarea{min-height:104px;resize:vertical}
+  .field .hint{font-size:.76rem;color:var(--ink-soft)}
+  .form-card .btn-primary{width:100%;justify-content:center;margin-top:6px}
+  .form-note{font-size:.78rem;color:var(--ink-soft);text-align:center;margin-top:14px}
+
+  /* ---------- Footer ---------- */
+  footer{background:var(--ink);color:var(--paper);padding:70px 0 36px}
+  .foot-top{display:flex;justify-content:space-between;gap:40px;flex-wrap:wrap;padding-bottom:40px;border-bottom:1px solid rgba(237,230,217,.12)}
+  .foot-brand{font-family:'Fraunces';font-size:1.7rem}
+  .foot-brand b{font-weight:300;font-style:normal}
+  .foot-brand p{font-size:.9rem;color:rgba(237,230,217,.6);margin-top:12px;max-width:34ch;font-family:'Outfit'}
+  .foot-links{display:flex;gap:60px;flex-wrap:wrap}
+  .foot-col h4{font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--bronze);margin-bottom:16px}
+  .foot-col a,.foot-col span{display:block;font-size:.92rem;color:rgba(237,230,217,.78);padding:5px 0;transition:color .25s}
+  .foot-col a:hover{color:var(--paper)}
+  .foot-bottom{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;padding-top:26px;font-size:.82rem;color:rgba(237,230,217,.5)}
+
+  /* ---------- Reconhecimento (logo + título) ---------- */
+  /* base inferior cresce p/ compensar o logo acima do texto, deixando o título centrado verticalmente */
+  #reconhecimento{padding-bottom:calc(75px + clamp(45px,6vw,80px) + 30px)}
+  #reconhecimento .wrap{text-align:center}
+  .recon-logo{height:clamp(45px,6vw,80px);width:auto;display:block;margin:0 0 30px}
+  #reconhecimento .h-sec{margin-left:auto;margin-right:auto}
+
+  /* ---------- Reveal ---------- */
+  .reveal{opacity:0;transform:translateY(26px);transition:opacity .9s var(--ease),transform .9s var(--ease);transition-delay:calc(var(--i,0)*90ms)}
+  .reveal.in{opacity:1;transform:none}
+
+  @media (prefers-reduced-motion:reduce){
+    *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+    .reveal{opacity:1;transform:none}
+  }
+
+  /* ---------- Responsive ---------- */
+  @media(max-width:1000px){
+    .gal{grid-auto-rows:minmax(200px,auto)}
+  }
+  .brk-desktop{display:inline}
+  @media(max-width:820px){
+    .brk-desktop{display:none}
+    .about-grid,.space-row,.contact-grid,.excl-grid{grid-template-columns:1fr!important}
+    .space-row:nth-child(even) .space-media{order:0}
+    .quote-float{position:static;margin-top:18px;left:0;max-width:none}
+    .excl-grid{border-top:0}
+    .excl-col{border-right:0;border-top:1px solid rgba(237,230,217,.14);padding:30px 0 4px;padding-left:0}
+    .hero-stats{grid-template-columns:1fr 1fr}
+    .hero-stat:nth-child(2){border-right:0}
+    .gal{grid-template-columns:repeat(2,1fr);grid-auto-rows:150px}
+    .hosp-cols{grid-template-columns:1fr 1fr}
+    .hosp-col{min-height:clamp(320px,46vh,440px)}
+  }
+  @media(max-width:560px){
+    body{font-size:16px}
+    .wrap{padding:0 20px}
+    .field.two{grid-template-columns:1fr}
+    .hero-stats{grid-template-columns:1fr 1fr;gap:0}
+    .gal{grid-template-columns:repeat(2,1fr)}
+    .hosp-cols{grid-template-columns:1fr}
+  }
+</style>
+</head>
+<body>
+<div class="grain"></div>
+
+<!-- ============ HERO ============ -->
+<header class="hero" id="top">
+  <div class="hero-bg">
+    <video autoplay muted loop playsinline poster="imgi_2_hero-main.uJFT39cl_Z19iT71.webp" aria-label="Vídeo do Duke Beach">
+      <source src="sobre-dukebeach.mp4" type="video/mp4">
+      <img src="imgi_2_hero-main.uJFT39cl_Z19iT71.webp" alt="Casamento à beira-mar no Duke Beach, Maresias">
+    </video>
+  </div>
+  <div class="hero-grad" aria-hidden="true"></div>
+  <a href="#top" class="hero-logo" aria-label="Duke Beach"><img src="imgi_1_logo-dekubeach-01.DImjf45Z_yipb5.webp" alt="Duke Beach"></a>
+  <div class="wrap hero-inner">
+    <div class="hero-tag reveal">
+      <span class="line"></span>
+      <span class="kicker on-dark">Maresias · Destination Wedding</span>
+    </div>
+    <h1 class="reveal" style="--i:1">Exclusividade<br>e encanto<br>à beira-mar.</h1>
+    <p class="lead reveal" style="--i:2">Seu destination wedding em um hotel boutique de luxo em Maresias.</p>
+    <div class="hero-actions reveal" style="--i:3">
+      <a href="#contato" class="btn btn-primary">Clique aqui para mais informações <span class="arr">→</span></a>
+    </div>
+    <div class="hero-stats reveal" style="--i:4">
+      <div class="hero-stat"><span class="n">31</span><span class="l">suítes para seus convidados</span></div>
+      <div class="hero-stat"><span class="n">1</span><span class="l">casamento por fim de semana</span></div>
+      <div class="hero-stat"><span class="n">5 ★</span><span class="l">hotel boutique de luxo</span></div>
+      <div class="hero-stat"><span class="n">100%</span><span class="l">privativo, só para vocês</span></div>
+    </div>
+  </div>
+  <div class="scroll-cue" aria-hidden="true"><span class="bar"></span></div>
+</header>
+
+<!-- ============ SOBRE ============ -->
+<section class="pad" id="sobre">
+  <div class="wrap">
+    <div class="about-grid">
+      <div class="about-copy">
+        <div class="eyebrow-row reveal"><span class="line"></span><span class="kicker">Sobre o Duke Beach</span></div>
+        <h2 class="h-sec reveal" style="--i:1;color:#a17d55">O oceano sempre esteve lá. Agora ele acompanha o seu casamento.</h2>
+        <p class="reveal" style="--i:2">Para entender o Duke Beach, você precisa desconstruir o conceito tradicional de casamento. Em uma das costas mais preservadas do litoral norte de São Paulo, nasce um destination wedding onde a experiência vai muito além da cerimônia.</p>
+        <p class="reveal" style="--i:3">O Duke é um <strong>hotel 5 estrelas</strong> que, por um fim de semana, para inteiramente para um único casamento.</p>
+        <p class="reveal" style="--i:4">Aqui, o evento e a hospedagem não coexistem. Eles se tornam a mesma memória.</p>
+      </div>
+      <div class="about-media reveal" style="--i:2">
+        <div class="media zoomable"><img src="imgi_15_hosp-pool-3.DjwgmR5H_Z1CghK0.webp" alt="Infinity pool do Duke Beach ao pôr do sol, com vista para o Atlântico"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CERIMÔNIA ============ -->
+<section class="feature" id="cerimonia">
+  <div class="feature-bg"><img src="imgi_2_hero-main.uJFT39cl_Z19iT71.webp" alt="Cerimônia diante do mar em Maresias"></div>
+  <div class="feature-fade"></div>
+  <div class="wrap feature-inner">
+    <div class="eyebrow-row reveal"><span class="line"></span><span class="kicker on-dark">Cerimônia</span></div>
+    <h2 class="h-sec reveal" style="--i:1;color:#fff">O mar como <em>testemunha.</em></h2>
+    <p class="reveal" style="--i:2">O momento do "sim" acontece diante de uma vista que poucos espaços no litoral paulista conseguem oferecer. Aqui, a paisagem não é cenário: ela participa da experiência.</p>
+    <a href="#contato" class="btn btn-ghost on-dark reveal" style="--i:3">Clique aqui para mais informações <span class="arr">→</span></a>
+  </div>
+</section>
+
+<!-- ============ RECEPÇÃO ============ -->
+<section class="pad excl" id="recepcao">
+  <div class="wrap">
+    <div class="excl-head">
+      <div class="eyebrow-row reveal"><span class="line"></span><span class="kicker on-dark">Recepção</span></div>
+      <h2 class="h-sec reveal" style="--i:1;color:#fff">Estrutura de <em>alto padrão.</em></h2>
+      <p class="lead reveal" style="--i:2">Um salão criado para celebrações de alto padrão, onde estrutura e atmosfera acompanham o ritmo da noite.</p>
+    </div>
+    <div class="excl-grid">
+      <div class="excl-col reveal"><div class="step">01</div><h3>Exclusividade absoluta</h3><p>Todo o hotel é reservado para um único casamento, sem compartilhamentos, interrupções ou encontros com outros hóspedes.</p></div>
+      <div class="excl-col reveal" style="--i:1"><div class="step">02</div><h3>Operação inteiramente dedicada</h3><p>Toda a estrutura do hotel é direcionada para um único evento. Cada detalhe recebe atenção integral da equipe.</p></div>
+      <div class="excl-col reveal" style="--i:2"><div class="step">03</div><h3>O privilégio de não olhar para o relógio</h3><p>A celebração acontece onde todos estão hospedados e o tempo deixa de ser uma preocupação. A festa segue naturalmente, no ritmo dos convidados.</p></div>
+    </div>
+    <a href="#contato" class="btn btn-ghost on-dark reveal">Clique aqui para mais informações <span class="arr">→</span></a>
+  </div>
+</section>
+
+<!-- ============ HOSPEDAGEM ============ -->
+<section class="pad" id="hospedagem" style="padding-bottom:0">
+  <div class="wrap">
+    <div class="eyebrow-row reveal"><span class="line"></span><span class="kicker">Hospedagem</span></div>
+    <h2 class="h-sec reveal" style="--i:1;margin-bottom:10px;color:#a17d55;max-width:none">Todos os seus convidados,<br> <em>no mesmo lugar.</em></h2>
+    <p class="reveal" style="--i:2;color:var(--ink-soft);max-width:50ch;font-size:calc(1em + 5px)">Um hotel reservado inteiramente para os dias da celebração. Trinta e uma suítes. Hospedagem completa.</p>
+
+  </div>
+
+  <div class="hosp-cols reveal">
+    <a class="hosp-col" href="#contato" aria-label="Suítes">
+      <img src="imgi_10_hosp-suite-1.B3T6Accp_Zi9rGs.webp" alt="Suítes com vista para o mar">
+      <div class="hosp-ov">
+        <span class="hi"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M3 18v-5a2 2 0 012-2h14a2 2 0 012 2v5"/><path d="M3 18h18"/><path d="M6 11V8.5A1.5 1.5 0 017.5 7h3A1.5 1.5 0 0112 8.5V11M12 11V8.5A1.5 1.5 0 0113.5 7h3A1.5 1.5 0 0118 8.5V11"/></svg></span>
+        <h3>Suítes</h3>
+      </div>
+    </a>
+    <a class="hosp-col" href="#contato" aria-label="Infinity Pool">
+      <img src="imgi_13_hosp-pool-1.CXsAsT_m_1ukFFP.webp" alt="Infinity pool com vista para o Atlântico">
+      <div class="hosp-ov">
+        <span class="hi"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M2 8c2.2 0 2.2 2 4.5 2S8.7 8 11 8s2.3 2 4.5 2S17.8 8 20 8"/><path d="M2 13c2.2 0 2.2 2 4.5 2S8.7 13 11 13s2.3 2 4.5 2S17.8 13 20 13"/><path d="M2 18c2.2 0 2.2 2 4.5 2S8.7 18 11 18s2.3 2 4.5 2S17.8 18 20 18"/></svg></span>
+        <h3>Infinity Pool</h3>
+      </div>
+    </a>
+    <a class="hosp-col" href="#contato" aria-label="SPA">
+      <img src="imgi_20_SALA-DE-MASSAGEM.jpg.B9GSnBNl_1XhBf.webp" alt="SPA disponível para todos os hóspedes">
+      <div class="hosp-ov">
+        <span class="hi"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M12 20c-4.4 0-8-2.7-8-6 2.6 0 4.7 1.2 6 3 .3-2.4-.9-5-2.4-6.7C9.6 7.7 11 5.7 12 4c1 1.7 2.4 3.7 4.4 6.3-1.5 1.7-2.7 4.3-2.4 6.7 1.3-1.8 3.4-3 6-3 0 3.3-3.6 6-8 6z"/></svg></span>
+        <h3>SPA</h3>
+      </div>
+    </a>
+    <a class="hosp-col" href="#contato" aria-label="Lago Aquecido">
+      <img src="imgi_22_hosp-lago-2.1vZTylqK_10nTJE.webp" alt="Lago aquecido contemplativo e privativo">
+      <div class="hosp-ov">
+        <span class="hi"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M12 3c3.5 4 6 7 6 10a6 6 0 11-12 0c0-3 2.5-6 6-10z"/></svg></span>
+        <h3>Lago Aquecido</h3>
+      </div>
+    </a>
+  </div>
+</section>
+
+<!-- ============ GALERIA ============ -->
+<section class="pad" id="galeria" style="background:var(--cream-2)">
+  <div class="wrap">
+    <div class="eyebrow-row reveal"><span class="line"></span><span class="kicker">Galeria</span></div>
+    <h2 class="h-sec reveal" style="--i:1;color:#a17d55">Momentos que foram registrados <em>no Duke.</em></h2>
+    <p class="reveal" style="--i:2;color:var(--ink-soft);margin-top:14px;font-size:calc(1em + 5px)">Veja fotos de casamentos reais que aconteceram aqui.</p>
+    <div class="gal">
+      <div class="media reveal"><img src="imgi_27_galeria-1.DvXU2eju_4A37p.webp" alt="Casamento real no Duke Beach"></div>
+      <div class="media reveal" style="--i:1"><img src="imgi_26_galeria-2.CqC9NHVZ_Z2x3wUb.webp" alt="Casamento real no Duke Beach"></div>
+      <div class="media reveal" style="--i:2"><img src="imgi_31_galeria-3.D93Nqf5k_Z1FDiB8.webp" alt="Casamento real no Duke Beach"></div>
+      <div class="media reveal" style="--i:3"><img src="imgi_32_galeria-5.yukSpw20_Spcl.webp" alt="Casamento real no Duke Beach"></div>
+      <div class="media reveal"><img src="imgi_33_galeria-6.BjjQwJuG_ZW4G0k.webp" alt="Casamento real no Duke Beach" style="object-position:center 38%"></div>
+      <div class="media reveal" style="--i:1"><img src="imgi_35_galeria-12.D5pCRVL9_QQG7q.webp" alt="Casamento real no Duke Beach"></div>
+      <div class="media reveal" style="--i:2"><img src="imgi_28_galeria-atualizada-05.ChBneckK_Z19bRpX.webp" alt="Casamento real no Duke Beach"></div>
+      <div class="media reveal" style="--i:3"><img src="imgi_29_galeria-atualizada-06.Cwuii95j_ZYxMns.webp" alt="Casamento real no Duke Beach"></div>
+      <div class="media reveal"><img src="imgi_6_festa-1-atualizada.ByfpXW7W_1mhjX.webp" alt="Festa de casamento no Duke Beach"></div>
+      <div class="media reveal" style="--i:1"><img src="imgi_7_festa-2-atualizada.BcSYvTbM_ZCyeCF.webp" alt="Festa de casamento no Duke Beach"></div>
+      <div class="media reveal" style="--i:2"><img src="imgi_8_festa-3-atualizada.CD-ah1HJ_7inDs.webp" alt="Festa de casamento no Duke Beach"></div>
+      <div class="media reveal" style="--i:3"><img src="imgi_9_festa-5-atualizada.BWX4etYQ_VRn0s.webp" alt="Festa de casamento no Duke Beach"></div>
+      <div class="media reveal"><img src="imgi_25_festa-4-atualizada.-gfu2Emr_1lsGdb.webp" alt="Festa de casamento no Duke Beach"></div>
+      <div class="media reveal" style="--i:1"><img src="imgi_34_festa-5.Bslu8GIk_ZB4zku.webp" alt="Festa de casamento no Duke Beach"></div>
+      <div class="media reveal" style="--i:2"><img src="imgi_18_C%C3%B3pia%20de%20DSC02972.CdVtY9et_Z1fL8hi.webp" alt="Casamento real no Duke Beach"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ RECONHECIMENTO ============ -->
+<section class="pad" id="reconhecimento">
+  <div class="wrap">
+    <img class="recon-logo reveal" src="PreferredHotels.svg.png" alt="Preferred Hotels &amp; Resorts">
+    <h2 class="h-sec reveal" style="--i:1;color:#a17d55">Um endereço entre os hotéis mais reconhecidos do país.</h2>
+  </div>
+</section>
+
+<!-- ============ DEPOIMENTO ============ -->
+<section class="pad testi" id="depoimento">
+  <div class="depo-bg" aria-hidden="true"><img src="imgi_3_cerimonia-1.DOmA9xI1_1vjUsR.webp" alt=""></div>
+  <div class="wrap">
+    <div class="eyebrow-row reveal" style="justify-content:center"><span class="line"></span><span class="kicker on-dark">Depoimento</span><span class="line"></span></div>
+    <blockquote class="reveal" style="--i:1;max-width:none">
+      <span class="qmark">“</span>
+      Acordamos no dia seguinte e ninguém queria ir embora.<br>
+      Ainda tinha gente na piscina às dez da manhã,<br>
+      o café estava no jardim e o mar continuava lá.<br>
+      Não lembro de um casamento que tivesse um dia depois assim.
+      <cite>Camila &amp; Rodrigo · Casamento em Março 2026</cite>
+    </blockquote>
+  </div>
+</section>
+
+<!-- ============ CONTATO ============ -->
+<section class="pad" id="contato">
+  <div class="wrap contact-grid">
+    <div class="contact-left">
+      <div class="eyebrow-row reveal"><span class="line"></span><span class="kicker">Contato</span></div>
+      <h2 class="h-sec reveal" style="--i:1;color:#a17d55">Venha sonhar<br class="brk-desktop"> <em>com a gente.</em></h2>
+      <p class="reveal" style="--i:2;font-size:calc(1em + 5px)">Preencha o formulário para receber nosso contato.</p>
+    </div>
+
+    <div class="form-card reveal" style="--i:2">
+      <div class="field">
+        <label for="nome">Nome dos noivos</label>
+        <input id="nome" type="text" placeholder="Ex.: Camila e Rodrigo" autocomplete="name">
+      </div>
+      <div class="field two">
+        <div class="field" style="margin:0">
+          <label for="data">Data prevista</label>
+          <input id="data" type="text" placeholder="Mês / ano">
+        </div>
+        <div class="field" style="margin:0">
+          <label for="convidados">Nº de convidados</label>
+          <input id="convidados" type="text" inputmode="numeric" placeholder="Ex.: 120">
+        </div>
+      </div>
+      <div class="field">
+        <label for="whats">WhatsApp</label>
+        <input id="whats" type="tel" inputmode="tel" placeholder="(11) 99999-9999" autocomplete="tel">
+      </div>
+      <div class="field">
+        <label for="email">E-mail</label>
+        <input id="email" type="email" placeholder="seuemail@exemplo.com" autocomplete="email">
+        <span class="hint">Usamos só para enviar a proposta. Sem spam.</span>
+      </div>
+      <div class="field">
+        <label for="msg">Mensagem (opcional)</label>
+        <textarea id="msg" placeholder="Conte como vocês imaginam o casamento de vocês…"></textarea>
+      </div>
+      <button class="btn btn-primary" id="sendBtn" type="button">ENVIAR SOLICITAÇÃO</button>
+      <p class="form-note">Ao enviar, você concorda com nossa política de privacidade.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="foot-brand">
+        Duke <b>Beach</b>
+        <p>Destination wedding em Maresias. Um hotel boutique de luxo, 100% privativo, dedicado a um casamento por fim de semana.</p>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© <span id="yr"></span> Duke Beach. Todos os direitos reservados.</span>
+      <span>Litoral Norte · São Paulo</span>
+    </div>
+  </div>
+</footer>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox" aria-hidden="true">
+  <button class="lb-close" id="lbClose" aria-label="Fechar">×</button>
+  <img id="lbImg" src="" alt="">
+</div>
+
+<script>
+  document.getElementById('yr').textContent = new Date().getFullYear();
+
+  // Lightbox — clique para ampliar
+  const lb = document.getElementById('lightbox');
+  const lbImg = document.getElementById('lbImg');
+  const openLb = (src, alt) => { lbImg.src = src; lbImg.alt = alt || ''; lb.classList.add('open'); document.body.style.overflow = 'hidden'; };
+  const closeLb = () => { lb.classList.remove('open'); document.body.style.overflow = ''; setTimeout(() => { lbImg.src = ''; }, 300); };
+  document.querySelectorAll('.gal .media img').forEach(img => {
+    img.addEventListener('click', () => openLb(img.currentSrc || img.src, img.alt));
+  });
+  lb.addEventListener('click', closeLb);
+  document.getElementById('lbClose').addEventListener('click', closeLb);
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLb(); });
+
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, {threshold:0.12, rootMargin:'0px 0px -8% 0px'});
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  document.getElementById('sendBtn').addEventListener('click', () => {
+    const v = id => (document.getElementById(id).value || '').trim();
+    const nome = v('nome'), data = v('data'), conv = v('convidados'), whats = v('whats'), email = v('email'), msg = v('msg');
+    let t = 'Olá! Gostaria de um orçamento para meu destination wedding no Duke Beach.';
+    if (nome) t += '\n\nNoivos: ' + nome;
+    if (data) t += '\nData prevista: ' + data;
+    if (conv) t += '\nConvidados: ' + conv;
+    if (whats) t += '\nWhatsApp: ' + whats;
+    if (email) t += '\nE-mail: ' + email;
+    if (msg)  t += '\n\n' + msg;
+    window.open('https://wa.me/5511975874745?text=' + encodeURIComponent(t), '_blank');
+  });
+</script>
+</body>
+</html>

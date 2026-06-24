@@ -1,0 +1,470 @@
+---
+// src/pages/casamentos.astro
+import Base from "../layouts/Base.astro";
+import Img from "../components/ui/Img.astro";
+import videoUrl from "../assets/video/sobre-dukebeach.mp4";
+import heroMainImg from "../assets/images/hero-main.png";
+import config from "../../config.json";
+import LeadForm from "../components/forms/LeadForm.astro";
+import "../styles/casamentos.css";
+---
+
+<Base
+  title="Duke Beach - Destination Wedding · Maresias"
+  description="Seu destination wedding em um hotel boutique de luxo em Maresias. Um casamento por fim de semana, 31 suítes para seus convidados e o hotel 100% privativo, só para vocês."
+>
+  <link
+    slot="head"
+    href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..500&family=Outfit:wght@300;400;500;600&display=swap"
+    rel="stylesheet"
+  />
+
+  <div class="grain"></div>
+
+  <!-- ============ HERO ============ -->
+  <header class="hero" id="top">
+    <div class="hero-bg">
+      <video autoplay muted loop playsinline poster={heroMainImg.src} aria-label="Vídeo do Duke Beach">
+        <source src={videoUrl} type="video/mp4" />
+        <Img src="hero-main.png" alt="Casamento à beira-mar no Duke Beach, Maresias" />
+      </video>
+    </div>
+    <div class="hero-grad" aria-hidden="true"></div>
+    <a href="#top" class="hero-logo" aria-label="Duke Beach">
+      <Img src="logo-dekubeach-01.png" alt="Duke Beach" priority />
+    </a>
+    <div class="wrap hero-inner">
+      <div class="hero-tag reveal">
+        <span class="line"></span>
+        <span class="kicker on-dark">Maresias · Destination Wedding</span>
+      </div>
+      <h1 class="reveal" style="--i:1">Exclusividade<br>e encanto<br>à beira-mar.</h1>
+      <p class="lead reveal" style="--i:2">Seu destination wedding em um hotel boutique de luxo em Maresias.</p>
+      <div class="hero-actions reveal" style="--i:3">
+        <a href="#contato" class="btn btn-primary">Clique aqui para mais informações <span class="arr">→</span></a>
+      </div>
+      <div class="hero-stats reveal" style="--i:4">
+        <div class="hero-stat"><span class="n">31</span><span class="l">suítes para <br>seus convidados</span></div>
+        <div class="hero-stat"><span class="n">1</span><span class="l">casamento por fim <br>de semana</span></div>
+        <div class="hero-stat"><span class="n">5 ★</span><span class="l">hotel boutique <br>de luxo</span></div>
+        <div class="hero-stat"><span class="n">100%</span><span class="l">privativo, só <br>para vocês</span></div>
+      </div>
+    </div>
+    <div class="scroll-cue" aria-hidden="true"><span class="bar"></span></div>
+  </header>
+
+  <!-- ============ SOBRE ============ -->
+  <section class="pad" id="sobre">
+    <div class="wrap">
+      <div class="about-grid">
+        <div class="about-copy">
+          <div class="eyebrow-row reveal"><span class="line"></span><span class="kicker">Sobre o Duke Beach</span></div>
+          <h2 class="h-sec reveal" style="--i:1;color:#a17d55">O oceano sempre esteve lá. Agora ele acompanha o seu casamento.</h2>
+          <p class="reveal" style="--i:2">Para entender o Duke Beach, você precisa desconstruir o concept tradicional de casamento. Em uma das costas mais preservadas do litoral norte de São Paulo, nasce um destination wedding onde a experiência vai muito além da cerimônia.</p>
+          <p class="reveal" style="--i:3">O Duke é um <strong>hotel 5 estrelas</strong> que, por um fim de semana, para inteiramente para um único casamento.</p>
+          <p class="reveal" style="--i:4">Aqui, o evento e a hospedagem não coexistem. Eles se tornam a mesma memória.</p>
+        </div>
+        <div class="about-media reveal" style="--i:2">
+          <div class="media zoomable">
+            <Img src="hosp-pool-3.jpg" alt="Infinity pool do Duke Beach ao pôr do sol, com vista para o Atlântico" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CERIMÔNIA ============ -->
+  <section class="feature" id="cerimonia">
+    <div class="feature-bg">
+      <Img src="hero-main.png" alt="Cerimônia diante do mar em Maresias" />
+    </div>
+    <div class="feature-fade"></div>
+    <div class="wrap feature-inner">
+      <div class="eyebrow-row reveal"><span class="line"></span><span class="kicker on-dark">Cerimônia</span></div>
+      <h2 class="h-sec reveal" style="--i:1;color:#fff">O mar como <em>testemunha.</em></h2>
+      <p class="reveal" style="--i:2">O momento do "sim" acontece diante de uma vista que poucos espaços no litoral paulista conseguem oferecer. Aqui, a paisagem não é cenário: ela participa da experiência.</p>
+      <a href="#contato" class="btn btn-ghost on-dark reveal" style="--i:3">Clique aqui para mais informações <span class="arr">→</span></a>
+    </div>
+  </section>
+
+  <!-- ============ RECEPÇÃO ============ -->
+  <section class="pad excl" id="recepcao">
+    <div class="wrap">
+      <div class="excl-head">
+        <div class="eyebrow-row reveal"><span class="line"></span><span class="kicker on-dark">Recepção</span></div>
+        <h2 class="h-sec reveal" style="--i:1;color:#fff">Estrutura de <em>alto padrão.</em></h2>
+        <p class="lead reveal" style="--i:2">Um salão criado para celebrações de alto padrão, onde estrutura e atmosfera acompanham o ritmo da noite.</p>
+      </div>
+      <div class="excl-grid">
+        <div class="excl-col reveal"><div class="step">01</div><h3>Exclusividade absoluta</h3><p>Todo o hotel é reservado para um único casamento, sem compartilhamentos, interrupções ou encontros com outros hóspedes.</p></div>
+        <div class="excl-col reveal" style="--i:1"><div class="step">02</div><h3>Operação inteiramente dedicada</h3><p>Toda a estrutura do hotel é direcionada para um único evento. Cada detalhe recebe atenção integral da equipe.</p></div>
+        <div class="excl-col reveal" style="--i:2"><div class="step">03</div><h3>O privilégio de não olhar para o relógio</h3><p>A celebração acontece onde todos estão hospedados e o tempo deixa de ser uma preocupação. A festa segue naturalmente, no ritmo dos convidados.</p></div>
+      </div>
+      <a href="#contato" class="btn btn-ghost on-dark reveal">Clique aqui para mais informações <span class="arr">→</span></a>
+    </div>
+  </section>
+
+  <!-- ============ HOSPEDAGEM ============ -->
+  <section class="pad" id="hospedagem" style="padding-bottom:0">
+    <div class="wrap">
+      <div class="eyebrow-row reveal"><span class="line"></span><span class="kicker">Hospedagem</span></div>
+      <h2 class="h-sec reveal" style="--i:1;margin-bottom:10px;color:#a17d55;max-width:none">Todos os seus convidados,<br> <em>no mesmo lugar.</em></h2>
+      <p class="reveal" style="--i:2;color:var(--ink-soft);max-width:50ch;font-size:calc(1em + 5px)">Um hotel reservado inteiramente para os dias da celebração. Trinta e uma suítes. Hospedagem completa.</p>
+    </div>
+
+    <div class="hosp-cols reveal">
+      <a class="hosp-col" href="#contato" aria-label="Suítes">
+        <Img src="hosp-suite-1.jpg" alt="Suítes com vista para o mar" />
+        <div class="hosp-ov">
+          <span class="hi"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M3 18v-5a2 2 0 012-2h14a2 2 0 012 2v5"/><path d="M3 18h18"/><path d="M6 11V8.5A1.5 1.5 0 017.5 7h3A1.5 1.5 0 0112 8.5V11M12 11V8.5A1.5 1.5 0 0113.5 7h3A1.5 1.5 0 0118 8.5V11"/></svg></span>
+          <h3>Suítes</h3>
+        </div>
+      </a>
+      <a class="hosp-col" href="#contato" aria-label="Infinity Pool">
+        <Img src="hosp-pool-1.webp" alt="Infinity pool com vista para o Atlântico" />
+        <div class="hosp-ov">
+          <span class="hi"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M2 8c2.2 0 2.2 2 4.5 2S8.7 8 11 8s2.3 2 4.5 2S17.8 8 20 8"/><path d="M2 13c2.2 0 2.2 2 4.5 2S8.7 13 11 13s2.3 2 4.5 2S17.8 13 20 13"/><path d="M2 18c2.2 0 2.2 2 4.5 2S8.7 18 11 18s2.3 2 4.5 2S17.8 18 20 18"/></svg></span>
+          <h3>Infinity Pool</h3>
+        </div>
+      </a>
+      <a class="hosp-col" href="#contato" aria-label="SPA">
+        <Img src="SPA/SALA-DE-MASSAGEM.jpg.webp" alt="SPA disponível para todos os hóspedes" />
+        <div class="hosp-ov">
+          <span class="hi"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M12 20c-4.4 0-8-2.7-8-6 2.6 0 4.7 1.2 6 3 .3-2.4-.9-5-2.4-6.7C9.6 7.7 11 5.7 12 4c1 1.7 2.4 3.7 4.4 6.3-1.5 1.7-2.7 4.3-2.4 6.7 1.3-1.8 3.4-3 6-3 0 3.3-3.6 6-8 6z"/></svg></span>
+          <h3>SPA</h3>
+        </div>
+      </a>
+      <a class="hosp-col" href="#contato" aria-label="Lago Aquecido">
+        <Img src="hosp-lago-2.webp" alt="Lago aquecido contemplativo e privativo" />
+        <div class="hosp-ov">
+          <span class="hi"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M12 3c3.5 4 6 7 6 10a6 6 0 11-12 0c0-3 2.5-6 6-10z"/></svg></span>
+          <h3>Lago Aquecido</h3>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <!-- ============ GALERIA ============ -->
+  <section class="pad" id="galeria" style="background:var(--cream-2)">
+    <div class="wrap">
+      <div class="eyebrow-row reveal"><span class="line"></span><span class="kicker">Galeria</span></div>
+      <h2 class="h-sec reveal" style="--i:1;color:#a17d55">Momentos que foram registrados <em>no Duke.</em></h2>
+      <p class="reveal" style="--i:2;color:var(--ink-soft);margin-top:14px;font-size:calc(1em + 5px)">Veja fotos de casamentos reais que aconteceram aqui.</p>
+      <div class="gal">
+        <div class="media reveal">
+          <Img src="galeria-1.jpg" alt="Casamento real no Duke Beach" />
+        </div>
+        <div class="media reveal" style="--i:1">
+          <Img src="galeria-2.jpg" alt="Casamento real no Duke Beach" />
+        </div>
+        <div class="media reveal" style="--i:2">
+          <Img src="galeria-3.jpg" alt="Casamento real no Duke Beach" />
+        </div>
+        <div class="media reveal" style="--i:3">
+          <Img src="galeria-5.jpg" alt="Casamento real no Duke Beach" />
+        </div>
+        <div class="media reveal">
+          <Img src="galeria-6.jpg" alt="Casamento real no Duke Beach" class="galeria-img-6" />
+        </div>
+        <div class="media reveal" style="--i:1">
+          <Img src="galeria-12.jpg" alt="Casamento real no Duke Beach" />
+        </div>
+        <div class="media reveal" style="--i:2">
+          <Img src="galeria-atualizada-05.jpg" alt="Casamento real no Duke Beach" />
+        </div>
+        <div class="media reveal" style="--i:3">
+          <Img src="galeria-atualizada-06.jpg" alt="Casamento real no Duke Beach" />
+        </div>
+        <div class="media reveal">
+          <Img src="festa-1-atualizada.jpg" alt="Festa de casamento no Duke Beach" />
+        </div>
+        <div class="media reveal" style="--i:1">
+          <Img src="festa-2-atualizada.png" alt="Festa de casamento no Duke Beach" />
+        </div>
+        <div class="media reveal" style="--i:2">
+          <Img src="festa-3-atualizada.png" alt="Festa de casamento no Duke Beach" />
+        </div>
+        <div class="media reveal" style="--i:3">
+          <Img src="festa-5-atualizada.jpg" alt="Festa de casamento no Duke Beach" />
+        </div>
+        <div class="media reveal">
+          <Img src="festa-4-atualizada.jpg" alt="Festa de casamento no Duke Beach" />
+        </div>
+        <div class="media reveal" style="--i:1">
+          <Img src="festa-5.jpg" alt="Festa de casamento no Duke Beach" />
+        </div>
+        <div class="media reveal" style="--i:2">
+          <Img src="SPA/Cópia de DSC02972.jpg" alt="Casamento real no Duke Beach" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ RECONHECIMENTO ============ -->
+  <section class="pad" id="reconhecimento">
+    <div class="wrap">
+      <Img class="recon-logo reveal" src="PreferredHotels.svg.png" alt="Preferred Hotels &amp; Resorts" />
+      <h2 class="h-sec reveal" style="--i:1;color:#a17d55">Um endereço entre os hotéis mais reconhecidos do país.</h2>
+    </div>
+  </section>
+
+  <!-- ============ DEPOIMENTO ============ -->
+  <section class="pad testi" id="depoimento">
+    <div class="depo-bg" aria-hidden="true">
+      <Img src="cerimonia-1.png" alt="" />
+    </div>
+    <div class="wrap">
+      <div class="eyebrow-row reveal" style="justify-content:center"><span class="line"></span><span class="kicker on-dark">Depoimento</span><span class="line"></span></div>
+      <blockquote class="reveal" style="--i:1;max-width:none">
+        <span class="qmark">“</span>
+        Acordamos no dia seguinte e ninguém queria ir embora.<br>
+        Ainda tinha gente na piscina às dez da manhã,<br>
+        o café estava no jardim e o mar continuava lá.<br>
+        Não lembro de um casamento que tivesse um dia depois assim.
+        <cite>Camila &amp; Rodrigo · Casamento em Março 2026</cite>
+      </blockquote>
+    </div>
+  </section>
+
+  <!-- ============ CONTATO ============ -->
+  <section class="pad" id="contato">
+    <div class="wrap contact-grid">
+      <div class="contact-left">
+        <div class="eyebrow-row reveal"><span class="line"></span><span class="kicker">Contato</span></div>
+        <h2 class="h-sec reveal" style="--i:1;color:#a17d55">Venha sonhar<br class="brk-desktop"> <em>com a gente.</em></h2>
+        <p class="reveal" style="--i:2;font-size:calc(1em + 5px)">Preencha o formulário para receber nosso contato.</p>
+      </div>
+
+      <div class="form-card reveal" style="--i:2">
+        <LeadForm
+          formId="lead-form"
+          project={config.project_slug}
+          submitUrl={config.forms["lead-form"].webhooks[0]}
+          redirectUrl={config.forms["lead-form"].redirect_on_success}
+          submitText="ENVIAR SOLICITAÇÃO"
+          prefix="dw"
+          honeypot
+          fields={[
+            { name: "nome",      type: "text",     label: "Nome dos noivos",  dataLabel: "Nome",                  placeholder: "Ex.: Camila e Rodrigo", required: true },
+            {
+              type: "row",
+              fields: [
+                { name: "data",       type: "text",   label: "Data prevista",     dataLabel: "Data do evento",        placeholder: "Mês / ano",            required: true },
+                { name: "convidados", type: "number", label: "Nº de convidados",  dataLabel: "Número de pessoas",     placeholder: "Ex.: 120",             required: true }
+              ]
+            },
+            { name: "telefone",  type: "tel",      label: "WhatsApp",         dataLabel: "WhatsApp",              placeholder: "(11) 99999-9999",      required: true },
+            { name: "email",     type: "email",    label: "E-mail",           dataLabel: "E-mail",                placeholder: "seuemail@exemplo.com", required: true },
+            { name: "detalhes",   type: "textarea", label: "Mensagem (opcional)", dataLabel: "Detalhes adicionais",   placeholder: "Conte como vocês imaginam o casamento de vocês…", required: false, full: true }
+          ]}
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer>
+    <div class="wrap">
+      <div class="foot-top">
+        <div class="foot-brand">
+          Duke <b>Beach</b>
+          <p>Destination wedding em Maresias. Um hotel boutique de luxo, 100% privativo, dedicado a um casamento por fim de semana.</p>
+        </div>
+      </div>
+      <div class="foot-bottom">
+        <span>© <span id="yr">{new Date().getFullYear()}</span> Duke Beach. Todos os direitos reservados.</span>
+        <span>Litoral Norte · São Paulo</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <button class="lb-close" id="lbClose" aria-label="Fechar">×</button>
+    <img id="lbImg" src="" alt="">
+  </div>
+
+  <!-- ─── POPUP PRÉ-WHATSAPP ─── -->
+  <div class="wa-backdrop" id="waModalOverlay" aria-hidden="true"></div>
+  <div class="wa-popup" id="waPopup" role="dialog" aria-modal="true" aria-labelledby="waPopupTitle">
+
+    <!-- Cabeçalho estilo WhatsApp -->
+    <div class="wa-popup__head">
+      <div class="wa-popup__avatar">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+        </svg>
+      </div>
+      <div class="wa-popup__info">
+        <strong id="waPopupTitle">Duke Beach</strong>
+        <span class="wa-popup__status">
+          <span class="wa-popup__dot"></span>Online agora
+        </span>
+      </div>
+      <button class="wa-popup__close" id="closeWaModal" aria-label="Fechar">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+          <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Corpo estilo chat -->
+    <div class="wa-popup__body">
+      <div class="wa-bubble">
+        <p>Olá! Preencha os dados abaixo e nossa equipe entra em contato pelo WhatsApp em até 2 horas. 🌊</p>
+      </div>
+
+      <LeadForm
+        formId="wa-form"
+        project={config.project_slug}
+        submitUrl={config.forms["lead-form"].webhooks[0]}
+        redirectUrl="https://wa.me/5512900000000?text=Olá!%20Acabei%20de%20preencher%20o%20formulário%20no%20site%20do%20Duke%20Beach%20e%20gostaria%20de%20saber%20mais%20sobre%20o%20destination%20wedding."
+        submitText="Enviar e continuar no WhatsApp"
+        prefix="wa"
+        honeypot
+        successTitle="Enviado!"
+        successText="Em instantes entraremos em contato pelo WhatsApp."
+        fields={[
+          { name: "nome",       type: "text",   id: "wa-nome",       dataLabel: "Nome",              placeholder: "Nome completo",        required: true  },
+          { name: "telefone",   type: "tel",    id: "wa-telefone",   dataLabel: "WhatsApp",          placeholder: "(00) 00000-0000",      required: true  },
+          { name: "email",      type: "email",  id: "wa-email",      dataLabel: "E-mail",            placeholder: "E-mail",               required: true  },
+          { name: "data",       type: "text",   id: "wa-data",       dataLabel: "Data do evento",    placeholder: "Data do evento",       required: true },
+          { name: "convidados", type: "number", id: "wa-convidados", dataLabel: "Número de pessoas", placeholder: "Número de convidados", required: true },
+        ]}
+      />
+    </div>
+  </div>
+
+  <!-- ─── FLOATING WHATSAPP BUTTON ─── -->
+  <button
+    type="button"
+    class="wa-floating-btn"
+    id="waFloatingBtn"
+    aria-label="Falar pelo WhatsApp"
+  >
+    <svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"></path>
+    </svg>
+  </button>
+
+  <script>
+    import flatpickr from 'flatpickr';
+    import { Portuguese } from 'flatpickr/dist/l10n/pt.js';
+    import 'flatpickr/dist/flatpickr.min.css';
+
+    // Lightbox — clique para ampliar
+    const lb = document.getElementById('lightbox');
+    const lbImg = document.getElementById('lbImg');
+    
+    const openLb = (src, alt) => {
+      if (!lb || !lbImg) return;
+      lbImg.src = src;
+      lbImg.alt = alt || '';
+      lb.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    };
+    
+    const closeLb = () => {
+      if (!lb || !lbImg) return;
+      lb.classList.remove('open');
+      document.body.style.overflow = '';
+      setTimeout(() => {
+        lbImg.src = '';
+      }, 300);
+    };
+
+    document.querySelectorAll('.gal .media img').forEach(img => {
+      img.addEventListener('click', () => {
+        openLb(img.currentSrc || img.src, img.alt);
+      });
+    });
+
+    if (lb) {
+      lb.addEventListener('click', closeLb);
+    }
+    
+    const lbCloseBtn = document.getElementById('lbClose');
+    if (lbCloseBtn) {
+      lbCloseBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        closeLb();
+      });
+    }
+
+    /* ─── WhatsApp phone mask ─── */
+    function applyPhoneMask(input) {
+      input.addEventListener('input', (e) => {
+        let v = e.target.value.replace(/\D/g, '');
+        if (v.length > 11) v = v.slice(0, 11);
+        if (v.length > 6) {
+          v = '(' + v.slice(0,2) + ') ' + v.slice(2,7) + '-' + v.slice(7);
+        } else if (v.length > 2) {
+          v = '(' + v.slice(0,2) + ') ' + v.slice(2);
+        } else if (v.length > 0) {
+          v = '(' + v;
+        }
+        e.target.value = v;
+      });
+    }
+    document.querySelectorAll('input[name="telefone"]').forEach(applyPhoneMask);
+
+    /* ─── Flatpickr — calendário de data ─── */
+    const flatpickrConfig = {
+      dateFormat: 'd/m/Y',
+      locale: Portuguese,
+      minDate: 'today',
+      disableMobile: false,
+      allowInput: true,
+    };
+    document.querySelectorAll('input[name="data"]').forEach((el) => {
+      flatpickr(el, flatpickrConfig);
+    });
+
+    /* ─── Popup WhatsApp ─── */
+    const floatingWaBtn = document.getElementById('waFloatingBtn');
+    const waBackdrop = document.getElementById('waModalOverlay');
+    const waPopup   = document.getElementById('waPopup');
+    const closeWaBtn = document.getElementById('closeWaModal');
+
+    function openWaModal() {
+      if (!waBackdrop || !waPopup) return;
+      waBackdrop.classList.add('is-open');
+      waPopup.classList.add('is-open');
+      document.body.style.overflow = 'hidden';
+      document.body.classList.add('modal-open');
+    }
+
+    function closeWaModal() {
+      if (!waBackdrop || !waPopup) return;
+      waBackdrop.classList.remove('is-open');
+      waPopup.classList.remove('is-open');
+      document.body.style.overflow = '';
+      document.body.classList.remove('modal-open');
+    }
+
+    if (waPopup) {
+      if (floatingWaBtn) floatingWaBtn.addEventListener('click', openWaModal);
+      if (closeWaBtn) closeWaBtn.addEventListener('click', closeWaModal);
+      if (waBackdrop) waBackdrop.addEventListener('click', closeWaModal);
+    }
+
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape') {
+        closeLb();
+        closeWaModal();
+      }
+    });
+
+    // IntersectionObserver reveal animation
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('in');
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+
+    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+  </script>
+</Base>
