@@ -22,6 +22,11 @@
       ]
     }
   },
+  "whatsapp_popup": {
+    "phone": "",
+    "form_id": "whats-popup",
+    "show_after_ms": 3000
+  },
   "deploy": {
     "user": "root",
     "server": "157.173.197.116",
