@@ -89,6 +89,35 @@ export function initForms() {
       body['form_id']         = formId;
       body['form_name']       = form.name || formId;
 
+      // Calcula o campo "Fonte" com base no tipo de evento selecionado ou na URL
+      const selectEl = form.querySelector<HTMLSelectElement>('[name="tipo"], [name="tipo_evento"]');
+      const selectedVal = selectEl?.value?.toLowerCase() || '';
+
+      let baseFonte = 'Landing page/casamentos';
+
+      if (selectedVal.includes('corporativo') || selectedVal.includes('confraternização') || selectedVal.includes('confraternizacao')) {
+        baseFonte = 'Landing page/eventos-corporativos';
+      } else if (selectedVal.includes('debutante')) {
+        baseFonte = 'Landing page/debutantes';
+      } else if (selectedVal.includes('aniversário') || selectedVal.includes('aniversario')) {
+        baseFonte = 'Landing page/aniversarios';
+      } else if (selectedVal.includes('casamento') || selectedVal.includes('destination')) {
+        baseFonte = 'Landing page/casamentos';
+      } else {
+        const path = window.location.pathname;
+        if (path.includes('/bio')) {
+          baseFonte = 'Landing page/bio';
+        } else if (path.includes('/casamentos')) {
+          baseFonte = 'Landing page/casamentos';
+        }
+      }
+
+      if (window.location.search) {
+        baseFonte += window.location.search;
+      }
+      
+      body['Fonte'] = baseFonte;
+
       try {
         // Dispara storage em paralelo (fire-and-forget — falha silenciosa)
         const storageUrl = (window as any).__DMOVE_STORAGE;
