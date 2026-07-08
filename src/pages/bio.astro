@@ -51,7 +51,7 @@ import '../styles/bio.css';
       submitText="Solicitar orçamento"
       honeypot
       fields={[
-        { name: 'nome', type: 'text', label: 'Nome completo', placeholder: 'Seu nome', required: true, full: true },
+        { name: 'nome', type: 'text', label: 'Nome completo', dataLabel: 'Nome', placeholder: 'Seu nome', required: true, full: true },
         { type: 'row', fields: [
           { name: 'telefone', id: 'whatsapp', type: 'tel', label: 'WhatsApp', placeholder: '(00) 00000-0000', required: true },
           { name: 'email', type: 'email', label: 'E-mail', placeholder: 'seu@email.com', required: true }
@@ -69,9 +69,9 @@ import '../styles/bio.css';
         ] },
         { type: 'row', fields: [
           { name: 'data', type: 'text', label: 'Data do evento', placeholder: 'dd/mm/aaaa', required: true },
-          { name: 'convidados', type: 'number', label: 'Nº de convidados', placeholder: 'Ex: 150', required: true }
+          { name: 'convidados', type: 'number', label: 'Nº de convidados', dataLabel: 'Convidados', placeholder: 'Ex: 150', required: true }
         ]},
-        { name: 'mensagem', type: 'textarea', label: 'Mensagem', placeholder: 'Detalhes adicionais (não obrigatório)', required: false, full: true }
+        { name: 'mensagem', type: 'textarea', label: 'Mensagem', dataLabel: 'Detalhes adicionais', placeholder: 'Detalhes adicionais (não obrigatório)', required: false, full: true }
       ]}
     />
   </section>

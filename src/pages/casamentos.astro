@@ -21,6 +21,16 @@ import "../styles/casamentos.css";
 
   <div class="grain"></div>
 
+  <!-- ─── Language Switcher ─── -->
+  <div class="lang-switcher" role="group" aria-label="Select language">
+    <button class="lang-btn is-active" id="langBr" title="Português" aria-pressed="true">
+      <img src="https://flagcdn.com/br.svg" alt="Português" />
+    </button>
+    <button class="lang-btn" id="langEn" title="English" aria-pressed="false">
+      <img src="https://flagcdn.com/us.svg" alt="English" />
+    </button>
+  </div>
+
   <!-- ============ HERO ============ -->
   <header class="hero" id="top">
     <div class="hero-bg">
@@ -38,16 +48,16 @@ import "../styles/casamentos.css";
         <span class="line"></span>
         <span class="kicker on-dark">Maresias · Destination Wedding</span>
       </div>
-      <h1 class="reveal" style="--i:1">Exclusividade<br>e encanto<br>à beira-mar.</h1>
-      <p class="lead reveal" style="--i:2">Seu destination wedding em um hotel boutique de luxo em Maresias.</p>
+      <h1 class="reveal" style="--i:1" data-i18n="hero.h1">Exclusividade<br>e encanto<br>à beira-mar.</h1>
+      <p class="lead reveal" style="--i:2" data-i18n="hero.lead">Seu destination wedding em um hotel boutique de luxo em Maresias.</p>
       <div class="hero-actions reveal" style="--i:3">
-        <a href="#contato" class="btn btn-primary">Clique aqui para mais informações <span class="arr">→</span></a>
+        <a href="#contato" class="btn btn-primary" data-i18n="hero.btn">Clique aqui para mais informações <span class="arr">→</span></a>
       </div>
       <div class="hero-stats reveal" style="--i:4">
-        <div class="hero-stat"><span class="n">31</span><span class="l">suítes para <br>seus convidados</span></div>
-        <div class="hero-stat"><span class="n">1</span><span class="l">casamento por fim <br>de semana</span></div>
-        <div class="hero-stat"><span class="n">5 ★</span><span class="l">hotel boutique <br>de luxo</span></div>
-        <div class="hero-stat"><span class="n">100%</span><span class="l">privativo, só <br>para vocês</span></div>
+        <div class="hero-stat"><span class="n">31</span><span class="l" data-i18n="hero.stat1">suítes para <br>seus convidados</span></div>
+        <div class="hero-stat"><span class="n">1</span><span class="l" data-i18n="hero.stat2">casamento por fim <br>de semana</span></div>
+        <div class="hero-stat"><span class="n">5 ★</span><span class="l" data-i18n="hero.stat3">hotel boutique <br>de luxo</span></div>
+        <div class="hero-stat"><span class="n">100%</span><span class="l" data-i18n="hero.stat4">privativo, só <br>para vocês</span></div>
       </div>
     </div>
     <div class="scroll-cue" aria-hidden="true"><span class="bar"></span></div>
@@ -58,11 +68,11 @@ import "../styles/casamentos.css";
     <div class="wrap">
       <div class="about-grid">
         <div class="about-copy">
-          <div class="eyebrow-row reveal"><span class="line"></span><span class="kicker">Sobre o Duke Beach</span></div>
-          <h2 class="h-sec reveal" style="--i:1;color:#a17d55">O oceano sempre esteve lá. Agora ele acompanha o seu casamento.</h2>
-          <p class="reveal" style="--i:2">Para entender o Duke Beach, você precisa desconstruir o concept tradicional de casamento. Em uma das costas mais preservadas do litoral norte de São Paulo, nasce um destination wedding onde a experiência vai muito além da cerimônia.</p>
-          <p class="reveal" style="--i:3">O Duke é um <strong>hotel 5 estrelas</strong> que, por um fim de semana, para inteiramente para um único casamento.</p>
-          <p class="reveal" style="--i:4">Aqui, o evento e a hospedagem não coexistem. Eles se tornam a mesma memória.</p>
+          <div class="eyebrow-row reveal"><span class="line"></span><span class="kicker" data-i18n="sobre.kicker">Sobre o Duke Beach</span></div>
+          <h2 class="h-sec reveal" style="--i:1;color:#a17d55" data-i18n="sobre.h2">O oceano sempre esteve lá. Agora ele acompanha o seu casamento.</h2>
+          <p class="reveal" style="--i:2" data-i18n="sobre.p1">Para entender o Duke Beach, você precisa desconstruir o concept tradicional de casamento. Em uma das costas mais preservadas do litoral norte de São Paulo, nasce um destination wedding onde a experiência vai muito além da cerimônia.</p>
+          <p class="reveal" style="--i:3" data-i18n="sobre.p2">O Duke é um <strong>hotel 5 estrelas</strong> que, por um fim de semana, para inteiramente para um único casamento.</p>
+          <p class="reveal" style="--i:4" data-i18n="sobre.p3">Aqui, o evento e a hospedagem não coexistem. Eles se tornam a mesma memória.</p>
         </div>
         <div class="about-media reveal" style="--i:2">
           <div class="media zoomable">
@@ -80,10 +90,10 @@ import "../styles/casamentos.css";
     </div>
     <div class="feature-fade"></div>
     <div class="wrap feature-inner">
-      <div class="eyebrow-row reveal"><span class="line"></span><span class="kicker on-dark">Cerimônia</span></div>
-      <h2 class="h-sec reveal" style="--i:1;color:#fff">O mar como <em>testemunha.</em></h2>
-      <p class="reveal" style="--i:2">O momento do "sim" acontece diante de uma vista que poucos espaços no litoral paulista conseguem oferecer. Aqui, a paisagem não é cenário: ela participa da experiência.</p>
-      <a href="#contato" class="btn btn-ghost on-dark reveal" style="--i:3">Clique aqui para mais informações <span class="arr">→</span></a>
+      <div class="eyebrow-row reveal"><span class="line"></span><span class="kicker on-dark" data-i18n="cerimonia.kicker">Cerimônia</span></div>
+      <h2 class="h-sec reveal" style="--i:1;color:#fff" data-i18n="cerimonia.h2">O mar como <em>testemunha.</em></h2>
+      <p class="reveal" style="--i:2" data-i18n="cerimonia.p">O momento do "sim" acontece diante de uma vista que poucos espaços no litoral paulista conseguem oferecer. Aqui, a paisagem não é cenário: ela participa da experiência.</p>
+      <a href="#contato" class="btn btn-ghost on-dark reveal" style="--i:3" data-i18n="cerimonia.btn">Clique aqui para mais informações <span class="arr">→</span></a>
     </div>
   </section>
 
@@ -91,25 +101,25 @@ import "../styles/casamentos.css";
   <section class="pad excl" id="recepcao">
     <div class="wrap">
       <div class="excl-head">
-        <div class="eyebrow-row reveal"><span class="line"></span><span class="kicker on-dark">Recepção</span></div>
-        <h2 class="h-sec reveal" style="--i:1;color:#fff">Estrutura de <em>alto padrão.</em></h2>
-        <p class="lead reveal" style="--i:2">Um salão criado para celebrações de alto padrão, onde estrutura e atmosfera acompanham o ritmo da noite.</p>
+        <div class="eyebrow-row reveal"><span class="line"></span><span class="kicker on-dark" data-i18n="recepcao.kicker">Recepção</span></div>
+        <h2 class="h-sec reveal" style="--i:1;color:#fff" data-i18n="recepcao.h2">Estrutura de <em>alto padrão.</em></h2>
+        <p class="lead reveal" style="--i:2" data-i18n="recepcao.lead">Um salão criado para celebrações de alto padrão, onde estrutura e atmosfera acompanham o ritmo da noite.</p>
       </div>
       <div class="excl-grid">
-        <div class="excl-col reveal"><div class="step">01</div><h3>Exclusividade absoluta</h3><p>Todo o hotel é reservado para um único casamento, sem compartilhamentos, interrupções ou encontros com outros hóspedes.</p></div>
-        <div class="excl-col reveal" style="--i:1"><div class="step">02</div><h3>Operação inteiramente dedicada</h3><p>Toda a estrutura do hotel é direcionada para um único evento. Cada detalhe recebe atenção integral da equipe.</p></div>
-        <div class="excl-col reveal" style="--i:2"><div class="step">03</div><h3>O privilégio de não olhar para o relógio</h3><p>A celebração acontece onde todos estão hospedados e o tempo deixa de ser uma preocupação. A festa segue naturalmente, no ritmo dos convidados.</p></div>
+        <div class="excl-col reveal"><div class="step">01</div><h3 data-i18n="recepcao.col1.h3">Exclusividade absoluta</h3><p data-i18n="recepcao.col1.p">Todo o hotel é reservado para um único casamento, sem compartilhamentos, interrupções ou encontros com outros hóspedes.</p></div>
+        <div class="excl-col reveal" style="--i:1"><div class="step">02</div><h3 data-i18n="recepcao.col2.h3">Operação inteiramente dedicada</h3><p data-i18n="recepcao.col2.p">Toda a estrutura do hotel é direcionada para um único evento. Cada detalhe recebe atenção integral da equipe.</p></div>
+        <div class="excl-col reveal" style="--i:2"><div class="step">03</div><h3 data-i18n="recepcao.col3.h3">O privilégio de não olhar para o relógio</h3><p data-i18n="recepcao.col3.p">A celebração acontece onde todos estão hospedados e o tempo deixa de ser uma preocupação. A festa segue naturalmente, no ritmo dos convidados.</p></div>
       </div>
-      <a href="#contato" class="btn btn-ghost on-dark reveal">Clique aqui para mais informações <span class="arr">→</span></a>
+      <a href="#contato" class="btn btn-ghost on-dark reveal" data-i18n="recepcao.btn">Clique aqui para mais informações <span class="arr">→</span></a>
     </div>
   </section>
 
   <!-- ============ HOSPEDAGEM ============ -->
   <section class="pad" id="hospedagem" style="padding-bottom:0">
     <div class="wrap">
-      <div class="eyebrow-row reveal"><span class="line"></span><span class="kicker">Hospedagem</span></div>
-      <h2 class="h-sec reveal" style="--i:1;margin-bottom:10px;color:#a17d55;max-width:none">Todos os seus convidados,<br> <em>no mesmo lugar.</em></h2>
-      <p class="reveal" style="--i:2;color:var(--ink-soft);max-width:50ch;font-size:calc(1em + 5px)">Um hotel reservado inteiramente para os dias da celebração. Trinta e uma suítes. Hospedagem completa.</p>
+      <div class="eyebrow-row reveal"><span class="line"></span><span class="kicker" data-i18n="hospedagem.kicker">Hospedagem</span></div>
+      <h2 class="h-sec reveal" style="--i:1;margin-bottom:10px;color:#a17d55;max-width:none" data-i18n="hospedagem.h2">Todos os seus convidados,<br> <em>no mesmo lugar.</em></h2>
+      <p class="reveal" style="--i:2;color:var(--ink-soft);max-width:50ch;font-size:calc(1em + 5px)" data-i18n="hospedagem.p">Um hotel reservado inteiramente para os dias da celebração. Trinta e uma suítes. Hospedagem completa.</p>
     </div>
 
     <div class="hosp-cols reveal">
@@ -117,7 +127,7 @@ import "../styles/casamentos.css";
         <Img src="hosp-suite-1.jpg" alt="Suítes com vista para o mar" />
         <div class="hosp-ov">
           <span class="hi"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M3 18v-5a2 2 0 012-2h14a2 2 0 012 2v5"/><path d="M3 18h18"/><path d="M6 11V8.5A1.5 1.5 0 017.5 7h3A1.5 1.5 0 0112 8.5V11M12 11V8.5A1.5 1.5 0 0113.5 7h3A1.5 1.5 0 0118 8.5V11"/></svg></span>
-          <h3>Suítes</h3>
+          <h3 data-i18n="hospedagem.suites">Suítes</h3>
         </div>
       </a>
       <a class="hosp-col" href="#contato" aria-label="Infinity Pool">
@@ -138,7 +148,7 @@ import "../styles/casamentos.css";
         <Img src="hosp-lago-2.webp" alt="Lago aquecido contemplativo e privativo" />
         <div class="hosp-ov">
           <span class="hi"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M12 3c3.5 4 6 7 6 10a6 6 0 11-12 0c0-3 2.5-6 6-10z"/></svg></span>
-          <h3>Lago Aquecido</h3>
+          <h3 data-i18n="hospedagem.lake">Lago Aquecido</h3>
         </div>
       </a>
     </div>
@@ -147,9 +157,9 @@ import "../styles/casamentos.css";
   <!-- ============ GALERIA ============ -->
   <section class="pad" id="galeria" style="background:var(--cream-2)">
     <div class="wrap">
-      <div class="eyebrow-row reveal"><span class="line"></span><span class="kicker">Galeria</span></div>
-      <h2 class="h-sec reveal" style="--i:1;color:#a17d55">Momentos que foram registrados <em>no Duke.</em></h2>
-      <p class="reveal" style="--i:2;color:var(--ink-soft);margin-top:14px;font-size:calc(1em + 5px)">Veja fotos de casamentos reais que aconteceram aqui.</p>
+      <div class="eyebrow-row reveal"><span class="line"></span><span class="kicker" data-i18n="galeria.kicker">Galeria</span></div>
+      <h2 class="h-sec reveal" style="--i:1;color:#a17d55" data-i18n="galeria.h2">Momentos que foram registrados <em>no Duke.</em></h2>
+      <p class="reveal" style="--i:2;color:var(--ink-soft);margin-top:14px;font-size:calc(1em + 5px)" data-i18n="galeria.p">Veja fotos de casamentos reais que aconteceram aqui.</p>
       <div class="gal">
         <div class="media reveal">
           <Img src="galeria-1.jpg" alt="Casamento real no Duke Beach" />
@@ -204,7 +214,7 @@ import "../styles/casamentos.css";
   <section class="pad" id="reconhecimento">
     <div class="wrap">
       <Img class="recon-logo reveal" src="PreferredHotels.svg.png" alt="Preferred Hotels &amp; Resorts" />
-      <h2 class="h-sec reveal" style="--i:1;color:#a17d55">Um endereço entre os hotéis mais reconhecidos do país.</h2>
+      <h2 class="h-sec reveal" style="--i:1;color:#a17d55" data-i18n="reconhecimento.h2">Um endereço entre os hotéis mais reconhecidos do país.</h2>
     </div>
   </section>
 
@@ -214,14 +224,14 @@ import "../styles/casamentos.css";
       <Img src="cerimonia-1.png" alt="" />
     </div>
     <div class="wrap">
-      <div class="eyebrow-row reveal" style="justify-content:center"><span class="line"></span><span class="kicker on-dark">Depoimento</span><span class="line"></span></div>
+      <div class="eyebrow-row reveal" style="justify-content:center"><span class="line"></span><span class="kicker on-dark" data-i18n="depoimento.kicker">Depoimento</span><span class="line"></span></div>
       <blockquote class="reveal" style="--i:1;max-width:none">
-        <span class="qmark">“</span>
-        Acordamos no dia seguinte e ninguém queria ir embora.<br>
+        <span class="qmark">"</span>
+        <span data-i18n="depoimento.quote">Acordamos no dia seguinte e ninguém queria ir embora.<br>
         Ainda tinha gente na piscina às dez da manhã,<br>
         o café estava no jardim e o mar continuava lá.<br>
-        Não lembro de um casamento que tivesse um dia depois assim.
-        <cite>Camila &amp; Rodrigo · Casamento em Março 2026</cite>
+        Não lembro de um casamento que tivesse um dia depois assim.</span>
+        <cite data-i18n="depoimento.cite">Camila &amp; Rodrigo · Casamento em Março 2026</cite>
       </blockquote>
     </div>
   </section>
@@ -230,9 +240,9 @@ import "../styles/casamentos.css";
   <section class="pad" id="contato">
     <div class="wrap contact-grid">
       <div class="contact-left">
-        <div class="eyebrow-row reveal"><span class="line"></span><span class="kicker">Contato</span></div>
-        <h2 class="h-sec reveal" style="--i:1;color:#a17d55">Venha sonhar<br class="brk-desktop"> <em>com a gente.</em></h2>
-        <p class="reveal" style="--i:2;font-size:calc(1em + 5px)">Preencha o formulário para receber nosso contato.</p>
+        <div class="eyebrow-row reveal"><span class="line"></span><span class="kicker" data-i18n="contato.kicker">Contato</span></div>
+        <h2 class="h-sec reveal" style="--i:1;color:#a17d55" data-i18n="contato.h2">Venha sonhar<br class="brk-desktop"> <em>com a gente.</em></h2>
+        <p class="reveal" style="--i:2;font-size:calc(1em + 5px)" data-i18n="contato.p">Preencha o formulário para receber nosso contato.</p>
       </div>
 
       <div class="form-card reveal" style="--i:2">
@@ -245,17 +255,19 @@ import "../styles/casamentos.css";
           prefix="dw"
           honeypot
           fields={[
+            { name: "tipo",      type: "hidden",                              dataLabel: "Tipo de evento",        value: "Casamento" },
             { name: "nome",      type: "text",     label: "Nome dos noivos",  dataLabel: "Nome",                  placeholder: "Ex.: Camila e Rodrigo", required: true },
             {
               type: "row",
               fields: [
                 { name: "data",       type: "text",   label: "Data prevista",     dataLabel: "Data do evento",        placeholder: "Mês / ano",            required: true },
-                { name: "convidados", type: "number", label: "Nº de convidados",  dataLabel: "Número de pessoas",     placeholder: "Ex.: 120",             required: true }
+                { name: "convidados", type: "number", label: "Nº de convidados",  dataLabel: "Convidados",            placeholder: "Ex.: 120",             required: true }
               ]
             },
             { name: "telefone",  type: "tel",      label: "WhatsApp",         dataLabel: "WhatsApp",              placeholder: "(11) 99999-9999",      required: true },
             { name: "email",     type: "email",    label: "E-mail",           dataLabel: "E-mail",                placeholder: "seuemail@exemplo.com", required: true },
-            { name: "detalhes",   type: "textarea", label: "Mensagem (opcional)", dataLabel: "Detalhes adicionais",   placeholder: "Conte como vocês imaginam o casamento de vocês…", required: false, full: true }
+            { name: "detalhes",   type: "textarea", label: "Mensagem (opcional)", dataLabel: "Detalhes adicionais",   placeholder: "Conte como vocês imaginam o casamento de vocês…", required: false, full: true },
+            { name: "fonte",      type: "hidden",                                dataLabel: "Fonte",                 value: "Landing page/casamentos" }
           ]}
         />
       </div>
@@ -268,11 +280,11 @@ import "../styles/casamentos.css";
       <div class="foot-top">
         <div class="foot-brand">
           Duke <b>Beach</b>
-          <p>Destination wedding em Maresias. Um hotel boutique de luxo, 100% privativo, dedicado a um casamento por fim de semana.</p>
+          <p data-i18n="footer.desc">Destination wedding em Maresias. Um hotel boutique de luxo, 100% privativo, dedicado a um casamento por fim de semana.</p>
         </div>
       </div>
       <div class="foot-bottom">
-        <span>© <span id="yr">{new Date().getFullYear()}</span> Duke Beach. Todos os direitos reservados.</span>
+        <span>© <span id="yr">{new Date().getFullYear()}</span> Duke Beach. <span data-i18n="footer.rights">Todos os direitos reservados.</span></span>
         <span>Litoral Norte · São Paulo</span>
       </div>
     </div>
@@ -298,7 +310,7 @@ import "../styles/casamentos.css";
       <div class="wa-popup__info">
         <strong id="waPopupTitle">Duke Beach</strong>
         <span class="wa-popup__status">
-          <span class="wa-popup__dot"></span>Online agora
+          <span class="wa-popup__dot"></span><span data-i18n="wa.status">Online agora</span>
         </span>
       </div>
       <button class="wa-popup__close" id="closeWaModal" aria-label="Fechar">
@@ -311,7 +323,7 @@ import "../styles/casamentos.css";
     <!-- Corpo estilo chat -->
     <div class="wa-popup__body">
       <div class="wa-bubble">
-        <p>Olá! Preencha os dados abaixo e nossa equipe entra em contato pelo WhatsApp em até 2 horas. 🌊</p>
+        <p data-i18n="wa.bubble">Olá! Preencha os dados abaixo e nossa equipe entra em contato pelo WhatsApp em até 2 horas. 🌊</p>
       </div>
 
       <LeadForm
@@ -325,11 +337,13 @@ import "../styles/casamentos.css";
         successTitle="Enviado!"
         successText="Em instantes entraremos em contato pelo WhatsApp."
         fields={[
+          { name: "tipo",       type: "hidden",                      dataLabel: "Tipo de evento",    value: "Casamento" },
           { name: "nome",       type: "text",   id: "wa-nome",       dataLabel: "Nome",              placeholder: "Nome completo",        required: true  },
           { name: "telefone",   type: "tel",    id: "wa-telefone",   dataLabel: "WhatsApp",          placeholder: "(00) 00000-0000",      required: true  },
           { name: "email",      type: "email",  id: "wa-email",      dataLabel: "E-mail",            placeholder: "E-mail",               required: true  },
           { name: "data",       type: "text",   id: "wa-data",       dataLabel: "Data do evento",    placeholder: "Data do evento",       required: true },
-          { name: "convidados", type: "number", id: "wa-convidados", dataLabel: "Número de pessoas", placeholder: "Número de convidados", required: true },
+          { name: "convidados", type: "number", id: "wa-convidados", dataLabel: "Convidados",         placeholder: "Número de convidados", required: true },
+          { name: "fonte",      type: "hidden",                      dataLabel: "Fonte",              value: "Landing page/casamentos" },
         ]}
       />
     </div>
@@ -352,18 +366,254 @@ import "../styles/casamentos.css";
     import { Portuguese } from 'flatpickr/dist/l10n/pt.js';
     import 'flatpickr/dist/flatpickr.min.css';
 
+    /* ─── i18n ─── */
+    const EN: Record<string, string> = {
+      'hero.h1':           'Exclusivity and charm<br>by the sea.',
+      'hero.lead':         'Your destination wedding at a luxury boutique hotel in Maresias.',
+      'hero.btn':          'Click here for more information <span class="arr">→</span>',
+      'hero.stat1':        'Guest<br>suites',
+      'hero.stat2':        'Wedding per<br>weekend',
+      'hero.stat3':        'luxury boutique<br>hotel',
+      'hero.stat4':        'exclusively<br>for you',
+      'sobre.kicker':      'About Duke Beach',
+      'sobre.h2':          'The ocean has always been here. Now, it becomes part of your story.',
+      'sobre.p1':          "Duke Beach redefines what a destination wedding can be. Nestled along one of the most pristine stretches of São Paulo's northern coastline, it offers an experience where every moment is thoughtfully curated, extending far beyond the ceremony itself.",
+      'sobre.p2':          'For one unforgettable weekend, our <strong>five-star boutique hotel</strong> is reserved exclusively for a single celebration.',
+      'sobre.p3':          'Here, your wedding and your stay are never separate experiences. They become one seamless journey, shared with the people who matter most and remembered for a lifetime.',
+      'cerimonia.kicker':  'Ceremony',
+      'cerimonia.h2':      'The ocean as your <em>wedding witness.</em>',
+      'cerimonia.p':       "Exchange your vows with a breathtaking oceanfront backdrop in one of the most exclusive settings on São Paulo's coastline. Here, the landscape isn't just a backdrop: it's an integral part of the experience.",
+      'cerimonia.btn':     'Learn more <span class="arr">→</span>',
+      'recepcao.kicker':   'Reception',
+      'recepcao.h2':       'A premium setting for <em>your celebration.</em>',
+      'recepcao.lead':     'A reception space designed for high-end weddings, where exceptional facilities and a refined atmosphere carry the celebration through the night.',
+      'recepcao.col1.h3':  'Complete exclusivity',
+      'recepcao.col1.p':   'The entire hotel is reserved for a single wedding, with no shared spaces, interruptions, or encounters with other guests.',
+      'recepcao.col2.h3':  'A team fully dedicated to your event',
+      'recepcao.col2.p':   "The hotel's entire operation is focused on a single celebration, ensuring every detail receives the team's full attention.",
+      'recepcao.col3.h3':  'The privilege of not watching the clock',
+      'recepcao.col3.p':   "The celebration takes place where everyone is staying, allowing time to become an afterthought. The party flows naturally, at the guests' own pace.",
+      'recepcao.btn':      'Learn more <span class="arr">→</span>',
+      'hospedagem.kicker': 'Accommodation',
+      'hospedagem.h2':     'All your guests,<br> <em>together in one place.</em>',
+      'hospedagem.p':      'An entire hotel reserved exclusively for your wedding celebration. Thirty-one suites. A complete luxury stay.',
+      'hospedagem.suites': 'Suites',
+      'hospedagem.lake':   'Heated Lake',
+      'galeria.kicker':    'Gallery',
+      'galeria.h2':        'Moments captured <em>at Duke Beach.</em>',
+      'galeria.p':         'Explore photos from real weddings celebrated here.',
+      'reconhecimento.h2': "An address among Brazil's most acclaimed luxury hotels.",
+      'depoimento.kicker': 'Testimonial',
+      'depoimento.quote':  "The next morning, no one wanted to leave. There were still guests by the pool at ten o'clock, breakfast was served in the garden, and the ocean was still there. I can't remember another wedding that felt like this the day after.",
+      'depoimento.cite':   'Camila &amp; Rodrigo · Wedding in March 2026',
+      'contato.kicker':    'Contact',
+      'contato.h2':        'Dream<br class="brk-desktop"> <em>with us.</em>',
+      'contato.p':         "Fill out the form, and we'll be in touch to start planning your celebration.",
+      'footer.desc':       'Destination weddings in Maresias. A luxury boutique hotel, reserved exclusively for one wedding each weekend.',
+      'footer.rights':     'All rights reserved.',
+      'wa.status':         'Online now',
+      'wa.bubble':         "Hi! Fill in your details below and our team will get in touch via WhatsApp within 2 hours. 🌊",
+    };
+
+    // Originals salvas antes da primeira tradução
+    const ORIG: Map<string, string> = new Map();
+    let currentLang: 'pt' | 'en' = 'pt';
+
+    function saveOriginals() {
+      document.querySelectorAll<HTMLElement>('[data-i18n]').forEach(el => {
+        ORIG.set('i18n:' + el.dataset.i18n!, el.innerHTML);
+      });
+      const waBtn = document.getElementById('waFloatingBtn');
+      if (waBtn) ORIG.set('aria:waBtn', waBtn.getAttribute('aria-label') || '');
+      const lbClose = document.getElementById('lbClose');
+      if (lbClose) ORIG.set('aria:lbClose', lbClose.getAttribute('aria-label') || '');
+
+      const mainForm = document.getElementById('form-lead-form');
+      if (mainForm) {
+        ['nome','data','convidados','detalhes'].forEach(n => {
+          const lbl = mainForm.querySelector<HTMLElement>(`label[for="${n}"]`);
+          if (lbl) ORIG.set('lbl:' + n, lbl.textContent || '');
+        });
+        ['nome','data','email','detalhes'].forEach(n => {
+          const el = mainForm.querySelector<HTMLElement>(`[name="${n}"]`);
+          if (el) ORIG.set('ph:' + n, el.getAttribute('placeholder') || '');
+        });
+        const st = mainForm.querySelector<HTMLElement>('.btn-text');
+        if (st) ORIG.set('submit:main', st.textContent || '');
+        const stitle = mainForm.querySelector<HTMLElement>('.dw-success-title');
+        if (stitle) ORIG.set('success-title:main', stitle.textContent || '');
+        const stext = mainForm.querySelector<HTMLElement>('.dw-success-text');
+        if (stext) ORIG.set('success-text:main', stext.innerHTML || '');
+      }
+
+      const waForm = document.getElementById('form-wa-form');
+      if (waForm) {
+        ['nome','data','convidados'].forEach(n => {
+          const el = waForm.querySelector<HTMLElement>(`[name="${n}"]`);
+          if (el) ORIG.set('wa-ph:' + n, el.getAttribute('placeholder') || '');
+        });
+        const ws = waForm.querySelector<HTMLElement>('.btn-text');
+        if (ws) ORIG.set('submit:wa', ws.textContent || '');
+        const wst = waForm.querySelector<HTMLElement>('.wa-success-title');
+        if (wst) ORIG.set('success-title:wa', wst.textContent || '');
+        const wstx = waForm.querySelector<HTMLElement>('.wa-success-text');
+        if (wstx) ORIG.set('success-text:wa', wstx.textContent || '');
+      }
+
+      document.querySelectorAll<HTMLElement>('.btn-loading').forEach((el, i) => {
+        const txt = Array.from(el.childNodes).find(n => n.nodeType === Node.TEXT_NODE);
+        ORIG.set('loading:' + i, txt?.textContent || '');
+      });
+      document.querySelectorAll<HTMLElement>('.dw-form-footer, .wa-form-footer').forEach((el, i) => {
+        ORIG.set('fp:' + i, el.textContent || '');
+      });
+    }
+
+    function applyEn() {
+      document.documentElement.lang = 'en';
+      document.querySelectorAll<HTMLElement>('[data-i18n]').forEach(el => {
+        const v = EN[el.dataset.i18n!];
+        if (v !== undefined) el.innerHTML = v;
+      });
+      document.getElementById('waFloatingBtn')?.setAttribute('aria-label', 'Chat on WhatsApp');
+      document.getElementById('lbClose')?.setAttribute('aria-label', 'Close');
+
+      const mainForm = document.getElementById('form-lead-form');
+      if (mainForm) {
+        ({nome:'Names of the couple', data:'Estimated date', convidados:'No. of guests', detalhes:'Message (optional)'} as Record<string,string>)
+          [Symbol.iterator as never] || Object.entries({nome:'Names of the couple', data:'Estimated date', convidados:'No. of guests', detalhes:'Message (optional)'}).forEach(([n,t]) => {
+            const lbl = mainForm.querySelector<HTMLElement>(`label[for="${n}"]`);
+            if (lbl) lbl.textContent = t;
+          });
+        Object.entries({nome:'E.g.: Emma & James', data:'Month / year', email:'youremail@example.com', detalhes:'Tell us how you envision your wedding…'}).forEach(([n,ph]) =>
+          mainForm.querySelector<HTMLElement>(`[name="${n}"]`)?.setAttribute('placeholder', ph));
+        const ms = mainForm.querySelector<HTMLElement>('.btn-text');
+        if (ms) ms.textContent = 'SEND ENQUIRY';
+        const mt = mainForm.querySelector<HTMLElement>('.dw-success-title');
+        if (mt) mt.textContent = 'Request received';
+        const mx = mainForm.querySelector<HTMLElement>('.dw-success-text');
+        if (mx) mx.innerHTML = "We've received your request.<br>We'll be in touch via WhatsApp or email shortly.";
+      }
+
+      const waForm = document.getElementById('form-wa-form');
+      if (waForm) {
+        Object.entries({nome:'Full name', data:'Event date', convidados:'Number of guests'}).forEach(([n,ph]) =>
+          waForm.querySelector<HTMLElement>(`[name="${n}"]`)?.setAttribute('placeholder', ph));
+        const ws = waForm.querySelector<HTMLElement>('.btn-text');
+        if (ws) ws.textContent = 'Send and continue on WhatsApp';
+        const wt = waForm.querySelector<HTMLElement>('.wa-success-title');
+        if (wt) wt.textContent = 'Sent!';
+        const wx = waForm.querySelector<HTMLElement>('.wa-success-text');
+        if (wx) wx.textContent = "We'll get in touch via WhatsApp shortly.";
+      }
+
+      document.querySelectorAll<HTMLElement>('.btn-loading').forEach(el => {
+        const txt = Array.from(el.childNodes).find(n => n.nodeType === Node.TEXT_NODE);
+        if (txt) txt.textContent = ' Sending…';
+      });
+      document.querySelectorAll<HTMLElement>('.dw-form-footer, .wa-form-footer').forEach(el => {
+        el.textContent = 'By submitting, you agree to our privacy policy.';
+      });
+    }
+
+    function restorePt() {
+      document.documentElement.lang = 'pt-BR';
+      document.querySelectorAll<HTMLElement>('[data-i18n]').forEach(el => {
+        const v = ORIG.get('i18n:' + el.dataset.i18n!);
+        if (v !== undefined) el.innerHTML = v;
+      });
+      const wb = document.getElementById('waFloatingBtn');
+      if (wb) wb.setAttribute('aria-label', ORIG.get('aria:waBtn') || '');
+      const lc = document.getElementById('lbClose');
+      if (lc) lc.setAttribute('aria-label', ORIG.get('aria:lbClose') || '');
+
+      const mainForm = document.getElementById('form-lead-form');
+      if (mainForm) {
+        ['nome','data','convidados','detalhes'].forEach(n => {
+          const lbl = mainForm.querySelector<HTMLElement>(`label[for="${n}"]`);
+          if (lbl) lbl.textContent = ORIG.get('lbl:' + n) || '';
+        });
+        ['nome','data','email','detalhes'].forEach(n =>
+          mainForm.querySelector<HTMLElement>(`[name="${n}"]`)?.setAttribute('placeholder', ORIG.get('ph:' + n) || ''));
+        const ms = mainForm.querySelector<HTMLElement>('.btn-text');
+        if (ms) ms.textContent = ORIG.get('submit:main') || '';
+        const mt = mainForm.querySelector<HTMLElement>('.dw-success-title');
+        if (mt) mt.textContent = ORIG.get('success-title:main') || '';
+        const mx = mainForm.querySelector<HTMLElement>('.dw-success-text');
+        if (mx) mx.innerHTML = ORIG.get('success-text:main') || '';
+      }
+
+      const waForm = document.getElementById('form-wa-form');
+      if (waForm) {
+        ['nome','data','convidados'].forEach(n =>
+          waForm.querySelector<HTMLElement>(`[name="${n}"]`)?.setAttribute('placeholder', ORIG.get('wa-ph:' + n) || ''));
+        const ws = waForm.querySelector<HTMLElement>('.btn-text');
+        if (ws) ws.textContent = ORIG.get('submit:wa') || '';
+        const wt = waForm.querySelector<HTMLElement>('.wa-success-title');
+        if (wt) wt.textContent = ORIG.get('success-title:wa') || '';
+        const wx = waForm.querySelector<HTMLElement>('.wa-success-text');
+        if (wx) wx.textContent = ORIG.get('success-text:wa') || '';
+      }
+
+      document.querySelectorAll<HTMLElement>('.btn-loading').forEach((el, i) => {
+        const txt = Array.from(el.childNodes).find(n => n.nodeType === Node.TEXT_NODE);
+        if (txt) txt.textContent = ORIG.get('loading:' + i) || '';
+      });
+      document.querySelectorAll<HTMLElement>('.dw-form-footer, .wa-form-footer').forEach((el, i) => {
+        el.textContent = ORIG.get('fp:' + i) || '';
+      });
+    }
+
+    function updateFlags(lang: 'pt' | 'en') {
+      const br = document.getElementById('langBr');
+      const en = document.getElementById('langEn');
+      br?.classList.toggle('is-active', lang === 'pt');
+      en?.classList.toggle('is-active', lang === 'en');
+      br?.setAttribute('aria-pressed', String(lang === 'pt'));
+      en?.setAttribute('aria-pressed', String(lang === 'en'));
+    }
+
+    function switchLang(lang: 'pt' | 'en') {
+      currentLang = lang;
+      localStorage.setItem('duke_lang', lang);
+      lang === 'en' ? applyEn() : restorePt();
+      updateFlags(lang);
+    }
+
+    function initI18n() {
+      saveOriginals();
+      const stored = localStorage.getItem('duke_lang') as 'pt' | 'en' | null;
+      const urlLang = new URLSearchParams(location.search).get('lang') ?? '';
+      const browserLang = (navigator.language ?? '').toLowerCase();
+      const isEn = stored === 'en' || (!stored && (urlLang === 'en' || browserLang.startsWith('en')));
+      currentLang = isEn ? 'en' : 'pt';
+      if (isEn) applyEn();
+      updateFlags(currentLang);
+      document.getElementById('langBr')?.addEventListener('click', () => switchLang('pt'));
+      document.getElementById('langEn')?.addEventListener('click', () => switchLang('en'));
+    }
+
+    initI18n();
+
+    // Anexa UTMs da URL ao campo "fonte" para o N8N separar os parâmetros
+    if (window.location.search) {
+      document.querySelectorAll<HTMLInputElement>('input[name="fonte"]').forEach(el => {
+        el.value += window.location.search;
+      });
+    }
+
     // Lightbox — clique para ampliar
     const lb = document.getElementById('lightbox');
-    const lbImg = document.getElementById('lbImg');
-    
-    const openLb = (src, alt) => {
+    const lbImg = document.getElementById('lbImg') as HTMLImageElement | null;
+
+    const openLb = (src: string, alt: string) => {
       if (!lb || !lbImg) return;
       lbImg.src = src;
       lbImg.alt = alt || '';
       lb.classList.add('open');
       document.body.style.overflow = 'hidden';
     };
-    
+
     const closeLb = () => {
       if (!lb || !lbImg) return;
       lb.classList.remove('open');
@@ -375,14 +625,14 @@ import "../styles/casamentos.css";
 
     document.querySelectorAll('.gal .media img').forEach(img => {
       img.addEventListener('click', () => {
-        openLb(img.currentSrc || img.src, img.alt);
+        openLb((img as HTMLImageElement).currentSrc || (img as HTMLImageElement).src, img.alt);
       });
     });
 
     if (lb) {
       lb.addEventListener('click', closeLb);
     }
-    
+
     const lbCloseBtn = document.getElementById('lbClose');
     if (lbCloseBtn) {
       lbCloseBtn.addEventListener('click', (e) => {
@@ -392,9 +642,10 @@ import "../styles/casamentos.css";
     }
 
     /* ─── WhatsApp phone mask ─── */
-    function applyPhoneMask(input) {
+    function applyPhoneMask(input: HTMLInputElement) {
       input.addEventListener('input', (e) => {
-        let v = e.target.value.replace(/\D/g, '');
+        const target = e.target as HTMLInputElement;
+        let v = target.value.replace(/\D/g, '');
         if (v.length > 11) v = v.slice(0, 11);
         if (v.length > 6) {
           v = '(' + v.slice(0,2) + ') ' + v.slice(2,7) + '-' + v.slice(7);
@@ -403,10 +654,10 @@ import "../styles/casamentos.css";
         } else if (v.length > 0) {
           v = '(' + v;
         }
-        e.target.value = v;
+        target.value = v;
       });
     }
-    document.querySelectorAll('input[name="telefone"]').forEach(applyPhoneMask);
+    document.querySelectorAll<HTMLInputElement>('input[name="telefone"]').forEach(applyPhoneMask);
 
     /* ─── Flatpickr — calendário de data ─── */
     const flatpickrConfig = {

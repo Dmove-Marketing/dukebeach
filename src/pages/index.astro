@@ -431,7 +431,7 @@ import videoUrl from "../assets/video/sobre-dukebeach.mp4";
             ],
           },
           { name: "data",       type: "text",   label: "Data do evento",    placeholder: "Selecione a data",   required: true },
-          { name: "convidados", type: "number", label: "Número de pessoas", placeholder: "Ex: 80",             required: true },
+          { name: "convidados", type: "number", label: "Número de pessoas", dataLabel: "Convidados", placeholder: "Ex: 80",             required: true },
           { name: "detalhes",   type: "textarea", label: "Detalhes adicionais", placeholder: "Conte um pouco sobre o casamento que vocês imaginam.", required: false, full: true },
         ]}
       />
@@ -479,11 +479,11 @@ import videoUrl from "../assets/video/sobre-dukebeach.mp4";
         successTitle="Enviado!"
         successText="Em instantes entraremos em contato pelo WhatsApp."
         fields={[
-          { name: "nome",       type: "text",   id: "wa-nome",       placeholder: "Nome completo",        required: true  },
-          { name: "telefone",   type: "tel",    id: "wa-telefone",   placeholder: "(00) 00000-0000",      required: true  },
-          { name: "email",      type: "email",  id: "wa-email",      placeholder: "E-mail",               required: true  },
-          { name: "data",       type: "text",   id: "wa-data",       placeholder: "Data do evento",       required: true },
-          { name: "convidados", type: "number", id: "wa-convidados", placeholder: "Número de convidados", required: true },
+          { name: "nome",       type: "text",   id: "wa-nome",       dataLabel: "Nome",              placeholder: "Nome completo",        required: true  },
+          { name: "telefone",   type: "tel",    id: "wa-telefone",   dataLabel: "WhatsApp",          placeholder: "(00) 00000-0000",      required: true  },
+          { name: "email",      type: "email",  id: "wa-email",      dataLabel: "E-mail",            placeholder: "E-mail",               required: true  },
+          { name: "data",       type: "text",   id: "wa-data",       dataLabel: "Data do evento",    placeholder: "Data do evento",       required: true },
+          { name: "convidados", type: "number", id: "wa-convidados", dataLabel: "Convidados",         placeholder: "Número de convidados", required: true },
         ]}
       />
     </div>

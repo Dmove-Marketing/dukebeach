@@ -32,6 +32,7 @@ const {
 import config from '../../config.json';
 const gtmId = config.tracking?.gtm_id || '';
 const trackingEnabled = config.tracking?.enabled !== false;
+const storageUrl = (config as any).storage_url || '';
 
 // JSON-LD padrão (Organization)
 const defaultJsonLd = {
@@ -81,6 +82,7 @@ const defaultJsonLd = {
     <script type="application/ld+json" set:html={JSON.stringify(jsonLd || defaultJsonLd)} />
 
     <slot name="head" />
+    {storageUrl && <script is:inline define:vars={{ storageUrl }}>(window).__DMOVE_STORAGE = storageUrl;</script>}
   </head>
   <body>
     <!-- GTM Body noscript -->

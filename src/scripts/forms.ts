@@ -90,6 +90,16 @@ export function initForms() {
       body['form_name']       = form.name || formId;
 
       try {
+        // Dispara storage em paralelo (fire-and-forget — falha silenciosa)
+        const storageUrl = (window as any).__DMOVE_STORAGE;
+        if (storageUrl) {
+          fetch(storageUrl, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(body),
+          }).catch(() => {});
+        }
+
         const res = await fetch(submitUrl, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
