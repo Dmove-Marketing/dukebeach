@@ -89,6 +89,17 @@ export function initForms() {
       body['form_id']         = formId;
       body['form_name']       = form.name || formId;
 
+      // Parâmetros de rastreamento UTM e de campanha
+      const urlParams = new URLSearchParams(window.location.search);
+      body['utm_source']   = urlParams.get('utm_source') || '';
+      body['utm_medium']   = urlParams.get('utm_medium') || '';
+      body['utm_campaign'] = urlParams.get('utm_campaign') || '';
+      body['utm_content']  = urlParams.get('utm_content') || '';
+      body['utm_term']     = urlParams.get('utm_term') || '';
+      body['fbclid']       = urlParams.get('fbclid') || '';
+      body['landing_page'] = window.location.pathname;
+      body['landing_url']  = window.location.href;
+
       // Calcula o campo "Fonte" com base no tipo de evento selecionado ou na URL
       const selectEl = form.querySelector<HTMLSelectElement>('[name="tipo"], [name="tipo_evento"]');
       const selectedVal = selectEl?.value?.toLowerCase() || '';
